@@ -1,0 +1,14 @@
+E:\Projects\nopCommerce\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.Square\Content\styles.css
+E:\Projects\nopCommerce\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.Square\plugin.json
+E:\Projects\nopCommerce\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.Square\Views\Configure.cshtml
+E:\Projects\nopCommerce\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.Square\Views\PaymentInfo.cshtml
+E:\Projects\nopCommerce\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.Square\Views\_ViewImports.cshtml
+E:\Projects\nopCommerce\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.Square\logo.png
+E:\Projects\nopCommerce\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.Square\Nop.Plugin.Payments.Square.dll
+E:\Projects\nopCommerce\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.Square\Nop.Plugin.Payments.Square.pdb
+E:\Projects\nopCommerce\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.Square\obj\Debug\net461\Nop.Plugin.Payments.Square.csprojResolveAssemblyReference.cache
+E:\Projects\nopCommerce\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.Square\obj\Debug\net461\Nop.Plugin.Payments.Square.csproj.CoreCompileInputs.cache
+E:\Projects\nopCommerce\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.Square\obj\Debug\net461\Nop.Plugin.Payments.Square.AssemblyInfoInputs.cache
+E:\Projects\nopCommerce\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.Square\obj\Debug\net461\Nop.Plugin.Payments.Square.AssemblyInfo.cs
+E:\Projects\nopCommerce\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.Square\obj\Debug\net461\Nop.Plugin.Payments.Square.dll
+E:\Projects\nopCommerce\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.Square\obj\Debug\net461\Nop.Plugin.Payments.Square.pdb
