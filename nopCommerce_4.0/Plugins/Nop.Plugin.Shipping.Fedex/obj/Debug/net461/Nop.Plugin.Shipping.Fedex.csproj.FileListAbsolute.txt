@@ -10,3 +10,15 @@ E:\Projects\nopCommerce\nopCommerce_4.0\Plugins\Nop.Plugin.Shipping.Fedex\obj\De
 E:\Projects\nopCommerce\nopCommerce_4.0\Plugins\Nop.Plugin.Shipping.Fedex\obj\Debug\net461\Nop.Plugin.Shipping.Fedex.AssemblyInfo.cs
 E:\Projects\nopCommerce\nopCommerce_4.0\Plugins\Nop.Plugin.Shipping.Fedex\obj\Debug\net461\Nop.Plugin.Shipping.Fedex.dll
 E:\Projects\nopCommerce\nopCommerce_4.0\Plugins\Nop.Plugin.Shipping.Fedex\obj\Debug\net461\Nop.Plugin.Shipping.Fedex.pdb
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Shipping.Fedex\plugin.json
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Shipping.Fedex\Views\Configure.cshtml
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Shipping.Fedex\Views\_ViewImports.cshtml
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Shipping.Fedex\logo.jpg
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Shipping.Fedex\Nop.Plugin.Shipping.Fedex.dll
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Shipping.Fedex\Nop.Plugin.Shipping.Fedex.pdb
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.Shipping.Fedex\obj\Debug\net461\Nop.Plugin.Shipping.Fedex.csprojResolveAssemblyReference.cache
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.Shipping.Fedex\obj\Debug\net461\Nop.Plugin.Shipping.Fedex.csproj.CoreCompileInputs.cache
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.Shipping.Fedex\obj\Debug\net461\Nop.Plugin.Shipping.Fedex.AssemblyInfoInputs.cache
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.Shipping.Fedex\obj\Debug\net461\Nop.Plugin.Shipping.Fedex.AssemblyInfo.cs
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.Shipping.Fedex\obj\Debug\net461\Nop.Plugin.Shipping.Fedex.dll
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.Shipping.Fedex\obj\Debug\net461\Nop.Plugin.Shipping.Fedex.pdb

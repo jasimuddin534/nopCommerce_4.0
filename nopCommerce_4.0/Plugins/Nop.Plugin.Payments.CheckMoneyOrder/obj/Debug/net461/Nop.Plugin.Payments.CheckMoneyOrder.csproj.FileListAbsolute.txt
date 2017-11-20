@@ -10,3 +10,15 @@ E:\Projects\nopCommerce\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.CheckMoneyOr
 E:\Projects\nopCommerce\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.CheckMoneyOrder\obj\Debug\net461\Nop.Plugin.Payments.CheckMoneyOrder.AssemblyInfo.cs
 E:\Projects\nopCommerce\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.CheckMoneyOrder\obj\Debug\net461\Nop.Plugin.Payments.CheckMoneyOrder.dll
 E:\Projects\nopCommerce\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.CheckMoneyOrder\obj\Debug\net461\Nop.Plugin.Payments.CheckMoneyOrder.pdb
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.CheckMoneyOrder\plugin.json
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.CheckMoneyOrder\Views\Configure.cshtml
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.CheckMoneyOrder\Views\PaymentInfo.cshtml
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.CheckMoneyOrder\Views\_ViewImports.cshtml
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.CheckMoneyOrder\logo.jpg
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.CheckMoneyOrder\Nop.Plugin.Payments.CheckMoneyOrder.dll
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.CheckMoneyOrder\Nop.Plugin.Payments.CheckMoneyOrder.pdb
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.CheckMoneyOrder\obj\Debug\net461\Nop.Plugin.Payments.CheckMoneyOrder.csproj.CoreCompileInputs.cache
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.CheckMoneyOrder\obj\Debug\net461\Nop.Plugin.Payments.CheckMoneyOrder.AssemblyInfoInputs.cache
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.CheckMoneyOrder\obj\Debug\net461\Nop.Plugin.Payments.CheckMoneyOrder.AssemblyInfo.cs
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.CheckMoneyOrder\obj\Debug\net461\Nop.Plugin.Payments.CheckMoneyOrder.dll
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.CheckMoneyOrder\obj\Debug\net461\Nop.Plugin.Payments.CheckMoneyOrder.pdb

@@ -11,3 +11,16 @@ E:\Projects\nopCommerce\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.PayPalDirect
 E:\Projects\nopCommerce\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.PayPalDirect\obj\Debug\net461\Nop.Plugin.Payments.PayPalDirect.AssemblyInfo.cs
 E:\Projects\nopCommerce\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.PayPalDirect\obj\Debug\net461\Nop.Plugin.Payments.PayPalDirect.dll
 E:\Projects\nopCommerce\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.PayPalDirect\obj\Debug\net461\Nop.Plugin.Payments.PayPalDirect.pdb
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.PayPalDirect\plugin.json
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.PayPalDirect\Views\Configure.cshtml
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.PayPalDirect\Views\PaymentInfo.cshtml
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.PayPalDirect\Views\_ViewImports.cshtml
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.PayPalDirect\logo.jpg
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.PayPalDirect\Nop.Plugin.Payments.PayPalDirect.dll
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.PayPalDirect\Nop.Plugin.Payments.PayPalDirect.pdb
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.PayPalDirect\obj\Debug\net461\Nop.Plugin.Payments.PayPalDirect.csprojResolveAssemblyReference.cache
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.PayPalDirect\obj\Debug\net461\Nop.Plugin.Payments.PayPalDirect.csproj.CoreCompileInputs.cache
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.PayPalDirect\obj\Debug\net461\Nop.Plugin.Payments.PayPalDirect.AssemblyInfoInputs.cache
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.PayPalDirect\obj\Debug\net461\Nop.Plugin.Payments.PayPalDirect.AssemblyInfo.cs
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.PayPalDirect\obj\Debug\net461\Nop.Plugin.Payments.PayPalDirect.dll
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.PayPalDirect\obj\Debug\net461\Nop.Plugin.Payments.PayPalDirect.pdb

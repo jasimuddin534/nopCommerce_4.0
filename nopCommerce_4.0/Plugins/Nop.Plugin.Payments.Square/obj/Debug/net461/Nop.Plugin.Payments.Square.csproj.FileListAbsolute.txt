@@ -12,3 +12,17 @@ E:\Projects\nopCommerce\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.Square\obj\D
 E:\Projects\nopCommerce\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.Square\obj\Debug\net461\Nop.Plugin.Payments.Square.AssemblyInfo.cs
 E:\Projects\nopCommerce\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.Square\obj\Debug\net461\Nop.Plugin.Payments.Square.dll
 E:\Projects\nopCommerce\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.Square\obj\Debug\net461\Nop.Plugin.Payments.Square.pdb
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.Square\Content\styles.css
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.Square\plugin.json
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.Square\Views\Configure.cshtml
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.Square\Views\PaymentInfo.cshtml
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.Square\Views\_ViewImports.cshtml
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.Square\logo.png
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.Square\Nop.Plugin.Payments.Square.dll
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.Square\Nop.Plugin.Payments.Square.pdb
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.Square\obj\Debug\net461\Nop.Plugin.Payments.Square.csprojResolveAssemblyReference.cache
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.Square\obj\Debug\net461\Nop.Plugin.Payments.Square.csproj.CoreCompileInputs.cache
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.Square\obj\Debug\net461\Nop.Plugin.Payments.Square.AssemblyInfoInputs.cache
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.Square\obj\Debug\net461\Nop.Plugin.Payments.Square.AssemblyInfo.cs
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.Square\obj\Debug\net461\Nop.Plugin.Payments.Square.dll
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.Square\obj\Debug\net461\Nop.Plugin.Payments.Square.pdb

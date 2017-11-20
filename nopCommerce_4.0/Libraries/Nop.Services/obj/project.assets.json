@@ -7796,11 +7796,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "E:\\Projects\\nopCommerce\\nopCommerce_4.0\\Libraries\\Nop.Services\\Nop.Services.csproj",
+      "projectUniqueName": "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Libraries\\Nop.Services\\Nop.Services.csproj",
       "projectName": "Nop.Services",
-      "projectPath": "E:\\Projects\\nopCommerce\\nopCommerce_4.0\\Libraries\\Nop.Services\\Nop.Services.csproj",
+      "projectPath": "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Libraries\\Nop.Services\\Nop.Services.csproj",
       "packagesPath": "C:\\Users\\BS061-Jasim\\.nuget\\packages\\",
-      "outputPath": "E:\\Projects\\nopCommerce\\nopCommerce_4.0\\Libraries\\Nop.Services\\obj\\",
+      "outputPath": "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Libraries\\Nop.Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -7819,11 +7819,11 @@
       "frameworks": {
         "net461": {
           "projectReferences": {
-            "E:\\Projects\\nopCommerce\\nopCommerce_4.0\\Libraries\\Nop.Core\\Nop.Core.csproj": {
-              "projectPath": "E:\\Projects\\nopCommerce\\nopCommerce_4.0\\Libraries\\Nop.Core\\Nop.Core.csproj"
+            "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Libraries\\Nop.Core\\Nop.Core.csproj": {
+              "projectPath": "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Libraries\\Nop.Core\\Nop.Core.csproj"
             },
-            "E:\\Projects\\nopCommerce\\nopCommerce_4.0\\Libraries\\Nop.Data\\Nop.Data.csproj": {
-              "projectPath": "E:\\Projects\\nopCommerce\\nopCommerce_4.0\\Libraries\\Nop.Data\\Nop.Data.csproj"
+            "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Libraries\\Nop.Data\\Nop.Data.csproj": {
+              "projectPath": "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Libraries\\Nop.Data\\Nop.Data.csproj"
             }
           }
         }

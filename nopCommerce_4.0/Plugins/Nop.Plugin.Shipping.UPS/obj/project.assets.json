@@ -7943,11 +7943,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "E:\\Projects\\nopCommerce\\nopCommerce_4.0\\Plugins\\Nop.Plugin.Shipping.UPS\\Nop.Plugin.Shipping.UPS.csproj",
+      "projectUniqueName": "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Plugins\\Nop.Plugin.Shipping.UPS\\Nop.Plugin.Shipping.UPS.csproj",
       "projectName": "Nop.Plugin.Shipping.UPS",
-      "projectPath": "E:\\Projects\\nopCommerce\\nopCommerce_4.0\\Plugins\\Nop.Plugin.Shipping.UPS\\Nop.Plugin.Shipping.UPS.csproj",
+      "projectPath": "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Plugins\\Nop.Plugin.Shipping.UPS\\Nop.Plugin.Shipping.UPS.csproj",
       "packagesPath": "C:\\Users\\BS061-Jasim\\.nuget\\packages\\",
-      "outputPath": "E:\\Projects\\nopCommerce\\nopCommerce_4.0\\Plugins\\Nop.Plugin.Shipping.UPS\\obj\\",
+      "outputPath": "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Plugins\\Nop.Plugin.Shipping.UPS\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -7966,8 +7966,8 @@
       "frameworks": {
         "net461": {
           "projectReferences": {
-            "E:\\Projects\\nopCommerce\\nopCommerce_4.0\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj": {
-              "projectPath": "E:\\Projects\\nopCommerce\\nopCommerce_4.0\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj"
+            "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj": {
+              "projectPath": "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj"
             }
           }
         }

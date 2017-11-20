@@ -7991,11 +7991,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "E:\\Projects\\nopCommerce\\nopCommerce_4.0\\Plugins\\Nop.Plugin.Payments.Worldpay\\Nop.Plugin.Payments.Worldpay.csproj",
+      "projectUniqueName": "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Plugins\\Nop.Plugin.Payments.Worldpay\\Nop.Plugin.Payments.Worldpay.csproj",
       "projectName": "Nop.Plugin.Payments.Worldpay",
-      "projectPath": "E:\\Projects\\nopCommerce\\nopCommerce_4.0\\Plugins\\Nop.Plugin.Payments.Worldpay\\Nop.Plugin.Payments.Worldpay.csproj",
+      "projectPath": "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Plugins\\Nop.Plugin.Payments.Worldpay\\Nop.Plugin.Payments.Worldpay.csproj",
       "packagesPath": "C:\\Users\\BS061-Jasim\\.nuget\\packages\\",
-      "outputPath": "E:\\Projects\\nopCommerce\\nopCommerce_4.0\\Plugins\\Nop.Plugin.Payments.Worldpay\\obj\\",
+      "outputPath": "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Plugins\\Nop.Plugin.Payments.Worldpay\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -8014,8 +8014,8 @@
       "frameworks": {
         "net461": {
           "projectReferences": {
-            "E:\\Projects\\nopCommerce\\nopCommerce_4.0\\Presentation\\Nop.Web\\Nop.Web.csproj": {
-              "projectPath": "E:\\Projects\\nopCommerce\\nopCommerce_4.0\\Presentation\\Nop.Web\\Nop.Web.csproj"
+            "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Presentation\\Nop.Web\\Nop.Web.csproj": {
+              "projectPath": "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Presentation\\Nop.Web\\Nop.Web.csproj"
             }
           }
         }

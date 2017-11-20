@@ -11,3 +11,16 @@ E:\Projects\nopCommerce\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.Manual\obj\D
 E:\Projects\nopCommerce\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.Manual\obj\Debug\net461\Nop.Plugin.Payments.Manual.AssemblyInfo.cs
 E:\Projects\nopCommerce\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.Manual\obj\Debug\net461\Nop.Plugin.Payments.Manual.dll
 E:\Projects\nopCommerce\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.Manual\obj\Debug\net461\Nop.Plugin.Payments.Manual.pdb
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.Manual\plugin.json
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.Manual\Views\Configure.cshtml
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.Manual\Views\PaymentInfo.cshtml
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.Manual\Views\_ViewImports.cshtml
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.Manual\logo.jpg
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.Manual\Nop.Plugin.Payments.Manual.dll
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\Payments.Manual\Nop.Plugin.Payments.Manual.pdb
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.Manual\obj\Debug\net461\Nop.Plugin.Payments.Manual.csprojResolveAssemblyReference.cache
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.Manual\obj\Debug\net461\Nop.Plugin.Payments.Manual.csproj.CoreCompileInputs.cache
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.Manual\obj\Debug\net461\Nop.Plugin.Payments.Manual.AssemblyInfoInputs.cache
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.Manual\obj\Debug\net461\Nop.Plugin.Payments.Manual.AssemblyInfo.cs
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.Manual\obj\Debug\net461\Nop.Plugin.Payments.Manual.dll
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.Payments.Manual\obj\Debug\net461\Nop.Plugin.Payments.Manual.pdb

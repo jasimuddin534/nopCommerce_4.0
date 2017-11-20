@@ -7,3 +7,13 @@ E:\Projects\nopCommerce\nopCommerce_4.0\Plugins\Nop.Plugin.ExchangeRate.EcbExcha
 E:\Projects\nopCommerce\nopCommerce_4.0\Plugins\Nop.Plugin.ExchangeRate.EcbExchange\obj\Debug\net461\Nop.Plugin.ExchangeRate.EcbExchange.AssemblyInfo.cs
 E:\Projects\nopCommerce\nopCommerce_4.0\Plugins\Nop.Plugin.ExchangeRate.EcbExchange\obj\Debug\net461\Nop.Plugin.ExchangeRate.EcbExchange.dll
 E:\Projects\nopCommerce\nopCommerce_4.0\Plugins\Nop.Plugin.ExchangeRate.EcbExchange\obj\Debug\net461\Nop.Plugin.ExchangeRate.EcbExchange.pdb
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\ExchangeRate.EcbExchange\plugin.json
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\ExchangeRate.EcbExchange\logo.jpg
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\ExchangeRate.EcbExchange\Nop.Plugin.ExchangeRate.EcbExchange.dll
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Presentation\Nop.Web\Plugins\ExchangeRate.EcbExchange\Nop.Plugin.ExchangeRate.EcbExchange.pdb
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.ExchangeRate.EcbExchange\obj\Debug\net461\Nop.Plugin.ExchangeRate.EcbExchange.csprojResolveAssemblyReference.cache
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.ExchangeRate.EcbExchange\obj\Debug\net461\Nop.Plugin.ExchangeRate.EcbExchange.csproj.CoreCompileInputs.cache
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.ExchangeRate.EcbExchange\obj\Debug\net461\Nop.Plugin.ExchangeRate.EcbExchange.AssemblyInfoInputs.cache
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.ExchangeRate.EcbExchange\obj\Debug\net461\Nop.Plugin.ExchangeRate.EcbExchange.AssemblyInfo.cs
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.ExchangeRate.EcbExchange\obj\Debug\net461\Nop.Plugin.ExchangeRate.EcbExchange.dll
+E:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Plugins\Nop.Plugin.ExchangeRate.EcbExchange\obj\Debug\net461\Nop.Plugin.ExchangeRate.EcbExchange.pdb
