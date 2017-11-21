@@ -45,37 +45,37 @@
 
     <!-- We copy the \Logs directory -->
     <Content Include="Logs\**" CopyToPublishDirectory="PreserveNewest" />
-    <Content Update="Themes\DC\Views\Shared\Head.cshtml">
+    <Content Update="Themes\PowerShop\Views\Shared\Head.cshtml">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="Themes\DC\Views\ShoppingCart\Cart.cshtml">
+    <Content Update="Themes\PowerShop\Views\ShoppingCart\Cart.cshtml">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="Themes\DC\Views\ShoppingCart\EmailWishlist.cshtml">
+    <Content Update="Themes\PowerShop\Views\ShoppingCart\EmailWishlist.cshtml">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="Themes\DC\Views\ShoppingCart\Wishlist.cshtml">
+    <Content Update="Themes\PowerShop\Views\ShoppingCart\Wishlist.cshtml">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="Themes\DC\Views\ShoppingCart\_EstimateShippingResult.cshtml">
+    <Content Update="Themes\PowerShop\Views\ShoppingCart\_EstimateShippingResult.cshtml">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="Themes\DC\Views\ShoppingCart\_GiftCardBox.cshtml">
+    <Content Update="Themes\PowerShop\Views\ShoppingCart\_GiftCardBox.cshtml">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="Themes\DC\Views\Topic\TopicDetails.cshtml">
+    <Content Update="Themes\PowerShop\Views\Topic\TopicDetails.cshtml">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="Themes\DC\Views\Vendor\ApplyVendor.cshtml">
+    <Content Update="Themes\PowerShop\Views\Vendor\ApplyVendor.cshtml">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="Themes\DC\Views\Vendor\Info.cshtml">
+    <Content Update="Themes\PowerShop\Views\Vendor\Info.cshtml">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="Themes\DC\Views\_ViewImports.cshtml">
+    <Content Update="Themes\PowerShop\Views\_ViewImports.cshtml">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="Themes\DC\Views\_ViewStart.cshtml">
+    <Content Update="Themes\PowerShop\Views\_ViewStart.cshtml">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
 
