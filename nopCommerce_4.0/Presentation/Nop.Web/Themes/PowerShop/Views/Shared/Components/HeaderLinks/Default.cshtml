@@ -4,15 +4,17 @@
     <ul>
         @await Component.InvokeAsync("Widget", new { widgetZone = "header_links_before" })
         <li>
-            <a onclick="openAccountNav()">
-                @T("Account.MyAccount")
+            <a onclick="openAccountNav()" title="@T("Account.MyAccount")">
+                <span class="account-icon">&nbsp;</span>
+                @*<span class="account-label">@T("Account.MyAccount")</span>*@
             </a>
         </li>
         @if (Model.ShoppingCartEnabled)
         {
             <li id="topcartlink">
-                <a onclick="openCartNav()">
-                    <span class="cart-label">@T("ShoppingCart")</span>
+                <a onclick="openCartNav()" title="@T("ShoppingCart")">
+                    <span class="cart-icon">&nbsp;</span>
+                    @*<span class="cart-label">@T("ShoppingCart")</span>*@
                     <span class="cart-qty">@T("ShoppingCart.HeaderQuantity", Model.ShoppingCartItems)</span>
                 </a>
             </li>

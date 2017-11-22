@@ -32,7 +32,7 @@
                         <div class="form-fields">
                             <div class="inputs">
                                 <label asp-for="AddProductReview.Title" asp-postfix=":"></label>
-                                <input asp-for="AddProductReview.Title" class="review-title" asp-disabled="@(!Model.AddProductReview.CanCurrentCustomerLeaveReview)"/>
+                                <input asp-for="AddProductReview.Title" class="review-title" asp-disabled="@(!Model.AddProductReview.CanCurrentCustomerLeaveReview)" />
                                 <nop-required />
                                 <span asp-validation-for="AddProductReview.Title"></span>
                             </div>
@@ -47,11 +47,16 @@
                                 <ul>
                                     <li class="label first">@T("Reviews.Fields.Rating.Bad")</li>
                                     <li class="rating-options">
-                                        <input asp-for="AddProductReview.Rating" value="1" type="radio" id="addproductrating_1"/>
-                                        <input asp-for="AddProductReview.Rating" value="2" type="radio" id="addproductrating_2"/>
-                                        <input asp-for="AddProductReview.Rating" value="3" type="radio" id="addproductrating_3"/>
-                                        <input asp-for="AddProductReview.Rating" value="4" type="radio" id="addproductrating_4"/>
-                                        <input asp-for="AddProductReview.Rating" value="5" type="radio" id="addproductrating_5"/>
+                                        <input asp-for="AddProductReview.Rating" value="1" type="radio" id="addproductrating_1" />
+                                        <label for="addproductrating_1">&nbsp;</label>
+                                        <input asp-for="AddProductReview.Rating" value="2" type="radio" id="addproductrating_2" />
+                                        <label for="addproductrating_2">&nbsp;</label>
+                                        <input asp-for="AddProductReview.Rating" value="3" type="radio" id="addproductrating_3" />
+                                        <label for="addproductrating_3">&nbsp;</label>
+                                        <input asp-for="AddProductReview.Rating" value="4" type="radio" id="addproductrating_4" />
+                                        <label for="addproductrating_4">&nbsp;</label>
+                                        <input asp-for="AddProductReview.Rating" value="5" type="radio" id="addproductrating_5" />
+                                        <label for="addproductrating_5">&nbsp;</label>
                                     </li>
                                     <li class="label last">@T("Reviews.Fields.Rating.Excellent")</li>
                                 </ul>

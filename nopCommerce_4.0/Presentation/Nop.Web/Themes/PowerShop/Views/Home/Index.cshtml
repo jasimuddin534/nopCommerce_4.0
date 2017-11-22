@@ -14,7 +14,7 @@
                 @await Component.InvokeAsync("TopicBlock", new { systemName = "HomePageText" })
             </div>
         </section>
-        <section>
+        <section class="section-gray">
             <div class="container">
                 @await Component.InvokeAsync("Widget", new { widgetZone = "home_page_before_categories" })
                 @await Component.InvokeAsync("HomepageCategories")
@@ -35,7 +35,7 @@
             </div>
         </section>
 
-        <section>
+        <section class="section-gray">
             <div class="container">
                 @await Component.InvokeAsync("Widget", new { widgetZone = "home_page_before_news" })
                 @await Component.InvokeAsync("HomepageNews")

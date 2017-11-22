@@ -310,12 +310,12 @@
                     <div class="title">
                         <strong>@T("Account.Options")</strong>
                     </div>
-                    <div class="form-fields">
+                    <div class="form-fields newsletter-fields">
                         @if (Model.NewsletterEnabled)
                         {
                             <div class="inputs">
-                                <label asp-for="Newsletter" asp-postfix=":"></label>
                                 <input asp-for="Newsletter" />
+                                <label asp-for="Newsletter" asp-postfix=":"></label>
                                 <span asp-validation-for="Newsletter"></span>
                             </div>
                         }
