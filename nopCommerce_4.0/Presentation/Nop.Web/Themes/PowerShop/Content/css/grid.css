@@ -41,16 +41,6 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     padding: 0;
 }
 
-input[type="button"],
-input[type="submit"],
-input[type="reset"],
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="password"],
-textarea {
-    border-radius: 0;
-}
 
 input[type="button"],
 input[type="submit"],
