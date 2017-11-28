@@ -1,0 +1,89 @@
+﻿@model CheckoutCompletedModel
+@using Nop.Web.Models.Checkout;
+@{
+    Layout = "_ColumnsOne";
+
+    //title
+    Html.AddTitleParts(T("PageTitle.Checkout").Text);
+    //page class
+    Html.AppendPageCssClassParts("html-checkout-page");
+    Html.AppendPageCssClassParts("html-order-completed-page");
+}
+@if (!Model.OnePageCheckoutEnabled)
+  {
+    @await Component.InvokeAsync("CheckoutProgress", new { step = CheckoutProgressStep.Complete })
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+
+
+            <div class="panel panel-default form-panel">
+                <div class="panel-heading">
+                    <h3>@T("Checkout.ThankYou")</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+
+
+
+
+
+                        <div class="col-lg-12 cart-box-wr">
+
+
+                            <div class="coupon-box offer offer-default">
+
+                                <div class="title"><strong>@T("Checkout.YourOrderHasBeenSuccessfullyProcessed")</strong></div>
+                                <div class="hint">
+                                    <div>
+                                        @T("Checkout.OrderNumber"): @Model.OrderId
+                                    </div>
+                                    <br />
+
+
+
+
+
+                                    <div class="row">
+                                        <div class="col-lg-3 pull-left">
+                                            <a class="btn btn-default" href="@Url.RouteUrl("OrderDetails", new { orderID = Model.OrderId })">@T("Checkout.PlacedOrderDetails")</a>
+
+                                        </div>
+                                        <div class="col-lg-3 pull-right pull-text-right">
+                                            <input type="button" value="@T("Checkout.ThankYou.Continue")" class="btn btn-default" onclick="setLocation('@Url.RouteUrl("HomePage")')" />
+                                        </div>
+
+                                    </div>
+
+
+
+
+
+
+                                </div>
+
+
+
+
+                            </div>
+
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,11 @@
+﻿@model EditForumTopicModel
+@using Nop.Web.Models.Boards;
+@{    
+    Layout = "_ColumnsTwo";
+
+    Html.AddTitleParts(T("Forum.PageTitle.TopicNew").Text);    
+}
+<form asp-route="TopicCreate" method="post">
+    @await Html.PartialAsync("_CreateUpdateTopic", Model)
+</form>
+

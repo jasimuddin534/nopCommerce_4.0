@@ -1,0 +1,57 @@
+﻿@model BoardsIndexModel
+@using Nop.Core.Infrastructure
+@using Nop.Services.Helpers
+@{
+    Layout = "_ColumnsOne";
+
+    Html.AddTitleParts(T("Forum.PageTitle.Default").Text);
+}
+@{
+    var dateTimeHelper = EngineContext.Current.Resolve<IDateTimeHelper>();
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 ">
+            @await Component.InvokeAsync("TopicBlock", new { systemName = "ForumWelcomeMessage" })
+        </div> 
+    </div>
+</div>
+
+<div >
+    
+    
+
+    <div class="container">
+        <div class=" offer offer-default">
+            <div class="row">
+                <div class="col-md-4 current-time">
+                    <h5> <strong> @dateTimeHelper.ConvertToUserTime(DateTime.UtcNow).ToString("F")</strong></h5>
+                </div>
+                <div class="col-md-offset-5 col-md-3">
+                    @Html.PartialAsync("_SearchBox")
+                </div>
+            </div>    
+        </div>
+            
+    </div>
+    <div class="row clearfix space10"></div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                @foreach (var forumGroup in Model.ForumGroups)
+                {
+                    Html.RenderPartial("_ForumGroup", forumGroup);
+                }
+                @await Component.InvokeAsync("ForumActiveDiscussionsSmall")
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

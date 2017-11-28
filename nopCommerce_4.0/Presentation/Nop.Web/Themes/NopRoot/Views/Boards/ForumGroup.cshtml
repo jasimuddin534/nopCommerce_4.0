@@ -1,0 +1,30 @@
+﻿@model ForumGroupModel
+
+@{
+    Layout = "_ColumnsOne";
+
+    Html.AddTitleParts(Model.Name);
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            @await Component.InvokeAsync("ForumBreadcrumb", new { forumGroupId = Model.Id })
+        </div>
+        <div class="col-md-3">
+             @Html.PartialAsync("_SearchBox")
+        </div>
+    </div>
+</div>
+
+
+       
+<div class="container">
+    <div class="row forums-page-header">
+        <div class="col-md-12">
+            <div class="page">
+                @Html.PartialAsync("_ForumGroup", Model)
+            </div>
+        </div>
+    </div>
+</div>
+

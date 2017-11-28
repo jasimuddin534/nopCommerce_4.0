@@ -1,0 +1,26 @@
+﻿@model CheckoutPaymentInfoModel
+<div >
+    @await Component.InvokeAsync("Widget", new { widgetZone = "op_checkout_payment_info_top" })
+    <div class="row noproot-opc-payment-info">
+        <div class="col-lg-12">
+            @await Component.InvokeAsync(Model.PaymentViewComponentName)
+        </div>
+    </div>
+    <div class="row">
+        
+        <div class="alert">
+            @Html.ValidationSummary(false)
+        </div>
+    </div>
+    @await Component.InvokeAsync("Widget", new { widgetZone = "op_checkout_payment_info_bottom" })
+    @if (Model.DisplayOrderTotals)
+    {
+        <div class="row">
+            <div class="col-lg-12">
+                @await Component.InvokeAsync("OrderSummary")
+            </div>
+        </div>
+
+    }
+</div>
+

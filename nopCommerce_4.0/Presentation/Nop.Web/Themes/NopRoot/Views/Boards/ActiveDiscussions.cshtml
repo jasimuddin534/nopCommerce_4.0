@@ -1,0 +1,34 @@
+﻿@model ActiveDiscussionsModel
+@using Nop.Web.Models.Boards;
+@{
+    Layout = "_ColumnsOne";
+
+    Html.AddTitleParts(T("Forum.PageTitle.ActiveDiscussions").Text);
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            @await Component.InvokeAsync("ForumBreadcrumb")
+        </div>
+     
+        <div class="col-md-3">
+            @if (!Model.ViewAllLinkEnabled)
+            {
+                @Html.PartialAsync("_SearchBox")   
+            }
+
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page active-discussions-page">
+                @Html.PartialAsync("_ActiveTopics", Model)
+            </div>
+        </div>
+    </div>
+</div>
+
+

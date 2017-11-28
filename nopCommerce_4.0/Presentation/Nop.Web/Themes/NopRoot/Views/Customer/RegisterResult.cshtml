@@ -1,0 +1,35 @@
+﻿@model RegisterResultModel
+@using Nop.Web.Models.Customer;
+@{
+    Layout = "_ColumnsTwo";
+
+    //title
+    Html.AddTitleParts(T("PageTitle.Register").Text);
+
+    //continue URL
+    var continueUrl = "";
+    if (!String.IsNullOrEmpty(@Context.Request.Query["ReturnUrl"]))
+    {
+        continueUrl = @Context.Request.Query["ReturnUrl"];
+    }
+    else
+    {
+        continueUrl = Url.RouteUrl("HomePage");
+    }
+}
+<div class="page registration-result-page">
+    <div class="panel panel-default form-panel">
+        
+        <div class="panel-heading">
+            <h3>@T("Account.Register")</h3>
+        </div>
+        <div class="panel-body">
+            <div class="result">
+                @Model.Result
+            </div>
+            <div class="buttons">
+                <input type="button" class="button-1 btn btn-default" onclick="location.href='@continueUrl'" value="@T("Account.Register.Result.Continue")" />
+            </div>
+        </div>
+    </div>
+</div>
