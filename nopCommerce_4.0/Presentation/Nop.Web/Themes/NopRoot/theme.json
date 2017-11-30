@@ -1,7 +1,7 @@
 ﻿{
-  "SystemName": "NopRoot",
-  "Title": "NopRoot",
-  "SupportRTL": true,
-  "PreviewImageUrl": "~/Themes/NopRoot/preview.jpg",
-  "PreviewText": "NopRoot - Free Bootstrap theme for NopCommerce developed by BrainStation-23"
+    "SystemName": "NopRoot",
+    "FriendlyName": "Nop Root",
+    "SupportRTL": true,
+    "PreviewImageUrl": "~/Themes/NopRoot/preview.jpg",
+    "PreviewText": "NopRoot - Free Bootstrap theme for NopCommerce developed by BrainStation-23"
 }

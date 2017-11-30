@@ -29,7 +29,7 @@
                     <h5> <strong> @dateTimeHelper.ConvertToUserTime(DateTime.UtcNow).ToString("F")</strong></h5>
                 </div>
                 <div class="col-md-offset-5 col-md-3">
-                    @Html.PartialAsync("_SearchBox")
+                    @await Html.PartialAsync("_SearchBox")
                 </div>
             </div>    
         </div>

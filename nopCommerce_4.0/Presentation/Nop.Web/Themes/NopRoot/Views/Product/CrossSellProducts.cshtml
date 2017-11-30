@@ -45,7 +45,7 @@
                     
                     <div class="col-md-3">
                         <div class="offer offer-default silde-show-offer pull-text-center">
-                            @Html.Partial("_ProductBox", item)
+                            @await Html.PartialAsync("_ProductBox", item)
                         </div>
                     </div>
                     
@@ -77,7 +77,7 @@
         {
             <div class="col-md-4">
                 <div class="offer offer-default silde-show-offer pull-text-center">
-                    @Html.Partial("_ProductBox", product)
+                    @await Html.PartialAsync("_ProductBox", product)
                 </div>
             </div>
 

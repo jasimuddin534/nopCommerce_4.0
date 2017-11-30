@@ -21,7 +21,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            @Html.Partial("_Notifications")
+            @await Html.PartialAsync("_Notifications")
         </div>
     </div>
 </div>
@@ -34,7 +34,6 @@
             <div class="search-box col-lg-8 col-md-8 col-sm-12 col-xs-12 pull-right">
                 @await Component.InvokeAsync("SearchBox")
             </div>
-            @*@Html.Widget("header_selectors")*@
         </div>
     </div>
 </div>

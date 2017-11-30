@@ -6,23 +6,24 @@
 }
 @if (Model.Enabled)
 {
-    <ol class="breadcrumb">
-    
-        @await Component.InvokeAsync("Widget", new { widgetZone = "productbreadcrumb_before", additionalData = Model.ProductId })
-        <li>
-            <a href="@Url.RouteUrl("HomePage")" itemprop="url">@T("Products.Breadcrumb.Top")</a>
-        </li>
-        @foreach (var category in Model.CategoryBreadcrumb)
-        {
-            <li>
-                <a href="@Url.RouteUrl("Category", new { SeName = category.SeName })" itemprop="url">@category.Name</a>
-            </li>
-        }
-        <li class="active">
-            @Model.ProductName
-            @await Component.InvokeAsync("Widget", new { widgetZone = "productbreadcrumb_after", additionalData = Model.ProductId })
-        </li>
-    
-    </ol>
+    <div class="col-sm-12">
+        <ol class="breadcrumb">
 
+            @await Component.InvokeAsync("Widget", new { widgetZone = "productbreadcrumb_before", additionalData = Model.ProductId })
+            <li>
+                <a href="@Url.RouteUrl("HomePage")" itemprop="url">@T("Products.Breadcrumb.Top")</a>
+            </li>
+            @foreach (var category in Model.CategoryBreadcrumb)
+            {
+                <li>
+                    <a href="@Url.RouteUrl("Category", new { SeName = category.SeName })" itemprop="url">@category.Name</a>
+                </li>
+            }
+            <li class="active">
+                @Model.ProductName
+                @await Component.InvokeAsync("Widget", new { widgetZone = "productbreadcrumb_after", additionalData = Model.ProductId })
+            </li>
+
+        </ol>
+    </div>
 }

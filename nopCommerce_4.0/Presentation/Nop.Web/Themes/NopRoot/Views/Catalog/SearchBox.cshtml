@@ -71,5 +71,5 @@
     </text>
             }
     </script>
-    @Html.Widget("searchbox")
+    @await Component.InvokeAsync("Widget", new { widgetZone = "searchbox" })
 }

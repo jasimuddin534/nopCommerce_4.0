@@ -1,6 +1,6 @@
 ﻿@model VendorModel
 @{
-    Layout = "~/Views/Shared/_ColumnsTwo.cshtml";
+    Layout = "_ColumnsTwo";
     Html.AddTitleParts(Model.Name);
 
     var canonicalUrlsEnabled = EngineContext.Current.Resolve<SeoSettings>().CanonicalUrlsEnabled;
@@ -20,7 +20,8 @@
             <h3>@Model.Name</h3>
         </div>
         <div class="panel-body">
-            @Html.Widget("vendordetails_top")
+            @await Component.InvokeAsync("Widget", new { widgetZone = "vendordetails_top" })
+
             @*description*@
             @if (!String.IsNullOrWhiteSpace(Model.Description))
             {
@@ -96,7 +97,7 @@
                         @foreach (var product in Model.Products)
                         {
                             <div class="offer offer-default">
-                                @Html.Partial("_ProductBox", product)
+                                @await Html.PartialAsync("_ProductBox", product)
                             </div>
                         }
                     </div>
@@ -119,7 +120,7 @@
 
                             <div class="col-md-4">
                                 <div class="offer offer-default silde-show-offer pull-text-center">
-                                    @Html.Partial("_ProductBox", product)
+                                    @await Html.PartialAsync("_ProductBox", product)
                                 </div>
                             </div>
                             if (pg_i % 3 == 2)
@@ -142,7 +143,7 @@
             <div class="pager">
                 @Html.Pager(Model.PagingFilteringContext).QueryParam("pagenumber")
             </div>
-            @Html.Widget("vendordetails_bottom")
+        @await Component.InvokeAsync("Widget", new { widgetZone = "vendordetails_bottom" })
         </div>
     </div>
     </div>

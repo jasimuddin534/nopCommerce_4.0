@@ -52,7 +52,7 @@
                 {
                     <div class="col-md-3">
                         <input asp-for="EnteredQuantity" class="qty-input form-control" type="text" />
-                        //when a customer clicks 'Enter' button we submit the "add to cart" button (if visible)
+                        @*when a customer clicks 'Enter' button we submit the "add to cart" button (if visible)*@
                         <script type="text/javascript">
                             $(document).ready(function() {
                                 $("#@Html.IdFor(model => model.EnteredQuantity)").keydown(function(event) {
@@ -90,7 +90,7 @@
             @if (!Model.DisableWishlistButton && Model.UpdatedShoppingCartItemId == 0)
             {
                 <div class="form-group row">
-                    <div class="col-md-12">
+                    <div class="col-md-3">
                          <button type="button" id="add-to-wishlist-button-@Model.ProductId" class="btn btn-default add-to-wishlist-button " data-productid="@Model.ProductId" onclick="AjaxCart.addproducttocart_details('@Url.RouteUrl("AddProductToCart-Details", new { productId = Model.ProductId, shoppingCartTypeId = (int)ShoppingCartType.Wishlist })', '#product-details-form');return false;"><i class="fa fa-heart fa-fw"></i> @T("ShoppingCart.AddToWishlist") </button>
                     </div>
                 </div>

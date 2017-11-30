@@ -46,7 +46,6 @@
                 @await Component.InvokeAsync("Widget", new { widgetZone = "left_side_column_after_category_navigation" })
                 @await Component.InvokeAsync("ManufacturerNavigation", new { currentManufacturerId = currentManufacturerId })
                 @await Component.InvokeAsync("VendorNavigation")
-                @await Component.InvokeAsync("RecentlyViewedProductsBlock", new { productThumbPictureSize = 64 })
                 @await Component.InvokeAsync("PopularProductTags")
                 @await Component.InvokeAsync("PollBlock", new { systemKeyword = "LeftColumnPoll" })
                 @await Component.InvokeAsync("Widget", new { widgetZone = "left_side_column_after" })
@@ -67,7 +66,6 @@
             else
             {
                 @await Component.InvokeAsync("NewsletterBox")
-             
                 @await Component.InvokeAsync("RecentlyViewedProductsBlock", new { productThumbPictureSize = 64 })
                 @await Component.InvokeAsync("PollBlock", new { systemKeyword = "LeftColumnPoll" })
        

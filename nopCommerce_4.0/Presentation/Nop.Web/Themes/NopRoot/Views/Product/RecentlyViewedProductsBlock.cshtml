@@ -80,7 +80,7 @@
       <div class="box-content">
           <div class="box-products slide carousel-fade" id="recently_viewd">
               <ol class="carousel-indicators">
-                
+
                   @for (int i = 0; i < Model.Count; i++)
                   {
                       if(i==0)
@@ -92,10 +92,10 @@
                       }
                   }
 
-                
-                
+
+
               </ol>
-              <div class="carousel-inner"> 
+              <div class="carousel-inner">
                   <!-- item -->
                   @{
                       var ki = 0;
@@ -109,12 +109,12 @@
                       {
                           @:<div class="item">
                       }
-                      @Html.Partial("_ProductBox", item)
+                      @await Html.PartialAsync("_ProductBox", item)
                       @:</div>
                       ki++;
                   }
-            
-            
+
+
               </div>
           </div>
           <div class="carousel-controls"> <a class="carousel-control left" data-slide="prev" href="#recently_viewd"> <i class="fa fa-angle-left fa-fw"></i> </a> <a class="carousel-control right" data-slide="next" href="#recently_viewd"> <i class="fa fa-angle-right fa-fw"></i> </a> </div>

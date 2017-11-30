@@ -7,7 +7,7 @@
 @await Html.PartialAsync("_JavaScriptDisabledWarning")
 @await Html.PartialAsync("_OldInternetExplorerWarning")
 @*@Html.Widget("body_start_html_tag_after")*@
-@*@Html.Partial("_Notifications")*@
+@*@await Html.PartialAsync("_Notifications")*@
 <div >
     @await Html.PartialAsync("_JavaScriptDisabledWarning")
     <div >
@@ -21,7 +21,7 @@
             </div>
         </div>
         <div >
-            @*@Html.Partial("Header")*@
+            @*@await Html.PartialAsync("Header")*@
             @await Html.PartialAsync("Header")
             <div class="container">
                 <div class="row">

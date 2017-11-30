@@ -14,7 +14,7 @@
         <div class="col-md-3">
             @if (!Model.ViewAllLinkEnabled)
             {
-                @Html.PartialAsync("_SearchBox")   
+                @await Html.PartialAsync("_SearchBox")
             }
 
         </div>
@@ -25,7 +25,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="page active-discussions-page">
-                @Html.PartialAsync("_ActiveTopics", Model)
+                @await Html.PartialAsync("_ActiveTopics", Model)
             </div>
         </div>
     </div>

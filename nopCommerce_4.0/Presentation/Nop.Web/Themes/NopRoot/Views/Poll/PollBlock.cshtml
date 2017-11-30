@@ -5,7 +5,6 @@
         <strong>@T("Polls.Title")</strong>
     </div>
     <div class="panel-body">
-        
-        @Html.Partial("_Poll", Model)
+        @await Html.PartialAsync("_Poll", Model)
     </div>
 </div>

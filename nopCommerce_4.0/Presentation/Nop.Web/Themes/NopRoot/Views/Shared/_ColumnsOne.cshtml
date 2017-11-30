@@ -1,10 +1,6 @@
 ﻿@{
     Layout = "_Root";
 }
-<div class="">
-    @await Component.InvokeAsync("Widget", new { widgetZone = "main_column_before" })
-  
-    @RenderBody()
-    @await Component.InvokeAsync("Widget", new { widgetZone = "main_column_after" })
-   
-</div>
+@await Component.InvokeAsync("Widget", new { widgetZone = "main_column_before" })
+@RenderBody()
+@await Component.InvokeAsync("Widget", new { widgetZone = "main_column_after" })

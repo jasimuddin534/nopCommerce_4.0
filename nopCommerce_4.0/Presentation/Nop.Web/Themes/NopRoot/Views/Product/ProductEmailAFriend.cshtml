@@ -1,7 +1,7 @@
 ﻿@model ProductEmailAFriendModel
 @using Nop.Web.Models.Catalog;
 @{
-    Layout = "~/Views/Shared/_ColumnsTwo.cshtml";
+    Layout = "_ColumnsTwo";
 
     //title
     Html.AddTitleParts(Model.ProductName);
@@ -33,7 +33,7 @@
                     <div class="form-fields">
                         <div class="inputs-left">
                             <div class="form-group row">
-                                @Html.LabelFor(model => model.FriendEmail, new { @class = "col-md-2 control-label" }, ":")
+                                @Html.LabelFor(model => model.FriendEmail, new { @class = "col-md-2 control-label" })
                                 <div class="col-md-6">
                                     @Html.TextBoxFor(model => model.FriendEmail, new { @class = "form-control", placeholder = T("Wishlist.EmailAFriend.FriendEmail.Hint") })
                                 </div>
@@ -47,7 +47,7 @@
                         @Html.ValidationMessageFor(model => model.YourEmailAddress)
                     </div>*@
                             <div class="form-group row">
-                                @Html.LabelFor(model => model.YourEmailAddress, new { @class = "col-md-2 control-label" }, ":")
+                                @Html.LabelFor(model => model.YourEmailAddress, new { @class = "col-md-2 control-label" })
                                 <div class="col-md-6">
                                     @Html.TextBoxFor(model => model.YourEmailAddress, new { @class = "form-control", placeholder = T("Wishlist.EmailAFriend.YourEmailAddress.Hint") })
                                 </div>
@@ -64,7 +64,7 @@
                         </div>
                         <div class="inputs-right">
                             <div class="form-group row">
-                                @Html.LabelFor(model => model.PersonalMessage, new { @class = "col-md-2 control-label" }, ":")
+                                @Html.LabelFor(model => model.PersonalMessage, new { @class = "col-md-2 control-label" })
                                 <div class="col-md-6">
                                     @Html.TextAreaFor(model => model.PersonalMessage, new { @class = "form-control", placeholder = T("Wishlist.EmailAFriend.PersonalMessage.Hint"), rows ="7" })
                                 </div>

@@ -29,11 +29,11 @@
 
     <div class="topic-password" id="ph-password-@Model.Id">
         @using (Ajax.BeginRouteForm("TopicAuthenticate", new AjaxOptions
-        {
-            HttpMethod = "Post",
-            OnSuccess = "OnAuthenticateSuccess" + @Model.Id,
-            LoadingElementId = "authenticate-progress-" + @Model.Id
-        }))
+                                                             {
+                                                                 HttpMethod = "Post",
+                                                                 OnSuccess = "OnAuthenticateSuccess" + @Model.Id,
+                                                                 LoadingElementId = "authenticate-progress-" + @Model.Id
+                                                             }))
         {
             @Html.HiddenFor(model => model.Id)
             <div class="enter-password-title">
@@ -49,7 +49,8 @@
             </div>
         }
     </div>
-    <div class="panel panel-default form-panel" id="ph-topic-@Model.Id">
+
+  @*  <div class="panel panel-default form-panel" id="ph-topic-@Model.Id">
         <div id="ph-title-@Model.Id">
             <div class="panel-heading">
                 <h3>@Model.Title</h3>
@@ -58,34 +59,41 @@
         <div class="panel-body">
             @Html.Raw(Model.Body)
         </div>
+    </div>*@
+
+
+    <div class="features_items " id="ph-topic-@Model.Id"><!--features_items-->
+        <h2 class="title text-center " id="ph-title-@Model.Id">@Model.Title</h2>
+        <div class="custom-page-box-div">
+            @Html.Raw(Model.Body)
+        </div>
+						
     </div>
+
+
+
 }
 else
 {
 
         if (!String.IsNullOrEmpty(Model.Title))
-        {        
-
-            <div class="panel panel-default form-panel">
-                        
-
-                <div class="panel-heading">
-                    <h3>@Model.Title</h3>
-                </div>
-                
-        
-                <div class="panel-body">
+        {
+            <div class="features_items"><!--features_items-->
+                <h2 class="title text-center">@Model.Title</h2>
+                <div class="custom-page-box-div">
                     @Html.Raw(Model.Body)
                 </div>
-
-
-
+						
             </div>
+
+
+
+            
 
 
         }else
         {
-            <div class="panel-body">
+            <div class="custom-page-box-div">
                 @Html.Raw(Model.Body)
             </div>
 
@@ -96,3 +104,5 @@ else
 
 
 }
+
+<br/>

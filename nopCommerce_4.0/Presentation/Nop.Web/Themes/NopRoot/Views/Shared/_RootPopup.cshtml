@@ -4,7 +4,7 @@
     Html.AppendScriptParts("~/Scripts/jquery-1.7.1.min.js");
 }
 <!DOCTYPE html>
-<html @Html.Partial("LanguageAttributes")>
+<html @await Html.PartialAsync("LanguageAttributes")>
 <head>
     <title>@Html.NopTitle(true)</title>
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
@@ -15,12 +15,12 @@
     @Html.NopCanonicalUrls()
     @*Favicon - upload favicon.ico file to the root directory*@
     @Html.Action("Favicon", "Common")
-    @Html.Widget("head_html_tag")
+    @await Component.InvokeAsync("Widget", new { widgetZone = "head_html_tag" })
 </head>
 <body>
-    @Html.Widget("body_start_html_tag_after")
+    @await Component.InvokeAsync("Widget", new { widgetZone = "body_start_html_tag_after" })
     @RenderBody()
-    @Html.Widget("body_end_html_tag_before")
+    @await Component.InvokeAsync("Widget", new { widgetZone = "body_end_html_tag_before" })
     @Html.NopCssFiles(this.Url, ResourceLocation.Foot)
     @Html.NopScripts(this.Url, ResourceLocation.Foot)
 </body>

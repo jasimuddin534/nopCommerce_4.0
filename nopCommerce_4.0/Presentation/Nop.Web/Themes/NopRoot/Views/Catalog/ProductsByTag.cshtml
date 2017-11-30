@@ -1,6 +1,6 @@
 ﻿@model ProductsByTagModel
 @{
-    Layout = "~/Views/Shared/_ColumnsTwo.cshtml";
+    Layout = "_ColumnsTwo";
 
     //title
     Html.AddTitleParts(string.Format(T("PageTitle.ProductsByTag").Text, Model.TagName));
@@ -14,8 +14,7 @@
 	</div>
 <div class="panel-body">
 	<div class="page-body">
-		@Html.Widget("productsbytag_top")
-
+        @await Component.InvokeAsync("Widget", new { widgetZone = "productsbytag_top" })
 
 
 		<div class="row">
@@ -79,48 +78,7 @@
                     
 		</div>
 
-
-
-
-
-
-		@*<div class="product-selectors">
-				$1$view mode#1#
-				@if (Model.PagingFilteringContext.AllowProductViewModeChanging && Model.Products.Count > 0)
-				{
-					<div class="product-viewmode">
-						<span>@T("Categories.ViewMode")</span>
-						@Html.DropDownList("products-viewmode", Model.PagingFilteringContext.AvailableViewModes, new { onchange = "setLocation(this.value);" })
-					</div>
-				}
-				$1$sorting#1#
-				@if (Model.PagingFilteringContext.AllowProductSorting && Model.Products.Count > 0)
-				{
-					<div class="product-sorting">
-						<span>@T("Categories.OrderBy")</span>
-						@Html.DropDownList("products-orderby", Model.PagingFilteringContext.AvailableSortOptions, new { onchange = "setLocation(this.value);" })
-					</div>
-				}
-				$1$page size#1#
-				@if (Model.PagingFilteringContext.AllowCustomersToSelectPageSize && Model.Products.Count > 0)
-				{
-					<div class="product-page-size">
-						<span>@T("Products.Tags.PageSize")</span>
-						@Html.DropDownList("products-pagesize", Model.PagingFilteringContext.PageSizeOptions, new { onchange = "setLocation(this.value);" })
-						<span>@T("Products.Tags.PageSize.PerPage")</span>
-					</div>
-				}
-			</div>*@
-
-
-
-
-
-
-
-
-
-		@Html.Widget("productsbytag_before_product_list")
+       @await Component.InvokeAsync("Widget", new { widgetZone = "productsbytag_before_product_list" })
 		@*product list*@
         @if (Model.Products.Count > 0)
         {
@@ -136,7 +94,7 @@
                         
                             <div class="col-md-12">
                                 <div class="offer offer-default">
-                                    @Html.Partial("_ProductBox", product)
+                                    @await Html.PartialAsync("_ProductBox", product)
                                 </div>
                             </div>
                         </div>
@@ -161,7 +119,7 @@
                         
                             <div class="col-md-4">
                                 <div class="offer offer-default silde-show-offer pull-text-center">
-                                    @Html.Partial("_ProductBox", product)
+                                    @await Html.PartialAsync("_ProductBox", product)
                                 </div>
                             </div>
                         if(pg_i%3==2)
@@ -182,7 +140,6 @@
 		<div class="pager">
 			@Html.Pager(Model.PagingFilteringContext).QueryParam("pagenumber")
 		</div>
-		@Html.Widget("productsbytag_bottom")
+        @await Component.InvokeAsync("Widget", new { widgetZone = "productsbytag_bottom" })
 	</div></div>
-</div>
 </div>
