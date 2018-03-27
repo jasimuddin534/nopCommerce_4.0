@@ -5,8 +5,9 @@ body a:hover,a:focus,a:active {
 .rating-area a {
     color: #E74C3C;
 }
-.btn.btn-primary:hover,.btn.btn-primary:active,.btn.btn-primary:focus {
+.btn.btn-primary:hover, .btn.btn-primary:active, .btn.btn-primary:focus {
     background: #E74C3C;
+    border-color: #E74C3C;
 }
 
 a#scrollUp { background: #E74C3C;  }
@@ -209,7 +210,10 @@ h2.title { color: #E74C3C;  }
 .text-area textarea:hover { border: 1px solid #E74C3C; }
 
 
-.btn.btn-primary { background: #E74C3C;  }
+.btn.btn-primary {
+    background: #E74C3C;
+    border-color: #E74C3C;
+}
 
 .blank-arrow label:after { border-color: #E74C3C transparent transparent transparent; }
 

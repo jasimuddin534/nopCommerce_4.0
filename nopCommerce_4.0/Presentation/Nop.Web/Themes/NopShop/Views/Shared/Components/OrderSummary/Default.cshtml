@@ -248,7 +248,7 @@
                             <div class="checkout-buttons">
                                 @if (String.IsNullOrEmpty(Model.MinOrderSubtotalWarning))
                                 {
-                                    <script type="text/javascript">
+                                    <script type="text/javascript" asp-location="Footer">
                                         $(document).ready(function() {
                                             $('#checkout').click(function() {
                                                 //terms of service

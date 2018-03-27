@@ -1,7 +1,7 @@
 ﻿@model CheckoutShippingAddressModel
 @using Nop.Web.Models.Checkout;
 @{
-    Layout = "~/Views/Shared/_ColumnsOne.cshtml";
+    Layout = "_ColumnsOne";
 
     //title
     Html.AddTitleParts(T("PageTitle.Checkout").Text);
@@ -138,7 +138,7 @@
                     <div class="description">
                         @T("Checkout.PickupPoints.Description")
                     </div>
-                    <script type="text/javascript">
+                    <script type="text/javascript" asp-location="Footer">
                         $(document).ready(function () {
                             $("#@Html.IdFor(model => model.PickUpInStore)").change(togglePickUpInStore);
                             togglePickUpInStore();
@@ -215,7 +215,7 @@
                         {
                             var src = string.Format("https://maps.googleapis.com/maps/api/js{0}", string.IsNullOrEmpty(Model.GoogleMapsApiKey) ? string.Empty : string.Format("?key={0}", Model.GoogleMapsApiKey));
                             <div class="pickup-points-map" id="map">
-                                <script type="text/javascript">
+                                <script type="text/javascript" asp-location="Footer">
                                     var markers = new Map();
                                     var googleMap = null;
                                     $(document).ready(function () {

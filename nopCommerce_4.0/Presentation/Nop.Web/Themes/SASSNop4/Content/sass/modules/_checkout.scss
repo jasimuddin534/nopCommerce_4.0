@@ -1,0 +1,415 @@
+﻿/********** CHECKOUT **********/
+.checkout-page {
+    .section {
+        margin: 0 0 30px;
+    }
+
+    .section.order-summary {
+        margin: 100px 0 30px;
+    }
+
+    .cart-options {
+        min-height: 60px;
+        overflow: hidden;
+    }
+
+    .cart-footer {
+        border-top: none;
+    }
+
+    .total-info {
+        margin: 0;
+        border-bottom: none;
+        padding: 5px 20px 10px;
+    }
+
+    .button-1 {
+        display: inline-block;
+        min-width: 140px;
+        border: none;
+        background-color: #4ab2f1;
+        padding: 10px 30px;
+        text-align: center;
+        font-size: 15px;
+        color: $white;
+        text-transform: uppercase;
+
+        &:hover {
+            background-color: #248ece;
+        }
+    }
+
+
+    .address-item {
+        width: 350px;
+        max-width: 100%;
+        margin: 0 auto 40px;
+
+        ul {
+            margin: 0 0 15px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            color: $black;
+        }
+
+        li {
+            padding: 5px 0;
+        }
+
+        li.name {
+            font-size: 16px;
+            font-weight: bold;
+        }
+    }
+
+
+    .ship-to-same-address {
+        padding: 30px 0;
+        text-align: center;
+    }
+
+    .ship-to-same-address {
+        .selector {
+            margin: 0 0 5px;
+            font-weight: bold;
+            color: $black;
+        }
+    }
+
+    .pickup-in-store {
+        text-align: center;
+    }
+
+    .pickup-in-store {
+        .selector {
+            margin: 0 0 5px;
+            font-weight: bold;
+            color: $black;
+        }
+    }
+
+    .pickup-points-map {
+        min-width: 400px;
+        min-height: 350px;
+        vertical-align: middle;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+}
+
+
+.enter-address {
+    .message-error {
+        margin: 20px 0;
+    }
+
+    .edit-address {
+        background-color: #f9f9f9;
+        border-top: 1px solid #e6e6e6;
+        margin: 0 0 30px;
+        padding: 30px 15px;
+    }
+}
+
+.select-pickup-point {
+    text-align: center;
+}
+
+.shipping-method,
+.payment-method {
+    .method-list {
+        margin: 0 auto 30px;
+        overflow: hidden;
+        text-align: center;
+        font-size: 0;
+
+        li {
+            margin: 20px 0;
+            font-size: 14px; /*reset zeroing*/
+            label {
+                font-size: 13px;
+                font-weight: bold;
+                color: $black;
+            }
+        }
+    }
+}
+
+
+.shipping-method {
+    .method-description {
+        margin: 5px 0 0;
+    }
+}
+
+.payment-method {
+    .use-reward-points {
+        margin: 0 0 30px;
+        text-align: center;
+        color: $black;
+    }
+
+    .payment-logo {
+        display: inline-block;
+        vertical-align: middle;
+
+        label {
+            display: block;
+            font-size: 0 !important;
+        }
+    }
+
+    .payment-details {
+        min-width: 180px;
+        display: inline-block;
+        margin: 0 0 0 10px;
+        text-align: left;
+        vertical-align: middle;
+    }
+}
+
+
+.payment-info {
+    .info {
+        padding: 30px 15px;
+        color: $black;
+
+        tr {
+            display: block;
+            margin: 0 0 15px;
+            font-size: 0;
+        }
+
+        td {
+            display: inline-block;
+            width: 100% !important;
+            max-width: 400px !important;
+            font-size: 14px; /*reset zeroing*/
+            input[type="text"] {
+                width: 100% !important;
+            }
+
+            input[name="CardCode"] {
+                width: 65px !important;
+            }
+
+            select {
+                min-width: 70px;
+            }
+        }
+
+        td:only-child {
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+
+        td:first-child {
+            margin: 0 0 10px;
+        }
+
+        p {
+            text-align: center;
+        }
+    }
+}
+
+
+.confirm-order {
+    .buttons {
+        padding: 10px 0;
+    }
+
+    .button-1 {
+        font-size: 16px;
+    }
+}
+
+.order-review-data,
+.order-details-area,
+.shipment-details-area {
+    > div {
+        width: 350px;
+        max-width: 100%;
+        margin: 0 auto 40px;
+        background-color: #f9f9f9;
+        padding: 20px;
+        color: $black;
+    }
+
+    li {
+        padding: 3px 0;
+    }
+
+    .title {
+        margin: 0 0 5px;
+        padding: 0;
+        font-size: 16px;
+        font-weight: bold;
+
+        strong {
+            font-weight: 700;
+        }
+    }
+}
+
+.order-review-data,
+.order-review-data {
+    .shipping-method-info {
+        margin-top: 20px;
+    }
+}
+
+.order-details-area,
+.order-details-area {
+    .shipping-method-info {
+        margin-top: 20px;
+    }
+}
+
+
+.order-completed {
+    .details {
+        margin: 0 0 30px;
+        padding: 30px 15px;
+        text-align: center;
+        color: $black;
+
+        div {
+            margin: 5px 0;
+        }
+
+        strong {
+            font-weight: normal;
+            text-transform: uppercase;
+        }
+
+        a {
+            color: #4ab2f1;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.opc {
+    .step-title {
+        margin: 0 0 1px;
+        overflow: hidden;
+        background-color: #f6f6f6;
+    }
+
+    .allow {
+        .step-title {
+            background-color: #4ab2f1;
+            cursor: pointer;
+        }
+    }
+
+    .step-title {
+        .number, .title {
+            float: left;
+            min-height: 40px;
+            padding: 10px 15px;
+            line-height: 20px;
+            font-size: 16px;
+            font-weight: normal;
+        }
+    }
+
+    .allow {
+        .step-title {
+            .number, .title {
+                color: $white;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .step-title {
+        .number {
+            width: 42px;
+            border-right: 1px solid $white;
+            text-align: center;
+        }
+    }
+
+    .allow {
+        .step-title {
+            .number {
+                background-color: #248ece;
+            }
+        }
+    }
+
+    .step {
+        margin: 10px 0;
+        padding: 30px 15px;
+        text-align: center;
+    }
+
+    .section {
+        margin: 0 0 30px;
+
+        > label {
+            display: block;
+            margin: 0 0 10px;
+        }
+    }
+
+    input[type="text"],
+    select {
+        max-width: 100%;
+    }
+
+    .buttons {
+        margin-bottom: 0;
+    }
+
+    .back-link {
+        margin: 0 0 10px;
+
+        small {
+            display: none;
+        }
+
+        a {
+            display: inline-block;
+            margin: 0 0 0 -15px;
+            background: url('../images/back-button.png') left center no-repeat;
+            padding: 0 0 0 18px;
+            color: $black;
+
+            &:hover {
+                color: #4ab2f1;
+            }
+        }
+    }
+
+    .buttons {
+        .please-wait {
+            display: block;
+            margin: 10px 0 0;
+            background: none;
+        }
+    }
+
+    .section.ship-to-same-address {
+        margin: 0 0 30px;
+        padding: 0;
+    }
+
+    .section.pickup-in-store {
+        margin: 0 0 30px;
+        padding: 0;
+    }
+
+    .payment-info .info tr {
+        text-align: left;
+    }
+
+    .section.order-summary {
+        margin: 0;
+    }
+}

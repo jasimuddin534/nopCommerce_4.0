@@ -2,14 +2,14 @@
 @using Nop.Web.Models.Customer
 @using Nop.Web.Models.Order
 @{
-    Layout = "~/Views/Shared/_ColumnsTwo.cshtml";
+    Layout = "_ColumnsTwo";
 
     //title
     Html.AddTitleParts(T("PageTitle.Account").Text);
 }
 @section left
 {
-    @Html.Action("CustomerNavigation", "Customer", new { selectedTabId = CustomerNavigationEnum.ReturnRequests })
+    @await Component.InvokeAsync("CustomerNavigation", new { selectedTabId = CustomerNavigationEnum.ReturnRequests })
 }
 <div class="features_items my-account-page">
     <h2 class="title text-center">@T("Account.MyAccount") - @T("Account.CustomerReturnRequests")</h2>

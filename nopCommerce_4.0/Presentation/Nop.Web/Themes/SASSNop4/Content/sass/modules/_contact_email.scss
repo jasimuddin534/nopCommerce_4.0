@@ -1,0 +1,80 @@
+﻿/*********** CONTACT & EMAIL A FRIEND & APPLY FOR VENDOR ACCOUNT ***********/
+
+.contact-page,
+.email-a-friend-page,
+.apply-vendor-page {
+    .page-title {
+        margin: 0 0 -1px;
+    }
+}
+
+.contact-page,
+.contact-page,
+.email-a-friend-page,
+.email-a-friend-page,
+.apply-vendor-page,
+.apply-vendor-page {
+    .result,
+    .message-error {
+        margin: 20px 0;
+    }
+}
+
+.contact-page,
+.email-a-friend-page,
+.apply-vendor-page {
+    .button-1 {
+        min-width: 140px;
+        border: none;
+        background-color: #4ab2f1;
+        padding: 10px 30px;
+        text-align: center;
+        font-size: 15px;
+        color: $white;
+        text-transform: uppercase;
+
+        &:hover {
+            background-color: #248ece;
+        }
+    }
+}
+
+.contact-page {
+    .topic-block {
+        margin: 25px 0;
+    }
+}
+
+
+.email-a-friend-page,
+.apply-vendor-page {
+    .title {
+        margin: 25px 0;
+    }
+}
+
+
+.email-a-friend-page {
+    .title {
+        h2 {
+            font-weight: normal;
+            color: #4ab2f1;
+        }
+    }
+}
+
+.apply-vendor-page {
+    .terms-of-service {
+        text-align: center;
+
+        > * {
+            display: inline-block;
+            line-height: 32px;
+        }
+
+        span, a {
+            color: #4ab2f1;
+            cursor: pointer;
+        }
+    }
+}

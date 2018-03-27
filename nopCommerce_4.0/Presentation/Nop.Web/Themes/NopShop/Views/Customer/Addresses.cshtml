@@ -1,18 +1,19 @@
 ﻿@model CustomerAddressListModel
 @using Nop.Web.Models.Customer;
 @{
-    Layout = "~/Views/Shared/_ColumnsTwo.cshtml";
+    Layout = "_ColumnsTwo";
 
     //title
     Html.AddTitleParts(T("PageTitle.Account").Text);
 }
 @section left
-{
-    @Html.Action("CustomerNavigation", "Customer", new { selectedTabId = CustomerNavigationEnum.Addresses })
+    {
+    @await Component.InvokeAsync("CustomerNavigation", new { selectedTabId = CustomerNavigationEnum.Addresses })
 }
 
 
-<div class="features_items my-account-page"><!--features_items-->
+<div class="features_items my-account-page">
+    <!--features_items-->
     <h2 class="title text-center">@T("Account.MyAccount") - @T("Account.CustomerAddresses")</h2>
     <div class="custom-page-box-div">
         @if (Model.Addresses.Count > 0)
@@ -20,7 +21,7 @@
             for (int i = 0; i < Model.Addresses.Count; i++)
             {
                 var address = Model.Addresses[i];
-                    
+
                 <div class="section address-item">
                     <div id="legend">
                         <legend>@address.FirstName @address.LastName</legend>
@@ -30,20 +31,20 @@
                             @address.FirstName @address.LastName
                         </li>
                         <li class="email">
-                            @Html.LabelFor(model => model.Addresses[i].Email, new { }, ":")
+                            @Html.LabelFor(model => model.Addresses[i].Email)
                             @address.Email
                         </li>
                         @if (address.PhoneEnabled)
                         {
                             <li class="phone">
-                                @Html.LabelFor(model => model.Addresses[i].PhoneNumber, new { }, ":")
+                                @Html.LabelFor(model => model.Addresses[i].PhoneNumber)
                                 @address.PhoneNumber
                             </li>
                         }
                         @if (address.FaxEnabled)
                         {
                             <li class="fax">
-                                @Html.LabelFor(model => model.Addresses[i].FaxNumber, new { }, ":")
+                                @Html.LabelFor(model => model.Addresses[i].FaxNumber)
                                 @address.FaxNumber
                             </li>
                         }
@@ -97,10 +98,7 @@
                     </div>
                 </div>
                 <div class="space15px"></div>
-                <div id="legend">
-                    <legend></legend>
-                </div>
-              <script type="text/javascript">
+                <script type="text/javascript" asp-location="Footer">
                     function deletecustomeraddress(addressId) {
                         if (confirm('@T("Admin.Common.AreYouSure")')) {
                             var postData = {
@@ -130,8 +128,8 @@
         {
             @T("Account.CustomerAddresses.NoAddresses")
         }
-        
-        
+
+
         <div class="row">
             <div class="col-sm-12">
                 <div class="add-button">
@@ -139,25 +137,7 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
 </div>
 
-
-
-
-@*
-
-
-<div class="col-sm-9">
-    <div class="blog-post-area">
-        <h2 class="title text-center">@T("Account.MyAccount") - @T("Account.CustomerAddresses")</h2>
-    </div>
-    <div class="panel-body">
-        <div class="address-list">
-            
-        </div>
-        
-    </div>
-</div>
-*@

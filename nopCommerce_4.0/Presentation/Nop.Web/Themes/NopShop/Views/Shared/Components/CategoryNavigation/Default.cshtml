@@ -2,28 +2,20 @@
 
 @if (Model.Categories.Count > 0)
 {
-    <div class="panel panel-default side-nav side-nav-category">
-        <div class="panel-heading">
-            <strong>@T("Categories")</strong>
-        </div>
-        <div class="panel-body">
-            <div class="panel-group" id="accordion">
-                @foreach (var category in Model.Categories)
+    <h2>@T("Categories")</h2>
+    <div class="panel-group category-products category-navigation-div" id="accordion">
+        @foreach (var category in Model.Categories)
                 {
                     var categoryLineModel = new CategoryNavigationModel.CategoryLineModel
                     {
                         CurrentCategoryId = Model.CurrentCategoryId,
                         Category = category
                     };
-                    <div class="panel panel-default">
-                        
-                        @await Html.PartialAsync("_CategoryLine.Navigation.Block", categoryLineModel)
-                        
-                    </div>
-                }
+            <div class="panel panel-default">
+
+                @await Html.PartialAsync("_CategoryLine.Navigation.Block", categoryLineModel)
+
             </div>
-            
-        </div>
-        
+        }
     </div>
 }

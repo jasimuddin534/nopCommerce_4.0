@@ -50,7 +50,7 @@
                     <div class="hint">
                         @using (Html.BeginRouteForm("CheckoutConfirm", FormMethod.Post, new { id = "confirm-order-form" }))
                         {
-                            <script type="text/javascript">
+                            <script type="text/javascript" asp-location="Footer">
                                 $(document).ready(function () {
                                     $('.confirm-order-next-step-button').click(function () {
                                         //terms of service

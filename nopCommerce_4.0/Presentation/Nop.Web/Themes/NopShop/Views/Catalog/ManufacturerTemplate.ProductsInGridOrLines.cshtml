@@ -1,6 +1,10 @@
 ﻿@model ManufacturerModel
+@using Nop.Core.Domain.Seo;
+@using Nop.Core.Infrastructure;
+@using Nop.Web.Models.Catalog;
+@using Nop.Web.Extensions;
 @{
-    Layout = "~/Views/Shared/_ColumnsTwo.cshtml";
+    Layout = "_ColumnsTwo";
     Html.AddTitleParts(!String.IsNullOrEmpty(Model.MetaTitle) ? Model.MetaTitle : Model.Name);
     Html.AddMetaDescriptionParts(Model.MetaDescription);
     Html.AddMetaKeywordParts(Model.MetaKeywords);
@@ -12,12 +16,6 @@
         Html.AddCanonicalUrlParts(manufacturerUrl);
     }
 }
-@using Nop.Core.Domain.Seo;
-@using Nop.Core.Infrastructure;
-@using Nop.Web.Models.Catalog;
-@using Nop.Web.Extensions;
-
-
 <div class="features_items"><!--features_items-->
     <h2 class="title text-center">@Model.Name</h2>
     
@@ -34,12 +32,7 @@
     <div class="custom-page-box-border-less-div">
         <div class="row">
             <div class="col-md-12">
-                                      
-            
                 <div class="product-selectors clearfix">
-                   
-
-                            
                     @*view mode*@
                     @if (Model.PagingFilteringContext.AllowProductViewModeChanging && Model.Products.Count > 0)
                     {
@@ -54,11 +47,6 @@
                                     </div>
 
                                 </div>
-																			
-
-																			
-
-
                                 <div class="col-md-6 remove_left_padding form-two text-left">
                                     <form class="pull-left">@Html.DropDownList("products-viewmode", Model.PagingFilteringContext.AvailableViewModes, new { @class = "", onchange = "setLocation(this.value);" })</form>
                                     
@@ -78,9 +66,6 @@
                                         </ol>
                                     </div>
                                 </div>
-
-
-                                
 
                                 <div class="col-md-8 remove_left_padding form-two">
                                     <form class="pull-left">@Html.DropDownList("products-orderby", Model.PagingFilteringContext.AvailableSortOptions, new { @class = "", onchange = "setLocation(this.value);" })</form>
@@ -112,8 +97,6 @@
                     }
                 </div>
                        
-
-
             </div>
                     
         </div>
@@ -137,7 +120,6 @@
                                     </div>
                                 </div>
                             </div>
-
                         
                         }
                     </div>       
@@ -173,8 +155,6 @@
             </div>
         </div>
 
-
-    
 </div>
 @section left
 {
@@ -184,19 +164,13 @@
         {
             @Html.Partial("_FilterPriceBox", Model.PagingFilteringContext.PriceRangeFilter, new ViewDataDictionary())
         }
-                
-                
+               
     </div>
-
 }
-
-
-
 
     @*featured products*@
     @if (Model.FeaturedProducts.Count > 0)
     {
-
 
         var best_i = 0;
         <div class="recommended_items"><!--recommended_items-->
@@ -218,10 +192,7 @@
                                 @:<div class="item">
                                 @:<div class="row" >  
                             }
-
-
-
-
+                    
                         }
                         <div class="col-lg-4">
                             <div class="offer offer-default silde-show-offer pull-text-center">
@@ -253,7 +224,5 @@
                 </a>			
             </div>
         </div>
-
-
-
+        
     }

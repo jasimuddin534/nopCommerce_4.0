@@ -1,10 +1,10 @@
 ﻿@model ActiveDiscussionsModel
 @using Nop.Web.Extensions;
 @using Nop.Web.Models.Boards;
-<div class="title mid-content-title">
+<div class="mid-content-title">
     <div class="row">
         <div class="col-md-10 pull-text-left">
-            <span><h4><strong>@T("Forum.ActiveDiscussions")</strong></h4></span>        
+            <h2 class="title text-center">@T("Forum.ActiveDiscussions")</h2>
         </div>
         <div class="col-md-12 pull-text-right">
             <span>
@@ -13,24 +13,15 @@
                     <a href="@Url.RouteUrl("ActiveDiscussionsRSS")" class="pull-right header-rss" title="@T("Forum.ActiveDiscussionsRSSLinkTitle")"><i class="fa fa-rss fa-2x header-rss-icon"></i></a>
                 }
                 @if (Model.ViewAllLinkEnabled)
-                {        
-                @*@Html.RouteLink(T("Forum.ActiveDiscussions.ViewAll").Text, "ActiveDiscussions", null, new { @class = "view-all" })*@
+                {
+                    @Html.RouteLink(T("Forum.ActiveDiscussions.ViewAll").Text, "ActiveDiscussions", null, new { @class = "view-all" })
                 }
-
-
             </span>
-        
         </div>
-
     </div>
-    
-    
 </div>
 
-
 <div id="cart_items">
-    
-
     <div class="table-responsive cart_info">
         @if (Model.ForumTopics.Count > 0)
         {
@@ -50,7 +41,7 @@
                             @T("Forum.LatestPost")
                         </td>
 
-                
+
                     </tr>
 
                 </thead>
@@ -59,7 +50,7 @@
                     {
                         <tr>
                             <td class="topic-name">
-                               <strong> @Html.RouteLink(topic.Subject, "TopicSlug", new { id = topic.Id, slug = topic.SeName }, new { @class = "topic-title" })</strong>
+                                <strong> @Html.RouteLink(topic.Subject, "TopicSlug", new { id = topic.Id, slug = topic.SeName }, new { @class = "topic-title" })</strong>
                                 @if (topic.NumPosts > Model.PostsPageSize)
                                 {
                                     <div class="topicspager">
@@ -72,11 +63,11 @@
                                         <label>@T("Forum.Author"):</label>
                                         if (topic.AllowViewingProfiles)
                                         {
-                                        @Html.RouteLink(topic.CustomerName, "CustomerProfile", new { Id = topic.CustomerId })
+                                            @Html.RouteLink(topic.CustomerName, "CustomerProfile", new { Id = topic.CustomerId })
                                         }
                                         else
                                         {
-                                        @topic.CustomerName
+                                            @topic.CustomerName
                                         }
                                     }
                                 </div>
@@ -88,11 +79,11 @@
                                 @topic.Views
                             </td>
                             <td class="last-post text-center">
-                                @Html.Action("LastPost", new { forumPostId = topic.LastPostId, showTopic = false })
+                                @await Component.InvokeAsync("ForumLastPost", new { forumPostId = topic.LastPostId, showTopic = true })
                             </td>
                         </tr>
                     }
-            
+
                 </tbody>
             </table>
         }

@@ -38,7 +38,7 @@
 }
 @if (successMessages.Count > 0)
 {
-    <script type="text/javascript">
+    <script type="text/javascript" asp-location="Footer">
         $(document).ready(function () {
             var msg = [ @Html.Raw("'" + string.Join("', '", successMessages.Select(x => JavaScriptEncoder.Default.Encode(x)).ToList()) + "'")];
             displayPopupNotification(msg, 'success', false);
@@ -47,7 +47,7 @@
 }
 @if (errorMessages.Count > 0)
 {
-    <script type="text/javascript">
+    <script type="text/javascript" asp-location="Footer">
         $(document).ready(function () {
             var msg = [ @Html.Raw("'" + string.Join("', '", errorMessages.Select(x => JavaScriptEncoder.Default.Encode(x)).ToList()) + "'")];
             displayPopupNotification(msg, 'error', false);
@@ -56,7 +56,7 @@
 }
 @if (warningMessages.Count > 0)
 {
-    <script type="text/javascript">
+    <script type="text/javascript" asp-location="Footer">
         $(document).ready(function () {
             var msg = [ @Html.Raw("'" + string.Join("', '", warningMessages.Select(x => JavaScriptEncoder.Default.Encode(x)).ToList()) + "'")];
             displayPopupNotification(msg, 'warning', false);

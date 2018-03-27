@@ -2,7 +2,7 @@
 @using Nop.Web.Models.ShoppingCart;
 
 @{
-    Layout = "~/Views/Shared/_ColumnsOne.cshtml";
+    Layout = "_ColumnsOne";
 
     //title
     Html.AddTitleParts(T("PageTitle.Wishlist").Text);
@@ -203,17 +203,13 @@
             </div>
             @if (Model.IsEditable && Model.Items.Count > 0)
             {
-<div class="space15px"><div class="space15px">&nbsp;</div></div>
+                <div class="space15px"><div class="space15px">&nbsp;</div></div>
                 <div class="share-info">
                     <div class="fieldset">
                         <div id="legend">
                             <legend>@T("Wishlist.YourWishlistURL")</legend>
                         </div>
                     </div>
-
-                    @*<p>
-                        <span class="share-label">:</span>
-                    </p>*@
                     <p>
                         <a href="@Url.RouteUrl("Wishlist", new { customerGuid = Model.CustomerGuid })" class="share-link">@Url.RouteUrl("Wishlist", new { customerGuid = Model.CustomerGuid }, "http")</a>
                     </p>

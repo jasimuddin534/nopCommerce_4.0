@@ -1,10 +1,10 @@
 ﻿@{
-    Layout = "~/Views/Shared/_Root.cshtml";
+    Layout = "_Root";
 }
 <div class="">
-    @Html.Widget("main_column_before")
+    @await Component.InvokeAsync("Widget", new { widgetZone = "main_column_before" })
     @RenderBody()
-    @Html.Widget("main_column_after")
+    @await Component.InvokeAsync("Widget", new { widgetZone = "main_column_after" })
 </div>
 
 

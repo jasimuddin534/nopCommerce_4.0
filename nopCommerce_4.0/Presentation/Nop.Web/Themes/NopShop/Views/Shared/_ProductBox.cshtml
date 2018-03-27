@@ -37,24 +37,20 @@
                         @if (!String.IsNullOrEmpty(Model.ProductPrice.OldPrice))
                         {
                             <span class="price old-price">@Model.ProductPrice.OldPrice</span>
-                        }
-								
-                        
-								    
+                        }    
                     </div>
 
                 }else
                 {
                     <div class="new-prices">
-								
                         <span class="price actual-price">@Model.ProductPrice.Price</span>
                     </div>
                 }
             </h2>
             <p class="product-name"> <a class="product-name-a" href="@Url.RouteUrl("Product", new
-                                                          {
-                                                              SeName = Model.SeName
-                                                          })">@Model.Name</a></p>
+                {
+                    SeName = Model.SeName
+                })">@Model.Name</a></p>
 
             
 @if(Model.ReviewOverviewModel.AllowCustomerReviews)
@@ -106,10 +102,6 @@
                         }
                     </div>
 
-
-
-                    
-
                 }
 
             <p class="show-on-list" >@if(!String.IsNullOrEmpty(Model.ShortDescription))
@@ -118,8 +110,6 @@
                }
 
             </p>
-
-
 
             @if (!Model.ProductPrice.DisableBuyButton)
             {

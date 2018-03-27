@@ -1,14 +1,12 @@
 ﻿@model ProductReviewsModel
 @using Nop.Web.Models.Catalog;
 @{
-    Layout = "~/Views/Shared/_ColumnsTwo.cshtml";
+    Layout = "_ColumnsTwo";
 
     //title
     Html.AddTitleParts(Model.ProductName);
     Html.AddTitleParts(T("PageTitle.ProductReviews").Text);
 }
-
-
 
 <div class="features_items product-details-review-page"><!--features_items-->
     <h2 class="title text-center">@T("Reviews.ProductReviewsFor") <a href="@Url.RouteUrl("Product", new { SeName = Model.ProductSeName })">@Model.ProductName</a></h2>
@@ -34,7 +32,7 @@
                                 <div class="message-error">@Html.ValidationSummary(true)</div>
                                 <div class="form-fields">
                                     <div class="form-group row">
-                                        @Html.LabelFor(model => model.AddProductReview.Title, new { @class = "col-md-2 control-label" }, ":")
+                                        @Html.LabelFor(model => model.AddProductReview.Title, new { @class = "col-md-2 control-label" })
                                         <div class="col-md-6">
                                             @Html.TextBoxFor(model => model.AddProductReview.Title, Model.AddProductReview.CanCurrentCustomerLeaveReview ? (object)(new { @class = "review-title gray-input" }) : (object)(new { @class = "review-title, form-control", disabled = "disabled" }))
                                         </div>
@@ -43,7 +41,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        @Html.LabelFor(model => model.AddProductReview.ReviewText, new { @class = "col-md-2 control-label" }, ":")
+                                        @Html.LabelFor(model => model.AddProductReview.ReviewText, new { @class = "col-md-2 control-label" })
                                         <div class="col-md-6">
                                             @Html.TextAreaFor(model => model.AddProductReview.ReviewText, Model.AddProductReview.CanCurrentCustomerLeaveReview ? (object)(new { @class = "review-text gray-textarea", rows="7" }) : (object)(new { @class = "review-text, form-control", disabled = "disabled", rows="7" }))
                                         </div>
@@ -52,7 +50,7 @@
                                         </div>
                                     </div>
                                     <div class="review-rating form-group row">
-                                        @Html.LabelFor(model => model.AddProductReview.Rating, new { @class = "col-md-2 control-label" }, ":")
+                                        @Html.LabelFor(model => model.AddProductReview.Rating, new { @class = "col-md-2 control-label" })
                                         <div class="col-md-8">
                                             <strong>@T("Reviews.Fields.Rating.Bad")</strong>
                                     
@@ -86,22 +84,16 @@
 				
                     
                     </div>
-                </div>
-
-                
-            }
-            
+                </div>               
+            }            
         </div>
         
     </div>
 </div>
 
-
 @if (Model.Items.Count > 0)
             {
-               
-                
-           
+         
 
                 <div class="features_items product-details-review-page"><!--features_items-->
                     <h2 class="title text-center">@T("Reviews.ExistingReviews")</h2>
@@ -158,7 +150,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-12">
-                                                @Html.Partial("_ProductReviewHelpfulness", review.Helpfulness, new ViewDataDictionary())
+                                                @await Html.PartialAsync("_ProductReviewHelpfulness", review.Helpfulness)
                                             </div>
                                         </div>
 

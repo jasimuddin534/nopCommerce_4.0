@@ -1,0 +1,163 @@
+﻿/****** ORDER DETAILS & SHIPPING DETAILS ******/
+.order-details-page {
+    .page-title {
+        border-bottom: none;
+
+        h1 {
+            margin: 0 0 30px;
+            border-bottom: 1px solid $gray;
+            padding: 0 0 10px;
+        }
+
+        a {
+            display: inline-block;
+            min-width: 180px;
+            margin: 5px 0;
+            border: none;
+            background-color: #aaa;
+            background-image: none;
+            padding: 10px 20px;
+            font-size: 15px;
+            color: $white;
+
+            &:hover {
+                background-color: #999;
+            }
+        }
+
+        a.print-order-button {
+            background-color: #4ab2f1;
+
+            &:hover {
+                background-color: #248ece;
+            }
+        }
+    }
+
+    .order-overview {
+        margin: 0 0 50px;
+        line-height: 26px;
+        text-align: center;
+        font-size: 16px;
+        color: $black;
+
+        .order-number {
+            margin: 0 0 10px;
+            text-transform: uppercase;
+        }
+
+        .order-total {
+            strong {
+                font-weight: normal;
+                color: #4ab2f1;
+            }
+        }
+    }
+
+    .repost {
+        .button-2 {
+            display: inline-block;
+            margin: 10px 0;
+            border: none;
+            background-color: #4ab2f1;
+            padding: 10px 15px;
+            font-size: 12px;
+            color: $white;
+            text-transform: uppercase;
+
+            &:hover {
+                background-color: #248ece;
+            }
+        }
+    }
+
+    .download {
+        a {
+            font-weight: normal;
+            color: #4ab2f1;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .tax-shipping-info {
+        margin: 30px 0;
+
+        a {
+            color: #4ab2f1;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+
+    .actions {
+        margin: 30px 0 0;
+        font-size: 0;
+
+        input {
+            display: inline-block;
+            min-width: 165px;
+            margin: 5px;
+            border: none;
+            background-color: #aaa;
+            background-image: none;
+            padding: 10px 20px;
+            font-size: 15px;
+            color: $white;
+
+            &:hover {
+                background-color: #999;
+            }
+
+            &:first-child {
+                background-color: #4ab2f1;
+            }
+
+            &:first-child:hover {
+                background-color: #248ece;
+            }
+        }
+    }
+
+    .totals.section {
+        width: 370px;
+        padding: 0 10px;
+        max-width: 100%;
+        margin: 0 auto 50px;
+    }
+
+    .total-info {
+        background-color: #f9f9f9;
+        padding: 15px 20px;
+        color: $black;
+    }
+}
+
+
+.user-agreement-page {
+    .terms-of-agreement {
+        margin: 0 0 20px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .button-1 {
+        min-width: 140px;
+        border: none;
+        background-color: #4ab2f1;
+        padding: 10px 30px;
+        text-align: center;
+        font-size: 15px;
+        color: $white;
+        text-transform: uppercase;
+
+        &:hover {
+            background-color: #248ece;
+        }
+    }
+}

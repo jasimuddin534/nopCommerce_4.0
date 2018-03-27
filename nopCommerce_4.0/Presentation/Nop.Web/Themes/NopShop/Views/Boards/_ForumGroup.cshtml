@@ -1,7 +1,7 @@
 ﻿@model ForumGroupModel
 @using Nop.Web.Models.Boards;
-<div class="@*forums-table-section-title*@ title mid-content-title">
-    <h4><strong> @Html.RouteLink(Model.Name, "ForumGroupSlug", new { id = Model.Id, slug = Model.SeName })</strong></h4>
+<div class="@*forums-table-section-title*@ mid-content-title">
+    <h2 class="title text-center"> @Html.RouteLink(Model.Name, "ForumGroupSlug", new { id = Model.Id, slug = Model.SeName })</h2>
 </div>
 
 <div id="cart_items">
@@ -47,7 +47,7 @@
                         <td class="posts text-center">@forum.NumPosts
                         </td>
                         <td class="last-post text-center">
-                            @Html.Action("LastPost", new { forumPostId = forum.LastPostId, showTopic = true })
+                            @await Component.InvokeAsync("ForumLastPost", new { forumPostId = forum.LastPostId, showTopic = true })
                         </td>
                     </tr>            
                 }

@@ -1,7 +1,7 @@
 ﻿@model TopicModel
 @if (Model.IsPasswordProtected)
 {
-    <script type="text/javascript">
+    <script type="text/javascript" asp-location="Footer">
         $(document).ready(function () {
             $('#button-password-@Model.Id').click(function() {
                 var postData = {
@@ -55,25 +55,23 @@
             <div class="password-error" id="password-error-@Model.Id" style="display: none;"></div>
         </form>
     </div>
-    <div class="topic-block" id="ph-topic-@Model.Id">
-        <div class="topic-block-title" id="ph-title-@Model.Id">
-            <h2>@Model.Title</h2>
-        </div>
-        <div class="topic-block-body">
+    <div class="features_items" id="ph-topic-@Model.Id">
+        <h2 class="title text-center" id="ph-title-@Model.Id">
+            @Model.Title
+        </h2>
+        <div class="custom-page-box-div">
             @Html.Raw(Model.Body)
         </div>
     </div>
 }
 else
 {
-    <div class="topic-block">
+    <div class="features_items">
         @if (!String.IsNullOrEmpty(Model.Title))
         {
-            <div class="topic-block-title">
-                <h2>@Model.Title</h2>
-            </div>
+                <h2 class="title text-center">@Model.Title</h2>
         }
-        <div class="topic-block-body">
+        <div class="custom-page-box-div">
             @Html.Raw(Model.Body)
         </div>
     </div>

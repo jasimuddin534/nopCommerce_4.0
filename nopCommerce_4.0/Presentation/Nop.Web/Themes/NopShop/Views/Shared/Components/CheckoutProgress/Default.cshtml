@@ -16,7 +16,7 @@
             }
                     
             <div class="banner pull-text-center">
-                @*<i class="fa fa-shopping-cart fa-3x"></i>*@
+                <i class="fa fa-shopping-cart fa-3x"></i>
                 <h4><a @(Model.CheckoutProgressStep == CheckoutProgressStep.Cart ? @Html.Raw(" class=\"active-step\"") : @Html.Raw(" class=\"inactive-step\"")) @(Model.CheckoutProgressStep != CheckoutProgressStep.Complete ? @Html.Raw(string.Format(" href=\"{0}\"", Url.RouteUrl("ShoppingCart"))) : null)><div><i class="fa fa-shopping-cart fa-2x"></i></div>@T("Checkout.Progress.Cart")</a></h4>
                 <p></p>
             </div>

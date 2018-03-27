@@ -2,8 +2,6 @@
 @using System.Text
 @using Nop.Web.Models.Checkout;
 <div class="checkout-data">
-    
-    
     @if (Model.AllowPickUpInStore && !Model.PickUpInStoreOnly && Model.PickupPoints.Any())
     {
         <div class="section pickup-in-store">
@@ -16,7 +14,7 @@
             <p class="description">
                 <i>@T("Checkout.PickupPoints.Description")</i>
             </p>
-            <script type="text/javascript">
+            <script type="text/javascript" asp-location="Footer">
                 $(document).ready(function () {
                     Shipping.togglePickUpInStore($('#@Html.FieldIdFor(model => model.PickUpInStore)'));
                 });
@@ -81,7 +79,7 @@
                 {
                     var src = string.Format("https://maps.googleapis.com/maps/api/js{0}", string.IsNullOrEmpty(Model.GoogleMapsApiKey) ? string.Empty : string.Format("?key={0}", Model.GoogleMapsApiKey));
                     <div class="pickup-points-map" id="map">
-                        <script type="text/javascript">
+                        <script type="text/javascript" asp-location="Footer">
                             var markers = new Map();
                             var googleMap = null;
                             $(document).ready(function () {
@@ -175,12 +173,9 @@
             </div>
         </div>
     }
-    @Html.Widget("op_checkout_shipping_address_top")
+    @await Component.InvokeAsync("Widget", new { widgetZone = "op_checkout_shipping_address_top" })
     @if (Model.ExistingAddresses.Count > 0)
     {
-        
-
-
         <div >
             <h4>@T("Checkout.SelectShippingAddressOrEnterNewOne")</h4>
             <div>
@@ -217,28 +212,20 @@
                 </select>
             </div>
             <br/>
-
         </div>
-
-
-
-
-
-
-    }
-    @Html.Widget("op_checkout_shipping_address_middle")
+   }
+    @await Component.InvokeAsync("Widget", new { widgetZone = "op_checkout_shipping_address_middle" })
     <div class="section new-shipping-address" id="shipping-new-address-form">
         <div class="enter-address">
             <div class="enter-address-body">
+                <div asp-validation-summary="ModelOnly" class="message-error"></div>
                 @{
-                    var dataDictAddress = new ViewDataDictionary();
-                    //Merge ModelState (required for validation)
-                    dataDictAddress.ModelState.Merge(ViewData.ModelState);
+                    var dataDictAddress = new ViewDataDictionary(ViewData);
                     dataDictAddress.TemplateInfo.HtmlFieldPrefix = "ShippingNewAddress";
-                    @Html.Partial("_CreateOrUpdateAddress", Model.NewAddress, dataDictAddress)              
+                    @await Html.PartialAsync("_CreateOrUpdateAddress", Model.ShippingNewAddress, dataDictAddress)
                 }
             </div>
         </div>
     </div>
-    @Html.Widget("op_checkout_shipping_address_bottom")
+    @await Component.InvokeAsync("Widget", new { widgetZone = "op_checkout_shipping_address_bottom" })
 </div>

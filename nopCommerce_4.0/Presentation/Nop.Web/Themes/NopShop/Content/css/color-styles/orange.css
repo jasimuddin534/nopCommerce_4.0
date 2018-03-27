@@ -2,7 +2,10 @@
 
 body a:hover, a:focus, a:active { color: #FE980F; }
 .rating-area a { color: #FE980F; }
-.btn.btn-primary:hover, .btn.btn-primary:active, .btn.btn-primary:focus { background: #FE980F; }
+.btn.btn-primary:hover, .btn.btn-primary:active, .btn.btn-primary:focus {
+    background: #FE980F;
+    border-color: #FE980F;
+}
 a#scrollUp { background: #FE980F; }
 
 
@@ -203,7 +206,10 @@ h2.title { color: #FE980F; }
 .text-area textarea:hover { border: 1px solid #FE980F; }
 
 
-.btn.btn-primary { background: #FE980F; }
+.btn.btn-primary {
+    background: #FE980F;
+    border-color: #FE980F;
+}
 
 .blank-arrow label:after { border-color: #FE980F transparent transparent transparent; }
 

@@ -1,14 +1,14 @@
 ﻿@model CustomerAddressEditModel
 @using Nop.Web.Models.Customer;
 @{
-    Layout = "~/Views/Shared/_ColumnsTwo.cshtml";
+    Layout = "_ColumnsTwo";
 
     //title
     Html.AddTitleParts(T("PageTitle.Account").Text);
 }
 @section left
 {
-    @Html.Action("CustomerNavigation", "Customer", new { selectedTabId = CustomerNavigationEnum.Addresses })
+    @await Component.InvokeAsync("CustomerNavigation", new { selectedTabId = CustomerNavigationEnum.Addresses })
 }
 @using (Html.BeginForm())
 {
@@ -17,13 +17,12 @@
 <div class="features_items my-account-page"><!--features_items-->
         <h2 class="title text-center">@T("Account.MyAccount") - @T("Account.CustomerAddresses.AddNew")</h2>
         <div class="custom-page-box-div">
+            <div asp-validation-summary="ModelOnly" class="message-error"></div>
             @{
-                    var dataDictAddress = new ViewDataDictionary();
-                    //Merge ModelState (required for validation)
-                    dataDictAddress.ModelState.Merge(ViewData.ModelState);
-                    dataDictAddress.TemplateInfo.HtmlFieldPrefix = "Address";
-                    @Html.Partial("_CreateOrUpdateAddress", Model.Address, dataDictAddress)              
-                }
+                var dataDictAddress = new ViewDataDictionary(ViewData);
+                dataDictAddress.TemplateInfo.HtmlFieldPrefix = "Address";
+                @await Html.PartialAsync("_CreateOrUpdateAddress", Model.Address, dataDictAddress)
+            }
             <div class="row">
                 <div class="col-sm-12">
                     <div class="buttons pull-right">

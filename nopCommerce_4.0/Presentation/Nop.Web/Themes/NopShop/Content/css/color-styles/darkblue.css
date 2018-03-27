@@ -5,8 +5,9 @@ body a:hover,a:focus,a:active {
 .rating-area a {
     color: #035094;
 }
-.btn.btn-primary:hover,.btn.btn-primary:active,.btn.btn-primary:focus {
+.btn.btn-primary:hover, .btn.btn-primary:active, .btn.btn-primary:focus {
     background: #035094;
+    border-color: #035094;
 }
 a#scrollUp { background: #035094;  }
 
@@ -208,7 +209,10 @@ h2.title { color: #035094;  }
 .text-area textarea:hover { border: 1px solid #035094; }
 
 
-.btn.btn-primary { background: #035094;  }
+.btn.btn-primary {
+    background: #035094;
+    border-color: #035094;
+}
 
 .blank-arrow label:after { border-color: #035094 transparent transparent transparent; }
 

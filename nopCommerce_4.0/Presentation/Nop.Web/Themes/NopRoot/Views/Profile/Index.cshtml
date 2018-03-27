@@ -1,7 +1,7 @@
 ﻿@model ProfileIndexModel
 @using Nop.Web.Models.Profile;
 @{    
-    Layout = "~/Views/Shared/_ColumnsOne.cshtml";
+    Layout = "_ColumnsOne";
 
     Html.AddTitleParts(T("PageTitle.Profile").Text);
 }
@@ -13,7 +13,7 @@
         @{
             var selectPostsTab = Model.ForumsEnabled && Model.PagingPosts ? ".tabs( 'option', 'active', 1 )" : "";
         }
-        <script type="text/javascript">
+        <script type="text/javascript" asp-location="Footer">
             $(document).ready(function () {
                 $("#tabs").tabs()@Html.Raw(selectPostsTab);
             });

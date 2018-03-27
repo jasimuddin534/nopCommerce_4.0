@@ -1,7 +1,7 @@
 ﻿@model ContactVendorModel
 @using Nop.Web.Models.Common;
 @{
-    Layout = "~/Views/Shared/_ColumnsTwo.cshtml";
+    Layout = "_ColumnsTwo";
 
     //title
     Html.AddTitleParts(T("PageTitle.ContactVendor", Model.VendorName).Text);
@@ -11,7 +11,7 @@
         <h1>@T("PageTitle.ContactVendor", Model.VendorName)</h1>
     </div>
     <div class="page-body">
-        @Html.Widget("contactvendor_top")
+        @await Component.InvokeAsync("Widget", new { widgetZone = "contactvendor_top" })
         @if (Model.SuccessfullySent)
         {
             <div class="result">
@@ -20,14 +20,10 @@
         }
         else
         {
-            using (Html.BeginForm())
-            {
-                 @Html.AntiForgeryToken()
-                var validationSummary = Html.ValidationSummary(true);
-                if (!MvcHtmlString.IsNullOrEmpty(validationSummary))
-                {
-                    <div class="message-error">@validationSummary</div>
-                }
+            <form asp-route="ContactVendor" method="post">
+                <div asp-validation-summary="ModelOnly" class="message-error"></div>
+                @Html.AntiForgeryToken()
+               
                 <div class="fieldset">
                     <div class="form-fields">
                         <div class="inputs">
@@ -44,7 +40,7 @@
                         {
                             <div class="inputs">
                                 @Html.LabelFor(model => model.Subject)
-                                @Html.TextBoxFor(model => model.Subject, new {@class = "subject", placeholder = T("ContactVendor.Subject.Hint")})
+                                @Html.TextBoxFor(model => model.Subject, new { @class = "subject", placeholder = T("ContactVendor.Subject.Hint") })
                                 @Html.ValidationMessageFor(model => model.Subject)
                             </div>
                         }
@@ -64,8 +60,8 @@
                 <div class="buttons">
                     <input type="submit" name="send-email" class="button-1 contact-us-button" value="@T("ContactVendor.Button")" />
                 </div>
-            }
+            </form>
         }
-        @Html.Widget("contactvendor_bottom")
+        @await Component.InvokeAsync("Widget", new { widgetZone = "contactvendor_bottom" })
     </div>
 </div>

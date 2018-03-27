@@ -1,12 +1,12 @@
 ﻿@model CheckoutShippingAddressModel
 @using Nop.Web.Models.Checkout;
 @{
-    Layout = "~/Views/Shared/_ColumnsOne.cshtml";
+    Layout = "_ColumnsOne";
 
     //title
     Html.AddTitleParts(T("PageTitle.Checkout").Text);
 }
-@Html.Action("CheckoutProgress", "Checkout", new { step = CheckoutProgressStep.Address })
+@await Component.InvokeAsync("CheckoutProgress", new { step = CheckoutProgressStep.Address })
 <div class="container">
 
     <div class="features_items my-account-page">
@@ -140,19 +140,19 @@
                     <div class="section pickup-in-store">
                     <div class="selector">
                         @Html.CheckBoxFor(x => x.PickUpInStore)
-                        <label for="@Html.FieldIdFor(model => model.PickUpInStore)">@T("Checkout.PickupPoints").Text</label>
+                        <label for="@Html.IdFor(model => model.PickUpInStore)">@T("Checkout.PickupPoints").Text</label>
                     </div>
                     <div class="description">
                         @T("Checkout.PickupPoints.Description")
                     </div>
-                    <script type="text/javascript">
+                    <script type="text/javascript" asp-location="Footer">
                         $(document).ready(function () {
-                            $("#@Html.FieldIdFor(model => model.PickUpInStore)").change(togglePickUpInStore);
+                            $("#@Html.IdFor(model => model.PickUpInStore)").change(togglePickUpInStore);
                             togglePickUpInStore();
                         });
 
                         function togglePickUpInStore() {
-                            if ($('#@Html.FieldIdFor(model => model.PickUpInStore)').is(':checked')) {
+                            if ($('#@Html.IdFor(model => model.PickUpInStore)').is(':checked')) {
                                 $('#pickup-points-form').show();
                                 $('#shipping-addresses-form').hide();
                             } else {
@@ -222,7 +222,7 @@
                         {
                             var src = string.Format("https://maps.googleapis.com/maps/api/js{0}", string.IsNullOrEmpty(Model.GoogleMapsApiKey) ? string.Empty : string.Format("?key={0}", Model.GoogleMapsApiKey));
                             <div class="pickup-points-map" id="map">
-                                <script type="text/javascript">
+                                <script type="text/javascript" asp-location="Footer">
                                     var markers = new Map();
                                     var googleMap = null;
                                     $(document).ready(function () {
@@ -293,8 +293,8 @@
                                                 new google.maps.event.trigger(markers.get(this.value), 'click' );
                                             });
 
-                                            $("#@Html.FieldIdFor(model => model.PickUpInStore)").change(function() {
-                                                if ($('#@Html.FieldIdFor(model => model.PickUpInStore)').is(':checked')) {
+                                            $("#@Html.IdFor(model => model.PickUpInStore)").change(function() {
+                                                if ($('#@Html.IdFor(model => model.PickUpInStore)').is(':checked')) {
                                                     var center = googleMap.getCenter();
                                                     google.maps.event.trigger(googleMap, 'resize');
                                                     googleMap.setCenter(center);
@@ -320,7 +320,7 @@
             if (!Model.PickUpInStoreOnly)
             {
                 <div class="shipping-addresses" id="shipping-addresses-form">
-                    @Html.Widget("checkout_shipping_address_top")
+                    @await Component.InvokeAsync("Widget", new { widgetZone = "checkout_shipping_address_top" })
                     @if (Model.ExistingAddresses.Count > 0)
                     {
                         <div class="section select-shipping-address">
@@ -413,7 +413,7 @@
                             </div>
                         </div>
                     }
-                    @Html.Widget("checkout_shipping_address_middle")
+                    @await Component.InvokeAsync("Widget", new { widgetZone = "checkout_shipping_address_middle" })
                     <div class="section new-shipping-address">
                         <div class="title">
                             @if (Model.ExistingAddresses.Count > 0)
@@ -426,23 +426,15 @@
                             }
                         </div>
                         <div class="enter-address">
+                            <div asp-validation-summary="ModelOnly" class="message-error"></div>
                             @{
-                                var validationSummary = Html.ValidationSummary(true);
-                            }
-                            @if (!MvcHtmlString.IsNullOrEmpty(validationSummary))
-                            {
-                                <div class="message-error">@validationSummary</div>
-                            }
-                            @{
-                                var dataDictAddress = new ViewDataDictionary();
-                                //Merge ModelState (required for validation)
-                                dataDictAddress.ModelState.Merge(ViewData.ModelState);
-                                dataDictAddress.TemplateInfo.HtmlFieldPrefix = "NewAddress";
-                                @Html.Partial("_CreateOrUpdateAddress", Model.NewAddress, dataDictAddress)
+                                var dataDictAddress = new ViewDataDictionary(ViewData);
+                                dataDictAddress.TemplateInfo.HtmlFieldPrefix = "ShippingNewAddress";
+                                @await Html.PartialAsync("_CreateOrUpdateAddress", Model.ShippingNewAddress, dataDictAddress)
                             }
                         </div>
                     </div>
-                    @Html.Widget("checkout_shipping_address_bottom")
+                    @await Component.InvokeAsync("Widget", new { widgetZone = "checkout_shipping_address_bottom" })
                 </div>
             }
                             <div class="text-right">
@@ -454,13 +446,11 @@
             </div>
             @if (Model.ExistingAddresses.Count > 0)
             {
-                @:
-            </div>
+                @:</div>
                 }
             else
             {
-                @:
-            </div>
+                @:</div>
                 }
         </div>
         <div class="space15px"></div>
@@ -472,7 +462,5 @@
 </div>
 <div class="container">
     <h2 class="title text-center">@T("Checkout.OrderSummary")</h2>
-
-    @Html.Action("OrderSummary", "ShoppingCart")
-
+    @await Component.InvokeAsync("OrderSummary")
 </div>

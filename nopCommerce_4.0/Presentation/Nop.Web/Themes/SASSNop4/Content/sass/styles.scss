@@ -1,0 +1,45 @@
+/***************************************************************************** 
+ *  Document    : Othoba Theme Global Styles                                 *
+ *  File Type   : SCSS Style Sheet (SASS)                                    *
+ *  Created on  : March 20, 2018                                             *
+ *  UX Designer : Md. Jasim Uddin, UX Engineer, Brain Station-23             *
+ *  Description : Purpose of the regular styling of the Othoba theme.        *
+ *****************************************************************************/
+
+/*BASE - Base style, variables, mixins, etc.*/
+@import 'base/_variables.scss';
+@import 'base/_maxinins.scss';
+@import 'base/_reset.scss';
+@import 'base/_normalize.scss';
+@import 'base/_grid.scss';
+
+
+/*LAYOUTS - header, footer*/
+@import 'layouts/_header.scss';
+@import 'layouts/_footer.scss';
+@import 'layouts/_side_colum.scss';
+
+
+/*MODULES - Home, Product, Category, Cart, Checkout etc.*/
+@import 'modules/_category.scss';
+@import 'modules/_product_page.scss';
+@import 'modules/_product_reviews.scss';
+@import 'modules/_wishlist.scss';
+@import 'modules/_topics.scss';
+@import 'modules/_contact_email.scss';
+@import 'modules/_registration.scss';
+@import 'modules/_shopping_cart.scss';
+@import 'modules/_checkout.scss';
+@import 'modules/_order_shipping.scss';
+@import 'modules/_search.scss';
+@import 'modules/_blog_news.scss';
+@import 'modules/_forums.scss';
+@import 'modules/_global_tables.scss';
+@import 'modules/_mobile_navigation.scss';
+
+
+/*Responsive Style*/
+@import 'modules/_481.scss';
+@import 'modules/_769.scss';
+@import 'modules/_1001.scss';
+@import 'modules/_1367.scss';

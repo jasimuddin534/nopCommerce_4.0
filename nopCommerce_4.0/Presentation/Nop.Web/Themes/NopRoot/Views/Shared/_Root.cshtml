@@ -1,13 +1,13 @@
 ﻿@{
-    Layout = "~/Views/Shared/_Root.Head.cshtml";
+    Layout = "_Root.Head";
 }
 
 @await Component.InvokeAsync("Widget", new { widgetZone = "body_start_html_tag_after" })
 @await Html.PartialAsync("_Notifications")
 @await Html.PartialAsync("_JavaScriptDisabledWarning")
 @await Html.PartialAsync("_OldInternetExplorerWarning")
-@*@Html.Widget("body_start_html_tag_after")*@
-@*@await Html.PartialAsync("_Notifications")*@
+@await Component.InvokeAsync("Widget", new { widgetZone = "body_start_html_tag_after" })
+@await Html.PartialAsync("_Notifications")
 <div >
     @await Html.PartialAsync("_JavaScriptDisabledWarning")
     <div >
@@ -65,7 +65,7 @@
   </div>
 </div>
 
-<script type="text/javascript">
+<script type="text/javascript" asp-location="Footer">
 function displayBootstrapModal(id) {
         $('#myModal').find('.modal-body').load('/qv/'+id, function (result) {
             $('#myModal').modal({ show: true });

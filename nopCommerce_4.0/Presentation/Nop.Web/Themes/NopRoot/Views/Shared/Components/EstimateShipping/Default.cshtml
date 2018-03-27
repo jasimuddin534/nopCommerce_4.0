@@ -3,7 +3,7 @@
 
 
 <div class="col-md-6 shipping">
-    <script type="text/javascript">
+    <script type="text/javascript" asp-location="Footer">
         $(document).ready(function () {
             $("#@Html.IdFor(model => model.CountryId)").change(function() {
                 var selectedItem = $(this).val();
@@ -30,7 +30,7 @@
             });
         });
     </script>
-    <script type="text/javascript">
+    <script type="text/javascript" asp-location="Footer">
         $(document).ready(function () {
             $('#estimate-shipping-button').click(function() {
                 displayAjaxLoading(true);

@@ -3,18 +3,18 @@
 @{
     if (!Model.PrintMode)
     {
-        Layout = "~/Views/Shared/_ColumnsOne.cshtml";
+        Layout = "_ColumnsOne";
     }
     else
     {
-        Layout = "~/Views/Shared/_Print.cshtml";
+        Layout = "_Print";
     }
     //title
     Html.AddTitleParts(T("PageTitle.OrderDetails").Text);
 }
 @if (Model.PrintMode)
 {
-    <script type="text/javascript">
+    <script type="text/javascript" asp-location="Footer">
         $(document).ready(function () {
             window.print();
         });
@@ -401,11 +401,8 @@
             <br/>
 
         }
-        @Html.Widget("orderdetails_page_afterproducts")
-
-
-
-
+        @await Component.InvokeAsync("Widget", new { widgetZone = "orderdetails_page_afterproducts" })
+        
         <div class="row">
             <div class="col-lg-4 pull-right ">
                
@@ -693,7 +690,3 @@
 
     </div>
 </div>
-
-
-
-

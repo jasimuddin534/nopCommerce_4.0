@@ -5,13 +5,8 @@
     var displayTierPrices = Model.Count > 0 && !(Model.Count == 1 && Model[0].Quantity <= 1);
 }
 @if (displayTierPrices)
-{
-
-   
+{   
        <p><b>@T("Products.TierPrices")</b></p>
-
-    
-        
             <table class="prices-table table table-striped table-responsive">
                 <tr>
                     <td class="field-header">
@@ -36,9 +31,4 @@
                     }
                 </tr>
             </table>
-        
-   
-
-
-    
 }

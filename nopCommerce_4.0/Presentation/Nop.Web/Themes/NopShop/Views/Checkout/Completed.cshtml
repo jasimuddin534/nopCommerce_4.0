@@ -1,14 +1,14 @@
 ﻿@model CheckoutCompletedModel
 @using Nop.Web.Models.Checkout;
 @{
-    Layout = "~/Views/Shared/_ColumnsOne.cshtml";
+    Layout = "_ColumnsOne";
 
     //title
     Html.AddTitleParts(T("PageTitle.Checkout").Text);
 }
 @if (!Model.OnePageCheckoutEnabled)
 {
-    @Html.Action("CheckoutProgress", "Checkout", new { step = CheckoutProgressStep.Complete })
+    @await Component.InvokeAsync("CheckoutProgress", new { step = CheckoutProgressStep.Complete })
 }
 <div class="container">
     <h2 class="title text-center">@T("Checkout.ThankYou")</h2>

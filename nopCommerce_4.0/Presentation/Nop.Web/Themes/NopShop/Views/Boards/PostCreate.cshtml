@@ -1,14 +1,14 @@
 ﻿@model EditForumPostModel
 @using Nop.Web.Models.Boards;
 @{   
-    Layout = "~/Views/Shared/_ColumnsOne.cshtml";
+    Layout = "_ColumnsOne";
 
     Html.AddTitleParts(T("Forum.PageTitle.PostNew").Text);
 }
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            @Html.Partial("_CreateUpdatePost", Model)
+            @await Html.PartialAsync("_CreateUpdatePost", Model)
         </div>
     </div>
     

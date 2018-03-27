@@ -1,0 +1,101 @@
+﻿@media all and (max-width: 1000px) {
+    /*** GLOBAL TABLES ***/
+    .cart {
+        display: block;
+
+        colgroup,
+        thead {
+            display: none;
+        }
+
+        tbody {
+            display: block;
+            overflow: hidden;
+        }
+
+        tr {
+            display: block;
+            float: left;
+            width: 100%;
+            margin: 40px 0 0;
+            border: 1px solid $gray;
+        }
+
+        td {
+            display: block;
+            border: none;
+            padding: 10px;
+        }
+
+        td.remove-from-cart {
+            margin: 0 0 15px;
+            border-bottom: 1px solid $gray;
+            background-color: #eee;
+            padding: 10px;
+        }
+
+        td.product-picture {
+            border-top: 1px solid $gray;
+            padding: 15px 10px 5px;
+        }
+
+        td.product {
+            min-width: 0;
+            border-bottom: 1px solid $gray;
+            padding: 5px 10px 15px;
+            text-align: center;
+        }
+
+        td.quantity {
+            display: inline-block;
+            padding: 0 10px;
+            vertical-align: middle;
+        }
+
+        td.unit-price,
+        td.subtotal {
+            display: inline-block;
+            padding: 20px 10px;
+            vertical-align: middle;
+        }
+    }
+
+
+    .order-details-page {
+        .data-table {
+            display: block;
+
+            colgroup,
+            thead {
+                display: none;
+            }
+
+            tbody {
+                display: block;
+                overflow: hidden;
+            }
+
+            tr {
+                display: block;
+                float: left;
+                width: 100%;
+                margin: 40px 0 0;
+                border: 1px solid $gray;
+            }
+
+            td {
+                display: block;
+                border: none;
+                padding: 10px;
+            }
+
+            td.product,
+            td.tracking-number {
+                min-width: 0;
+                border-bottom: 1px solid $gray;
+                padding: 5px 10px 15px;
+                text-align: center;
+            }
+        }
+    }
+}

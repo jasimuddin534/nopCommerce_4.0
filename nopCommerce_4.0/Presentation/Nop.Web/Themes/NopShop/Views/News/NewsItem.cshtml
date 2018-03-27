@@ -1,7 +1,7 @@
 ﻿@model NewsItemModel
 @using Nop.Web.Models.News;
 @{
-    Layout = "~/Views/Shared/_ColumnsTwo.cshtml";
+    Layout = "_ColumnsTwo";
 
     //title
     Html.AddTitleParts(!String.IsNullOrEmpty(Model.MetaTitle) ? Model.MetaTitle : Model.Title);
@@ -9,20 +9,15 @@
     Html.AddMetaKeywordParts(Model.MetaKeywords);
 }
 <div class="features_items custom-blog-page"><!--features_items-->
-    <h2 class="title text-center">@Model.Title</h2>
-
-    
+    <h2 class="title text-center">@Model.Title</h2>   
     <div class="product-details">
         <div class="custom-page-box-div">
             <div class="post-meta">
                 <ul class="sinlge-post-meta">
-                            
                     <li><i class="fa fa-clock-o"></i> @Model.CreatedOn.ToString("T")</li>
                     <li><i class="fa fa-calendar"></i> @Model.CreatedOn.ToString("D")</li>
                 </ul>
-                        
             </div>
-
                     
             <p>@Html.Raw(Model.Full)</p>
 
@@ -98,7 +93,7 @@
 
                         <div class=" ">
                             <div class="row">
-                                @Html.LabelFor(model => model.AddNewComment.CommentTitle, new { @class = "col-md-2"}, ":")
+                                @Html.LabelFor(model => model.AddNewComment.CommentTitle, new { @class = "col-md-2"})
                                 <div class="col-sm-4" >                            
                                     @Html.TextBoxFor(model => model.AddNewComment.CommentTitle, new { @class = "gray-input"})
                                 </div>
@@ -109,7 +104,7 @@
                         </div>
                         <div class="">
                             <div class="row">
-                                @Html.LabelFor(model => model.AddNewComment.CommentText, new { @class = "col-md-2"}, ":")
+                                @Html.LabelFor(model => model.AddNewComment.CommentText, new { @class = "col-md-2"})
                                 <div class="col-md-8">    
                                     @Html.TextAreaFor(model => model.AddNewComment.CommentText, new { @class = "gray-textarea",rows="10" })
                                 </div>
@@ -137,9 +132,7 @@
                 </div>
                 
             }
-            
         </div>
-        
     </div>
 </div>
 

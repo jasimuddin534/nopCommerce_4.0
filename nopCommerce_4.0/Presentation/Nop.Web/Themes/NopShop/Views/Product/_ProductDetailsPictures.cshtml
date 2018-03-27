@@ -3,8 +3,8 @@
 @using Nop.Core.Infrastructure;
 @using Nop.Web.Models.Catalog;
 @{
-    Html.AddScriptParts("~/Scripts/jquery.magnific-popup.js");
-    Html.AddCssFileParts("~/Content/magnific-popup/magnific-popup.css");
+    Html.AddScriptParts("~/lib/magnific-popup/jquery.magnific-popup.js");
+    Html.AddCssFileParts("~/lib/magnific-popup/magnific-popup.css");
 
     //int productPerRow = EngineContext.Current.Resolve<MediaSettings>().ProductThumbPerRowOnProductDetailsPage;   
     int productPerRow = 4; 
@@ -18,7 +18,7 @@
             <a href="@Model.DefaultPictureModel.FullSizeImageUrl" title="@Model.Name" id="main-product-img-lightbox-anchor-@Model.Id">
                 <img alt="@Model.DefaultPictureModel.AlternateText" src="@Model.DefaultPictureModel.ImageUrl" title="@Model.DefaultPictureModel.Title" itemprop="image" id="main-product-img-@Model.Id" />
             </a>
-            <script type="text/javascript">
+            <script type="text/javascript" asp-location="Footer">
                 $(document).ready(function () {
                     $('#main-product-img-lightbox-anchor-@Model.Id').magnificPopup(
                     {
@@ -83,7 +83,7 @@
             </a>
         </div>
     
-        <script type="text/javascript">
+        <script type="text/javascript" asp-location="Footer">
             $(document).ready(function () {
                 $('.thumb-popup-link').magnificPopup(
                 {

@@ -2,40 +2,41 @@
 @using Nop.Web.Models.Customer;
 @using Nop.Core;
 @using Nop.Core.Infrastructure;
+@using System.Net
+@inject IWebHelper webHelper
 @{
-    Layout = "~/Views/Shared/_ColumnsTwo.cshtml";
-
+    Layout = "_ColumnsTwo";
     //title
     Html.AddTitleParts(T("PageTitle.Login").Text);
+    //page class
+    Html.AppendPageCssClassParts("html-login-page");
 
     //register URL with return URL (if specified)
     var registerUrl = Url.RouteUrl("Register");
-    if (!String.IsNullOrEmpty(this.Context.Request.QueryString["returnUrl"]))
+    if (!string.IsNullOrEmpty(this.Context.Request.Query["returnUrl"]))
     {
-        var webHelper = EngineContext.Current.Resolve<IWebHelper>();
-        registerUrl = webHelper.ModifyQueryString(registerUrl, "returnurl=" + HttpUtility.UrlEncode(this.Context.Request.QueryString["returnUrl"]), null);
+        registerUrl = webHelper.ModifyQueryString(registerUrl, "returnurl=" + WebUtility.UrlEncode(this.Context.Request.Query["returnUrl"]), null);
     }
 }
 
 
-<div class="features_items my-account-page"><!--features_items-->
+<div class="features_items my-account-page">
+    <!--features_items-->
     <h2 class="title text-center">@T("Account.Login.Welcome")</h2>
     <div class="custom-page-box-div">
-        
-        @Html.Partial("_ExternalAuthentication.AssociateMessage")
-        @Html.Partial("_ExternalAuthentication.Errors")
+        @await Html.PartialAsync("_ExternalAuthentication.Errors")
         <div class="row">
             <div class="col-md-6">
                 @if (Model.CheckoutAsGuest)
                 {
-                    
+
                     <div id="legend">
-                        <legend >@T("Account.Login.CheckoutAsGuestOrRegister")</legend>
+                        <legend>@T("Account.Login.CheckoutAsGuestOrRegister")</legend>
                     </div>
 
                     <div class="offer offer-default">
                         <div class="text">
-                            @Html.Action("TopicBlock", "Topic", new { systemName = "CheckoutAsGuestOrRegister" })
+                            @await Component.InvokeAsync("TopicBlock", new { systemName = "CheckoutAsGuestOrRegister" })
                         </div>
                         <div class="buttons">
                             <input type="button" class="button-1 checkout-as-guest-button btn btn-primary" onclick="location.href='@Url.RouteUrl("Checkout")'" value="@T("Account.Login.CheckoutAsGuest")" />
@@ -45,9 +46,9 @@
                 }
                 else
                 {
-                    
+
                     <div id="legend">
-                        <legend >@T("Account.Login.NewCustomer")</legend>
+                        <legend>@T("Account.Login.NewCustomer")</legend>
                     </div>
 
                     <div class="offer offer-default">
@@ -58,17 +59,17 @@
                             <input type="button" class="button-1 register-button btn btn-primary " onclick="location.href='@registerUrl'" value="@T("Account.Register")" />
                         </div>
                     </div>
-                    
+
                 }
             </div>
             <div class="col-md-6">
                 <div class="fieldset">
-                    
-                
+
+
                     <div id="legend">
-                        <legend >@T("Account.Login.ReturningCustomer")</legend>
+                        <legend>@T("Account.Login.ReturningCustomer")</legend>
                     </div>
-               
+
                     <div class="offer offer-default">
                         <div class="">
                             @using (Html.BeginForm())
@@ -80,8 +81,8 @@
                                 {
                                     <div class="form-group row">
                                         <div class="col-md-3">
-                                            @Html.LabelFor(m => m.Username, new { @class = "" }, ":")
-                                        </div>    
+                                            @Html.LabelFor(m => m.Username)
+                                        </div>
                                         <div class="col-md-9">
                                             @Html.TextBoxFor(m => m.Username, new { @class = "username gray-input", autofocus = "autofocus" })
                                         </div>
@@ -93,7 +94,7 @@
                                     <div class="form-group row">
                                         <div class="col-md-3">
                                             <div class="">
-                                                @Html.LabelFor(m => m.Email, new { @class = "" }, ":")
+                                                @Html.LabelFor(m => m.Email)
                                             </div>
                                         </div>
                                         <div class="col-md-9">
@@ -105,7 +106,7 @@
                                 <div class="form-group row">
                                     <div class="col-md-3">
                                         <div class="">
-                                            @Html.LabelFor(m => m.Password, new { @class = "" }, ":")
+                                            @Html.LabelFor(m => m.Password)
                                         </div>
                                     </div>
                                     <div class="col-md-9">
@@ -129,23 +130,22 @@
                                 <div class="buttons">
                                     <input class="button-1 login-button btn btn-primary " type="submit" value="@T("Account.Login.LoginButton")" />
                                 </div>
-                       
                             }
                         </div>
-                    </div></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <div class="custom-page-box-div">
-        @Html.Action("ExternalMethods", "ExternalAuthentication") 
+        @await Component.InvokeAsync("ExternalMethods", "ExternalAuthentication")
     </div>
-
 </div>
 
 
 <div class="row">
     <div class="col-md-12">
-        @Html.Action("TopicBlock", "Topic", new { systemName = "LoginRegistrationInfo" })
+        @await Component.InvokeAsync("TopicBlock", new { systemName = "LoginRegistrationInfo" })
     </div>
 </div>
 

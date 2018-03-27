@@ -39,7 +39,6 @@
 <div class="space15px"></div>
 <div class="container">
     <div class="row">
-        
         <div class="col-lg-3 col-md-4 col-sm-4 hidden-xs">
             <div class="left-sidebar">
                 @if (IsSectionDefined("left"))
@@ -50,14 +49,15 @@
                 {
 
                     @await Component.InvokeAsync("Widget", new { widgetZone = "left_side_column_before" })
-                    @*@await Component.InvokeAsync("CategoryNavigation")*@
+                    @await Component.InvokeAsync("CategoryNavigation", new { currentCategoryId = currentCategoryId, currentProductId = currentProductId })
                     @await Component.InvokeAsync("Widget", new { widgetZone = "left_side_column_after_category_navigation" })
-                    @await Component.InvokeAsync("ManufacturerNavigation")
-                    @await Component.InvokeAsync("VendorNavigation", "Catalog")
-                    @await Component.InvokeAsync("RecentlyViewedProductsBlock")
-                    @await Component.InvokeAsync("PopularProductTags", "Catalog")
+                    @await Component.InvokeAsync("ManufacturerNavigation", new { currentManufacturerId = currentManufacturerId })
+                    @await Component.InvokeAsync("VendorNavigation")
+                    @await Component.InvokeAsync("RecentlyViewedProductsBlock", new { productThumbPictureSize = 64 })
+                    @await Component.InvokeAsync("PopularProductTags")
                     @await Component.InvokeAsync("PollBlock", new { systemKeyword = "LeftColumnPoll" })
                     @await Component.InvokeAsync("Widget", new { widgetZone = "left_side_column_after" })
+
                 }
             </div>
 

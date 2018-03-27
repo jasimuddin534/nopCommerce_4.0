@@ -3,8 +3,8 @@
 @if (Model.NewsItems.Count > 0)
 {
     <div class="news-list-homepage">
-        <div class="title mid-content-title">
-            <strong>@T("News")</strong>
+        <div class="mid-content-title">
+            <h2 class="title text-center">@T("News")</h2>
         </div>
         <div class="news-items offer offer-default">
             @foreach (var item in Model.NewsItems)
@@ -27,7 +27,7 @@
                     <div class="news-details">
                         @Html.Raw(item.Short)
                     </div>
-                    <div class="pull-text-right"><a href="@Url.RouteUrl("NewsItem", new { SeName = item.SeName })" class="read-more btn btn-default">
+                    <div class="pull-text-right"><a href="@Url.RouteUrl("NewsItem", new { SeName = item.SeName })" class="read-more btn btn-primary">
                         @T("News.MoreInfo")</a></div>
                 </div>
                 <br/>
@@ -36,7 +36,7 @@
 
             }
             <div class="view-all pull-text-right">
-                <a href="@Url.RouteUrl("NewsArchive")" class="btn btn-default">
+                <a href="@Url.RouteUrl("NewsArchive")" class="btn btn-primary">
                     @T("News.ViewAll")</a>
             </div>
         </div>

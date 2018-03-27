@@ -1,0 +1,202 @@
+﻿/********** WISHLIST & COMPARE LIST **********/
+.wishlist-page {
+    .page-title {
+        margin: 0 0 -1px;
+    }
+}
+
+.wishlist-content {
+    margin: 0 0 20px;
+
+    .message-error {
+        margin: 20px 0;
+    }
+
+    .table-wrapper {
+        margin: 0 0 30px;
+    }
+
+    .product-content {
+        min-width: 300px;
+        text-align: left;
+    }
+
+    .tax-shipping-info {
+        margin: 0 0 20px;
+        text-align: center;
+
+        a {
+            color: #4ab3f1;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .buttons {
+        font-size: 0;
+    }
+
+    .button-2 {
+        display: block;
+        width: 250px;
+        margin: 0 auto 3px;
+        border: none;
+        padding: 10px 25px;
+        text-align: center;
+        line-height: 20px;
+        font-size: 15px;
+        color: $white;
+    }
+
+    .update-wishlist-button,
+    .wishlist-add-to-cart-button {
+        background-color: #4ab2f1;
+        text-transform: uppercase;
+
+        &:hover {
+            background-color: #248ece;
+        }
+    }
+
+    .email-a-friend-wishlist-button {
+        background-color: #aaa;
+
+        &:hover {
+            background-color: #999;
+        }
+    }
+}
+
+.wishlist-page {
+    .share-info {
+        text-align: center;
+    }
+
+    .share-info {
+        span {
+            display: block;
+            margin: 0 0 5px;
+        }
+
+        a {
+            font-weight: bold;
+            color: $black;
+
+            &:hover {
+                color: #4ab2f1;
+            }
+        }
+    }
+
+    .no-data {
+        margin: 25px 0 0;
+    }
+}
+
+
+.compare-products-page {
+    position: relative;
+    overflow: hidden;
+
+    .clear-list {
+        display: inline-block;
+        margin: 0 0 20px;
+        background-color: #4ab2f1;
+        padding: 10px 15px;
+        font-size: 12px;
+        color: $white;
+        text-transform: uppercase;
+    }
+
+    .clear-list:hover {
+        background-color: #248ece;
+    }
+
+    .table-wrapper {
+        margin: 0 0 30px;
+        padding: 0 0 1px; /*IE mobile table border fix*/
+    }
+
+    .no-data {
+        margin: 25px 0 0;
+    }
+}
+
+.compare-products-table {
+    td {
+        min-width: 150px;
+        border: 1px solid $gray;
+        background-color: $white;
+        padding: 20px;
+        text-align: left;
+        vertical-align: top;
+        color: $black;
+
+        label {
+            font-weight: normal;
+            color: $base-color;
+        }
+
+        .remove-button {
+            display: inline-block;
+            border: none;
+            background: url('../images/remove.png') left center no-repeat;
+            padding: 0 0 0 18px;
+            font-size: 12px;
+            color: #666;
+
+            &:hover {
+                color: #4ab2f1;
+            }
+        }
+    }
+
+    td:first-child {
+        min-width: 0;
+    }
+
+    .picture {
+        display: block;
+        position: relative;
+        max-width: 200px;
+        height: 200px;
+        overflow: hidden;
+
+        img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            max-width: 100%;
+            max-height: 100%;
+            margin: auto;
+        }
+    }
+
+    .product-name {
+        td {
+            font-weight: bold;
+
+            a {
+                &:hover {
+                    color: #4ab2f1;
+                }
+            }
+        }
+    }
+
+    .short-description {
+        td {
+            line-height: 22px;
+        }
+    }
+
+    .full-description {
+        td {
+            display: none;
+        }
+    }
+}

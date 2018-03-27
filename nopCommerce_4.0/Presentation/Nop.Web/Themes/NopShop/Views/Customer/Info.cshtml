@@ -1,23 +1,26 @@
-﻿@model CustomerInfoModel
-@using Nop.Web.Models.Customer;
-@using Nop.Core;
+﻿@using Nop.Core
+@model CustomerInfoModel
 @{
-    Layout = "~/Views/Shared/_ColumnsTwo.cshtml";
+    Layout = "_ColumnsTwo";
 
     //title
     Html.AddTitleParts(T("PageTitle.Account").Text);
+    //page class
+    Html.AppendPageCssClassParts("html-account-page");
+    Html.AppendPageCssClassParts("html-customer-info-page");
 }
+
 @section left
 {
-    @Html.Action("CustomerNavigation", "Customer", new { selectedTabId = CustomerNavigationEnum.Addresses })
+    @await Component.InvokeAsync("CustomerNavigation", new { selectedTabId = CustomerNavigationEnum.Info })
 }
 @if (Model.CountryEnabled && Model.StateProvinceEnabled)
 {
-    <script type="text/javascript">
+    <script type="text/javascript" asp-location="Footer">
         $(function () {
-            $("#@Html.FieldIdFor(model => model.CountryId)").change(function () {
+            $("#@Html.IdFor(model => model.CountryId)").change(function () {
                 var selectedItem = $(this).val();
-                var ddlStates = $("#@Html.FieldIdFor(model => model.StateProvinceId)");
+                var ddlStates = $("#@Html.IdFor(model => model.StateProvinceId)");
              var statesProgress = $("#states-loading-progress");
              statesProgress.show();
              $.ajax({
@@ -44,7 +47,8 @@
 
 
 
-<div class="features_items my-account-page"><!--features_items-->
+<div class="features_items my-account-page">
+    <!--features_items-->
     <h2 class="title text-center">@T("Account.MyAccount") - @T("Account.CustomerInfo")</h2>
     <div class="custom-page-box-div">
         @using (Html.BeginForm())
@@ -55,13 +59,13 @@
             </div>
             <div class="fieldset">
                 <div id="legend">
-                    <legend >@T("Account.YourPersonalDetails")</legend>
+                    <legend>@T("Account.YourPersonalDetails")</legend>
                 </div>
                 <div class="form-fields">
                     @if (Model.GenderEnabled)
                     {
                         <div class="form-group row">
-                            <label class="col-md-2 " >@T("Account.Fields.Gender"):</label>
+                            <label class="col-md-2 ">@T("Account.Fields.Gender"):</label>
                             <div class="col-md-9">
                                 @Html.RadioButton("Gender", "M", (Model.Gender == "M"), new { id = "gender-male" })
                                 <label class="forcheckbox  " for="gender-male">@T("Account.Fields.Gender.Male")</label>
@@ -71,58 +75,62 @@
                         </div>
                     }
                     <div class="form-group row">
-                        <div class="col-md-2"> 
-                            @Html.LabelFor(model => model.FirstName, new { @class = "col-md- control-label" }, ":")
+                        <div class="col-md-2">
+                            @Html.LabelFor(model => model.FirstName, new { @class = "col-md- control-label" })
                         </div>
                         <div class="col-md-6">
                             @Html.TextBoxFor(model => model.FirstName, new { @class = "gray-input" })
                         </div>
-                        <div class="col-md-2" >
-                            
-                            @Html.RequiredHint()
+                        <div class="col-md-2">
+
+                            <nop-required />
                             @Html.ValidationMessageFor(model => model.FirstName)
-                        </div>     
+                        </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-2 ">
-                            @Html.LabelFor(model => model.LastName, new { @class = "" }, ":")
+                            @Html.LabelFor(model => model.LastName, new { @class = "" })
                         </div>
                         <div class="col-md-6">
                             @Html.TextBoxFor(model => model.LastName, new { @class = "gray-input" })
                         </div>
                         <div class="col-md-2">
-                            @Html.RequiredHint()
+                            <nop-required />
                             @Html.ValidationMessageFor(model => model.LastName)
                         </div>
                     </div>
                     @if (Model.DateOfBirthEnabled)
                     {
                         <div class="form-group row">
-                            <label class="col-md-2">@T("Account.Fields.DateOfBirth"):</label>
+                            <label class="col-md-2">@T("Account.Fields.DateOfBirth")</label>
                             <div class="col-md-6 datepicker-dropdowns">
-                                @Html.DatePickerDropDowns(Html.FieldNameFor(x => x.DateOfBirthDay),
-                                                          Html.FieldNameFor(x => x.DateOfBirthMonth),
-                                                          Html.FieldNameFor(x => x.DateOfBirthYear),
-                                                          DateTime.Now.Year - 110,
-                                                          DateTime.Now.Year,
-                                                          Model.DateOfBirthDay,
-                                                          Model.DateOfBirthMonth,
-                                                          Model.DateOfBirthYear)
-                                @Html.ValidationMessageFor(model => model.DateOfBirthDay)
-                                @Html.ValidationMessageFor(model => model.DateOfBirthMonth)
-                                @Html.ValidationMessageFor(model => model.DateOfBirthYear)
+                                    <nop-date-picker asp-day-name="@Html.NameFor(x => x.DateOfBirthDay)"
+                                                     asp-month-name="@Html.NameFor(x => x.DateOfBirthMonth)"
+                                                     asp-year-name="@Html.NameFor(x => x.DateOfBirthYear)"
+                                                     asp-begin-year="@(DateTime.Now.Year - 110)"
+                                                     asp-end-year="@(DateTime.Now.Year)"
+                                                     asp-selected-day="@Model.DateOfBirthDay"
+                                                     asp-selected-month="@Model.DateOfBirthMonth"
+                                                     asp-selected-year="@Model.DateOfBirthYear" />
+                                    @if (Model.DateOfBirthRequired)
+                                    {
+                                        <nop-required />
+                                    }
+                                    <span asp-validation-for="DateOfBirthDay"></span>
+                                    <span asp-validation-for="DateOfBirthMonth"></span>
+                                    <span asp-validation-for="DateOfBirthYear"></span>
                             </div>
                         </div>
                     }
                     <div class="form-group row">
                         <div class="col-md-2 ">
-                            @Html.LabelFor(model => model.Email, new { @class = "" }, ":")
+                            @Html.LabelFor(model => model.Email, new { @class = "" })
                         </div>
                         <div class="col-md-6">
                             @Html.TextBoxFor(model => model.Email, new { @class = "gray-input" })
                         </div>
                         <div class="col-md-2">
-                            @Html.RequiredHint()
+                            <nop-required />
                             @Html.ValidationMessageFor(model => model.Email)
                         </div>
                     </div>
@@ -133,14 +141,14 @@
                         {
                             <div class="form-group row">
                                 <div class="col-md-2 ">
-                                    @Html.LabelFor(model => model.Username, new { @class = "" }, ":")
+                                    @Html.LabelFor(model => model.Username, new { @class = "" })
                                 </div>
 
                                 <div class="col-md-6">
                                     @Html.TextBoxFor(model => model.Username, new { @class = "gray-input" })
                                 </div>
                                 <div class="col-md-4">
-                                    @Html.RequiredHint()
+                                    <nop-required />
                                     @Html.ValidationMessageFor(model => model.Username)
                                     @if (Model.CheckUsernameAvailabilityEnabled)
                                     {
@@ -152,7 +160,7 @@
                         else
                         {
                             <div class="form-group row">
-                                @Html.LabelFor(model => model.Username, new { @class = "" }, ":")
+                                @Html.LabelFor(model => model.Username, new { @class = "" })
                                 <div class="col-md-10">
                                     @Model.Username
                                 </div>
@@ -160,16 +168,16 @@
                         }
                     }
                 </div>
-            </div>    
+            </div>
             if (Model.AssociatedExternalAuthRecords.Count > 0)
             {
                 <div class="fieldset">
-                <div id="legend">
-                    <legend >@T("Account.AssociatedExternalAuth")</legend>
-                </div>
+                    <div id="legend">
+                        <legend>@T("Account.AssociatedExternalAuth")</legend>
+                    </div>
 
                     <div id="cart_items">
-    
+
 
                         <div class="table-responsive cart_info">
                             <table class="table table-condensed">
@@ -184,7 +192,7 @@
                                         <td class="a-center external-id">
                                             @T("Account.AssociatedExternalAuth.ExternalIdentifier")
                                         </td>
-                
+
                                     </tr>
 
                                 </thead>
@@ -204,7 +212,7 @@
                                             </td>
                                         </tr>
                                     }
-            
+
                                 </tbody>
 
                             </table>
@@ -214,7 +222,7 @@
                 </div>
 
 
-                
+
 
             }
             if (Model.CompanyEnabled || Model.DisplayVatNumber)
@@ -228,15 +236,15 @@
                         {
                             <div class="form-group row">
                                 <div class="col-md-2">
-                                    @Html.LabelFor(model => model.Company, new { @class = "" }, ":")
+                                    @Html.LabelFor(model => model.Company, new { @class = "" })
                                 </div>
                                 <div class="col-md-6">
                                     @Html.TextBoxFor(model => model.Company, new { @class = "gray-input" })
-                                </div>   
-                                <div class="col-md-4"> 
+                                </div>
+                                <div class="col-md-4">
                                     @if (Model.CompanyRequired)
                                     {
-                                        @Html.RequiredHint()
+                                        <nop-required />
                                     }
                                     @Html.ValidationMessageFor(model => model.Company)
                                 </div>
@@ -246,16 +254,16 @@
                         {
                             <div class="form-group row">
                                 <div class="col-md-2">
-                                @Html.LabelFor(model => model.VatNumber, new { @class = "" }, ":")
+                                    @Html.LabelFor(model => model.VatNumber, new { @class = "" })
                                 </div>
-                                
+
                                 <div class="col-md-6">
                                     @Html.TextBoxFor(model => model.VatNumber, new { @class = "gray-input" })
                                 </div>
-                                <div class="col-md-2"> 
+                                <div class="col-md-2">
                                     <span class="vat-status">@Model.VatNumberStatusNote</span>
                                 </div>
-                                <div class="col-md-2"> 
+                                <div class="col-md-2">
                                     <span class="vat-note"><em>@T("Account.Fields.VatNumber.Note")</em></span>
                                 </div>
                             </div>
@@ -263,11 +271,7 @@
                     </div>
                 </div>
             }
-            if (Model.StreetAddressEnabled ||
-                Model.StreetAddress2Enabled ||
-                Model.ZipPostalCodeEnabled ||
-                Model.CityEnabled ||
-                Model.CountryEnabled)
+            if (Model.StreetAddressEnabled || Model.StreetAddress2Enabled || Model.ZipPostalCodeEnabled || Model.CityEnabled || Model.CountryEnabled)
             {
                 <div class="fieldset">
                     <div id="legend">
@@ -277,14 +281,14 @@
                         @if (Model.StreetAddressEnabled)
                         {
                             <div class="form-group row">
-                                @Html.LabelFor(model => model.StreetAddress, new { @class = "col-md-2" }, ":")
+                                @Html.LabelFor(model => model.StreetAddress, new { @class = "col-md-2" })
                                 <div class="col-md-6">
                                     @Html.TextBoxFor(model => model.StreetAddress, new { @class = "gray-input" })
                                 </div>
-                                <div class="col-md-4">                             
+                                <div class="col-md-4">
                                     @if (Model.StreetAddressRequired)
                                     {
-                                        @Html.RequiredHint()
+                                        <nop-required />
                                     }
                                     @Html.ValidationMessageFor(model => model.StreetAddress)
                                 </div>
@@ -293,30 +297,30 @@
                         @if (Model.StreetAddress2Enabled)
                         {
                             <div class="form-group row">
-                                @Html.LabelFor(model => model.StreetAddress2, new { @class = "col-md-2 " }, ":")
+                                @Html.LabelFor(model => model.StreetAddress2, new { @class = "col-md-2 " })
                                 <div class="col-md-6">
                                     @Html.TextBoxFor(model => model.StreetAddress2, new { @class = "gray-input" })
                                 </div>
-                                <div class="col-md-4">                             
+                                <div class="col-md-4">
                                     @if (Model.StreetAddress2Required)
                                     {
-                                        @Html.RequiredHint()
+                                        <nop-required />
                                     }
                                     @Html.ValidationMessageFor(model => model.StreetAddress2)
-                                </div>                               
+                                </div>
                             </div>
                         }
                         @if (Model.ZipPostalCodeEnabled)
                         {
                             <div class="form-group row">
-                                @Html.LabelFor(model => model.ZipPostalCode, new { @class = "col-md-2" }, ":")
+                                @Html.LabelFor(model => model.ZipPostalCode, new { @class = "col-md-2" })
                                 <div class="col-md-6">
                                     @Html.TextBoxFor(model => model.ZipPostalCode, new { @class = "gray-input" })
                                 </div>
                                 <div class="col-md-4">
                                     @if (Model.ZipPostalCodeRequired)
                                     {
-                                        @Html.RequiredHint()
+                                        <nop-required />
                                     }
                                     @Html.ValidationMessageFor(model => model.ZipPostalCode)
                                 </div>
@@ -325,14 +329,14 @@
                         @if (Model.CityEnabled)
                         {
                             <div class="form-group row">
-                                @Html.LabelFor(model => model.City, new { @class = "col-md-2" }, ":")
-                                <div class="col-md-6">    
+                                @Html.LabelFor(model => model.City, new { @class = "col-md-2" })
+                                <div class="col-md-6">
                                     @Html.TextBoxFor(model => model.City, new { @class = "gray-input" })
                                 </div>
                                 <div class="col-md-4">
                                     @if (Model.CityRequired)
                                     {
-                                        @Html.RequiredHint()
+                                        <nop-required />
                                     }
                                     @Html.ValidationMessageFor(model => model.City)
                                 </div>
@@ -341,24 +345,24 @@
                         @if (Model.CountryEnabled)
                         {
                             <div class="form-group row">
-                                @Html.LabelFor(model => model.CountryId, new { @class = "col-md-2" }, ":")
-                                <div class="col-md-6">    
+                                @Html.LabelFor(model => model.CountryId, new { @class = "col-md-2" })
+                                <div class="col-md-6">
                                     @Html.DropDownList("CountryId", Model.AvailableCountries, new { @class = "gray-dropdown" })
-                                </div>    
+                                </div>
                             </div>
                         }
                         @if (Model.CountryEnabled && Model.StateProvinceEnabled)
                         {
                             <div class="form-group row">
-                                @Html.LabelFor(model => model.StateProvinceId, new { @class = "col-md-2" }, ":")
-                                <div class="col-md-6">    
+                                @Html.LabelFor(model => model.StateProvinceId, new { @class = "col-md-2" })
+                                <div class="col-md-6">
                                     @Html.DropDownList("StateProvinceId", Model.AvailableStates, new { @class = "gray-dropdown" })
                                     <span id="states-loading-progress" style="display: none;" class="please-wait">@T("Common.Wait...")</span>
                                 </div>
                             </div>
                         }
                     </div>
-                </div>            
+                </div>
             }
             if (Model.PhoneEnabled || Model.FaxEnabled)
             {
@@ -370,14 +374,14 @@
                         @if (Model.PhoneEnabled)
                         {
                             <div class="form-group row">
-                                @Html.LabelFor(model => model.Phone, new { @class = "col-md-2" }, ":")
-                                <div class="col-md-6">    
+                                @Html.LabelFor(model => model.Phone, new { @class = "col-md-2" })
+                                <div class="col-md-6">
                                     @Html.TextBoxFor(model => model.Phone, new { @class = "gray-input" })
                                 </div>
                                 <div class="col-md-4">
                                     @if (Model.PhoneRequired)
                                     {
-                                        @Html.RequiredHint()
+                                        <nop-required />
                                     }
                                     @Html.ValidationMessageFor(model => model.Phone)
                                 </div>
@@ -386,14 +390,14 @@
                         @if (Model.FaxEnabled)
                         {
                             <div class="form-group row">
-                                @Html.LabelFor(model => model.Fax, new { @class = "col-md-2" }, ":")
-                                <div class="col-md-6">    
+                                @Html.LabelFor(model => model.Fax, new { @class = "col-md-2" })
+                                <div class="col-md-6">
                                     @Html.TextBoxFor(model => model.Fax, new { @class = "gray-input" })
                                 </div>
                                 <div class="col-md-4">
                                     @if (Model.FaxRequired)
                                     {
-                                        @Html.RequiredHint()
+                                        <nop-required />
                                     }
                                     @Html.ValidationMessageFor(model => model.Fax)
                                 </div>
@@ -413,10 +417,10 @@
                         {
                             <div class="form-group row">
                                 <div class="col-md-2">
-                                    @Html.LabelFor(model => model.Newsletter, new {@class = ""}, ":")
+                                    @Html.LabelFor(model => model.Newsletter, new { @class = "" })
                                 </div>
-                                <div class="col-md-6">    
-                                    @Html.EditorFor(model => model.Newsletter, new {@class = ""})
+                                <div class="col-md-6">
+                                    @Html.EditorFor(model => model.Newsletter, new { @class = "" })
                                 </div>
                                 <div class="col-md-4">
                                     @Html.ValidationMessageFor(model => model.Newsletter)
@@ -432,7 +436,7 @@
                 </div>
             }
             if (Model.AllowCustomersToSetTimeZone || Model.SignatureEnabled)
-            { 
+            {
                 <div class="fieldset">
                     <div id="legend">
                         <legend class="">@T("Account.Preferences")</legend>
@@ -441,9 +445,9 @@
                         @if (Model.AllowCustomersToSetTimeZone)
                         {
                             <div class="form-group row">
-                                @Html.LabelFor(model => model.TimeZoneId, new { @class = "col-md-2" }, ":")
-                                <div class="col-md-6">    
-                                    @Html.DropDownList("TimeZoneId", Model.AvailableTimeZones, new { @class = "gray-dropdown" })                                    
+                                @Html.LabelFor(model => model.TimeZoneId, new { @class = "col-md-2" })
+                                <div class="col-md-6">
+                                    @Html.DropDownList("TimeZoneId", Model.AvailableTimeZones, new { @class = "gray-dropdown" })
                                 </div>
                                 <div class="col-md-4">
                                     @Html.ValidationMessageFor(model => model.TimeZoneId)
@@ -454,10 +458,10 @@
                         {
                             <div class="form-group row">
                                 <div class="col-md-2">
-                                    @Html.LabelFor(model => model.Signature, new { @class = "" }, ":")
+                                    @Html.LabelFor(model => model.Signature, new { @class = "" })
                                 </div>
-                                <div class="col-md-6">    
-                                    @Html.TextAreaFor(model => model.Signature, new { @class = "gray-textarea" })                                  
+                                <div class="col-md-6">
+                                    @Html.TextAreaFor(model => model.Signature, new { @class = "gray-textarea" })
                                 </div>
                             </div>
                         }
@@ -467,13 +471,11 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="buttons pull-right">
-                    <input type="submit" value="@T("Common.Save")" name="save-info-button" class="button-1 register-next-step-button btn btn-primary" />
-                </div>    
+                        <input type="submit" value="@T("Common.Save")" name="save-info-button" class="button-1 register-next-step-button btn btn-primary" />
+                    </div>
                 </div>
-                
-            </div>
 
-            
+            </div>
         }
     </div>
 </div>

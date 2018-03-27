@@ -1,0 +1,86 @@
+﻿@mixin border-radius($radius) {
+    border-radius: $radius;
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+}
+
+@mixin add-border($size, $color, $position) {
+    @if $position == 'all' {
+        border: $size solid $color;
+    }
+    @else if $position == 'top' {
+        border-top: $size solid $color;
+    }
+    @else if $position == 'bottom' {
+        border-bottom: $size solid $color;
+    }
+    @else if $position == 'right' {
+        border-right: $size solid $color;
+    }
+    @else if $position == 'left' {
+        border-left: $size solid $color;
+    }
+    @else if $position == 'top-bottom' {
+        border-top: $size solid $color;
+        border-bottom: $size solid $color;
+    }
+    @else if $position == 'right-left' {
+        border-left: $size solid $color;
+        border-right: $size solid $color;
+    }
+}
+
+
+@mixin add-background($color) {
+    background: $color;
+
+    @if $color == $red or $color == $red-dark or $color == $red-light {
+        color: $white;
+    }
+
+    @if $color == $yellow or $color == $yellow-dark {
+        color: $white;
+    }
+}
+
+@mixin add-background-image($image-path) {
+    background-image: $image-path;
+}
+
+
+@mixin add-appearance($appearance) {
+    appearance: $appearance;
+    -ms-appearance: $appearance;
+    -moz-appearance: $appearance;
+    -webkit-appearance: $appearance;
+}
+
+@mixin add-transform($transform) {
+    transform: $transform;
+    -ms-transform: $transform;
+    -moz-transform: $transform;
+    -webkit-transform: $transform;
+}
+
+@mixin add-transition($transition) {
+    transition: $transition;
+    -ms-transition: $transition;
+    -moz-transition: $transition;
+    -webkit-transition: $transition;
+}
+
+@mixin add-box-sizing($sizing) {
+    box-sizing: $sizing;
+    -ms-box-sizing: $sizing;
+    -moz-box-sizing: $sizing;
+    -webkit-box-sizing: $sizing;
+}
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null, $z-index: 0) {
+    top: $top;
+    left: $left;
+    right: $right;
+    bottom: $bottom;
+    z-index: $z-index;
+    position: $position;
+}

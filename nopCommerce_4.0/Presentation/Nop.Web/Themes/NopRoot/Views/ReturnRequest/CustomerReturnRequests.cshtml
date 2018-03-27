@@ -9,7 +9,7 @@
 }
 @section left
 {
-    @Html.Action("CustomerNavigation", "Customer", new { selectedTabId = CustomerNavigationEnum.ReturnRequests })
+    @await Component.InvokeAsync("CustomerNavigation", new { selectedTabId = CustomerNavigationEnum.ReturnRequests })
 }
 <div class="page account-page return-request-list-page">
     <div class="panel panel-default form-panel">

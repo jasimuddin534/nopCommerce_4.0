@@ -3,23 +3,27 @@
 @{
     var selectedItem = Model.Items.FirstOrDefault(x => x.Selected);
 }
-@helper FormatPriceRangeText(CatalogPagingFilteringModel.PriceRangeFilterItem filterItem)
-{
-    string rangeText = "";
-    if (String.IsNullOrWhiteSpace(filterItem.From))
+@functions{
+
+    public string FormatPriceRangeText(CatalogPagingFilteringModel.PriceRangeFilterItem filterItem)
     {
-        rangeText = string.Format(T("Filtering.PriceRangeFilter.Under").Text, string.Format("<span class=\"PriceRange\">{0}</span>", filterItem.To));
+        var rangeText = "";
+        if (string.IsNullOrWhiteSpace(filterItem.From))
+        {
+            rangeText = string.Format(T("Filtering.PriceRangeFilter.Under").Text, $"<span class=\"PriceRange\">{filterItem.To}</span>");
+        }
+        else if (string.IsNullOrWhiteSpace(filterItem.To))
+        {
+            rangeText = string.Format(T("Filtering.PriceRangeFilter.Over").Text, $"<span class=\"PriceRange\">{filterItem.From}</span>");
+        }
+        else
+        {
+            rangeText = $"<span class=\"PriceRange\">{filterItem.From}</span> - <span class=\"PriceRange\">{filterItem.To}</span>";
+        }
+        return rangeText;
     }
-    else if (String.IsNullOrWhiteSpace(filterItem.To))
-    {
-        rangeText = string.Format(T("Filtering.PriceRangeFilter.Over").Text, string.Format("<span class=\"PriceRange\">{0}</span>", filterItem.From));
-    }
-    else
-    {
-        rangeText = string.Format("<span class=\"PriceRange\">{0}</span> - <span class=\"PriceRange\">{1}</span>", filterItem.From, filterItem.To);
-    }
-    <text>@Html.Raw(rangeText)</text>
 }
+
 @if (Model.Enabled)
 {
     <h2>@T("Filtering.PriceRangeFilter")</h2>
@@ -30,40 +34,28 @@
             foreach (var item in Model.Items)
             {
                 <div class="panel panel-default">
-                        
-
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a href="@item.FilterUrl">@FormatPriceRangeText(item)<i class="fa fa-angle-right pull-right"></i></a>
+                            <a href="@item.FilterUrl">
+                            @Html.Raw(FormatPriceRangeText(item))                            
+                            <i class="fa fa-angle-right pull-right"></i></a>
                         </h4>
                     </div>
-                        
-                
-
-                        
                 </div>
             }
         }else
             {
                 <div class="panel panel-default">
-                        
-
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                           <a href="@Model.RemoveFilterUrl" class="remove-price-range-filter">@FormatPriceRangeText(selectedItem)<br/>@T("Filtering.PriceRangeFilter.Remove")<i class="fa fa-times pull-right"></i></a>
+                           <a href="@Model.RemoveFilterUrl" class="remove-price-range-filter">
+                            @Html.Raw(FormatPriceRangeText(selectedItem))  
+                            <br/>@T("Filtering.PriceRangeFilter.Remove")<i class="fa fa-times pull-right"></i></a>
                         </h4>
                     </div>
-                        
-                
-
-                        
                 </div>
-
                 
             }
     </div>
-
-
-
-    
+       
 }

@@ -13,41 +13,24 @@
                               && (!storeInformationSettings.DisplayMiniProfilerForAdminOnly || permissionService.Authorize(StandardPermissionProvider.AccessAdminPanel));
 
     //NopShop Scripts
-
-    Html.AppendScriptParts("~/Themes/NopShop/Scripts/styleSheetToogle.js");
-
-
-    Html.AppendScriptParts("~/Themes/NopShop/Scripts/jquery.slimscroll.min.js");
-
-    Html.AppendScriptParts("~/Themes/NopShop/Scripts/html5shiv.js");
-
-    Html.AppendScriptParts("~/Themes/NopShop/Scripts/main.js");
-    Html.AppendScriptParts("~/Themes/NopShop/Scripts/jquery.prettyPhoto.js");
-    Html.AppendScriptParts("~/Themes/NopShop/Scripts/price-range.js");
-
-    Html.AppendScriptParts("~/Themes/NopShop/Scripts/jquery.scrollUp.min.js");
-    Html.AppendScriptParts("~/Scripts/jquery-ui-1.10.3.custom.min.js");
-    Html.AppendScriptParts("~/Themes/NopShop/Content/bootstrap-3.2.0/js/bootstrap.min.js");
-
-
-
-
+    Html.AppendScriptParts(ResourceLocation.Footer, "~/Themes/NopShop/Scripts/styleSheetToogle.js");
+    Html.AppendScriptParts(ResourceLocation.Footer, "~/Themes/NopShop/Scripts/jquery.slimscroll.min.js");
+    Html.AppendScriptParts(ResourceLocation.Footer, "~/Themes/NopShop/Scripts/html5shiv.js");
+    Html.AppendScriptParts(ResourceLocation.Footer, "~/Themes/NopShop/Scripts/main.js");
+    Html.AppendScriptParts(ResourceLocation.Footer, "~/Themes/NopShop/Scripts/jquery.prettyPhoto.js");
+    Html.AppendScriptParts(ResourceLocation.Footer, "~/Themes/NopShop/Scripts/price-range.js");
+    Html.AppendScriptParts(ResourceLocation.Footer, "~/Themes/NopShop/Scripts/jquery.scrollUp.min.js");
+    Html.AppendScriptParts(ResourceLocation.Footer, "~/lib/jquery-ui-1.10.3.custom.min.js");
+    Html.AppendScriptParts(ResourceLocation.Footer, "~/Themes/NopShop/Content/bootstrap-3.2.0/js/bootstrap.min.js");
 
     //resources
-
-
-    Html.AppendScriptParts("~/Scripts/public.ajaxcart.js");
-    Html.AppendScriptParts("~/Scripts/public.common.js");
-    Html.AppendScriptParts("~/Scripts/jquery-migrate-1.2.1.min.js");
-    Html.AppendScriptParts("~/Scripts/jquery.validate.unobtrusive.min.js");
-
-    Html.AppendScriptParts("~/Scripts/jquery.validate.min.js");
-    //Html.AppendScriptParts("~/Scripts/jquery.unobtrusive-ajax.min.js");
-
-    Html.AppendScriptParts("~/Scripts/jquery-1.10.2.min.js");
-
-
-
+    Html.AppendScriptParts(ResourceLocation.Footer, "~/js/public.ajaxcart.js");
+    Html.AppendScriptParts(ResourceLocation.Footer, "~/js/public.common.js");
+    Html.AppendScriptParts(ResourceLocation.Footer, "~/lib/jquery-migrate-1.2.1.min.js");
+    Html.AppendScriptParts(ResourceLocation.Footer, "~/lib/jquery.validate.unobtrusive.min.js");
+    Html.AppendScriptParts(ResourceLocation.Footer, "~/lib/jquery.validate.min.js");
+    //Html.AppendScriptParts(ResourceLocation.Footer, "~/lib/jquery.unobtrusive-ajax.min.js");
+    Html.AppendScriptParts(ResourceLocation.Footer, "~/lib/jquery-1.10.2.min.js");
 
 }
 <!DOCTYPE html>
@@ -65,30 +48,28 @@
     @Html.NopCssFiles(this.Url, ResourceLocation.Head)
     @Html.NopScripts(this.Url, ResourceLocation.Head)
     @Html.NopCanonicalUrls()
-    @*@await Component.InvokeAsync("RssHeaderLink")*@
+    @await Component.InvokeAsync("NewsRssHeaderLink")
+    @await Component.InvokeAsync("BlogRssHeaderLink")
     @*Favicon - upload favicon.ico file to the root directory*@
     @await Component.InvokeAsync("Favicon")
     @if (displayMiniProfiler)
     {
         <mini-profiler />
     }
-    
+
     <!--Powered by nopCommerce - http://www.nopCommerce.com-->
     <!--Copyright (c) 2008-2013-->
-     @*[if lt IE 9]>*@
-      <script src="~/Themes/NopShop/Scripts/html5shiv.js"></script>
-      <script src="~/Themes/NopShop/Scripts/respond.min.js"></script>
+    @*[if lt IE 9]>*@
+    <script src="~/Themes/NopShop/Scripts/html5shiv.js"></script>
+    <script src="~/Themes/NopShop/Scripts/respond.min.js"></script>
     @*<![endif]*@
 
 
 </head>
-    <body>
-        
-        @RenderBody()
-
-        @*@Html.NopCssFiles(this.Url, ResourceLocation.Foot)
-        @Html.NopScripts(this.Url, ResourceLocation.Foot)*@
-
-
-    </body>
+<body>
+    @RenderBody()
+    @Html.NopCssFiles(this.Url, ResourceLocation.Footer)
+    @Html.NopScripts(this.Url, ResourceLocation.Footer)
+    @Html.NopInlineScripts(this.Url, ResourceLocation.Footer)
+</body>
 </html>

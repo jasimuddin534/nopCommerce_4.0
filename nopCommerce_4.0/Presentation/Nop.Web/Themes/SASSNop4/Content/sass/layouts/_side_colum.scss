@@ -1,0 +1,228 @@
+﻿
+/*********** SIDE COLUMN ***********/
+
+
+
+.block {
+    max-width: 600px; /*width limit in mobile*/
+    min-height: 50px;
+    margin: auto;
+    text-align: left;
+
+    .title {
+        position: relative;
+        margin: 0 0 10px;
+        border-bottom: 1px solid $gray;
+        background: #f6f6f6 url('../images/toggle-gray.png') right 14px no-repeat;
+        padding: 12px 30px 12px 10px;
+        font-size: 20px;
+        color: $black;
+        cursor: pointer;
+
+        strong {
+            font-weight: normal;
+        }
+    }
+
+    .listbox {
+        display: none;
+        border-bottom: 1px solid $gray;
+        padding: 10px 5px;
+    }
+
+    .list {
+        li {
+            padding: 5px 0 5px 15px;
+        }
+
+        a {
+            display: inline-block;
+            position: relative;
+            padding: 5px 0;
+            font-size: 16px;
+            color: $black;
+            -webkit-transition: all 0.1s ease;
+            transition: all 0.1s ease;
+
+            &:hover {
+                color: #4ab2f1;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 12px;
+                left: -15px;
+                width: 5px;
+                height: 5px;
+                background-color: $gray;
+            }
+        }
+
+        .active > a {
+            color: #4ab2f1;
+        }
+    }
+
+    a.product-picture {
+        display: none;
+    }
+
+    a.product-picture:before {
+        display: none;
+    }
+
+    .sublist {
+        margin: 15px 0 5px;
+
+        a {
+            font-size: 14px;
+        }
+    }
+
+    .view-all {
+        margin: 10px 0 0;
+
+        a {
+            display: inline-block;
+            padding: 10px 15px;
+            font-size: 16px;
+            color: #4ab2f1;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .tags {
+        margin: 5px 0 10px;
+
+        ul {
+            font-size: 0;
+        }
+
+        li {
+            display: inline-block;
+            position: relative;
+            margin: 0 10px;
+            overflow: hidden;
+            font-size: 17px !important; /*setting base size*/
+            a {
+                float: left;
+                line-height: 30px;
+                color: $black;
+
+                &:hover {
+                    color: #4ab2f1;
+                }
+            }
+        }
+    }
+}
+
+
+.product-tags-all-page {
+    li {
+        display: inline-block;
+        position: relative;
+        margin: 0 10px;
+        overflow: hidden;
+        font-size: 17px !important; /*setting base size*/
+        a {
+            float: left;
+            line-height: 30px;
+            color: $black;
+
+            &:hover {
+                color: #4ab2f1;
+            }
+        }
+    }
+}
+
+.poll {
+    strong {
+        display: block;
+        margin: 10px 0;
+        background-color: #f6f6f6;
+        padding: 10px 15px;
+        font-size: 15px;
+        font-weight: normal;
+        color: $black;
+        text-transform: uppercase;
+    }
+
+    .buttons {
+        input {
+            border: none;
+            background-color: #aaa;
+            padding: 10px 20px;
+            font-size: 13px;
+            color: $white;
+            text-transform: uppercase;
+
+            &:hover {
+                background-color: #bbb;
+            }
+        }
+    }
+}
+
+.poll-options,
+.poll-results {
+    margin: 10px 0 15px;
+    overflow: hidden;
+    font-size: 15px;
+    color: $black;
+
+    li {
+        margin: 10px 0;
+    }
+}
+
+
+.poll-options {
+    li {
+        > input {
+            margin: 0 5px 0 0;
+            cursor: pointer;
+        }
+
+        > label {
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    }
+}
+
+.poll-total-votes {
+    display: block;
+    margin: 10px 0 0;
+    font-weight: bold;
+    font-style: italic;
+    color: $black;
+}
+
+.home-page-polls {
+    text-align: center;
+
+    .title {
+        border-bottom: 1px solid $gray;
+        color: $black;
+        font-size: 30px;
+        font-weight: normal;
+        margin: 0 0 30px;
+        padding: 0 0 15px;
+
+        strong {
+            font-weight: normal;
+        }
+    }
+
+    li {
+        display: inline-block;
+        margin: 10px;
+    }
+}

@@ -1,0 +1,200 @@
+﻿/*********** FOOTER ***********/
+
+.footer {
+    background-color: #eee;
+    text-align: center;
+}
+
+.footer-upper {
+    width: 95%;
+    margin: auto;
+    border-bottom: 1px solid $gray;
+    overflow: hidden;
+    padding: 40px 0;
+    font-size: 0;
+}
+
+.footer-block {
+    width: 95%;
+    margin: 1px auto;
+    text-align: left;
+    font-size: 14px; /*reset zeroing*/
+    .title {
+        margin: 0 0 1px;
+        background: #4ab2f1 url('../images/toggle-white.png') right center no-repeat;
+        padding: 10px 15px;
+        font-size: 20px;
+        color: $white;
+        cursor: pointer;
+
+        strong {
+            font-weight: normal;
+        }
+    }
+
+    .list {
+        display: none;
+        margin: 0 0 20px;
+        background-color: $white;
+        padding: 10px 15px;
+
+        a {
+            display: block;
+            padding: 10px 15px;
+            line-height: 20px;
+
+            &:hover {
+                color: #4ab2f1;
+            }
+        }
+    }
+}
+
+.follow-us {
+    margin: 30px auto 0;
+    text-align: center;
+
+    .title {
+        margin: 0 0 10px;
+        background: none;
+        color: $black;
+        cursor: auto;
+    }
+
+    .social {
+        ul {
+            margin: 0 0 30px;
+            border-bottom: 1px solid $gray;
+            padding: 0 0 30px;
+            font-size: 0;
+
+            li {
+                display: inline-block;
+                margin: 0 5px;
+            }
+        }
+
+        a {
+            display: block;
+            width: 38px;
+            height: 38px;
+            background: url('../images/social-sprite.png') no-repeat;
+            font-size: 0;
+        }
+
+        .facebook {
+            a {
+                background-position: 0 0;
+            }
+        }
+
+        .twitter {
+            a {
+                background-position: -38px 0;
+            }
+        }
+
+        .rss {
+            a {
+                background-position: -76px 0;
+            }
+        }
+
+        .youtube {
+            a {
+                background-position: -114px 0;
+            }
+        }
+
+        .google-plus {
+            a {
+                background-position: -152px 0;
+            }
+        }
+    }
+}
+
+.newsletter-email {
+    display: inline-block;
+    overflow: hidden;
+
+    input[type="email"] {
+        float: left;
+        width: 180px;
+        height: 36px;
+        margin: 0 -1px 0 0;
+    }
+
+    .options {
+        clear: both;
+        padding: 10px 0 0;
+    }
+}
+
+.newsletter-subscribe-button {
+    float: left;
+    height: 36px;
+    border: none;
+    background-color: #4ab2f1;
+    padding: 0 15px;
+    text-align: center;
+    color: $white;
+    text-transform: uppercase;
+
+    &:hover {
+        background-color: #248ece;
+    }
+}
+
+
+
+.newsletter-validation,
+.newsletter-result {
+    width: 100%;
+    overflow: hidden;
+    line-height: 28px;
+}
+/*.newsletter-validation .please-wait {
+	display: none !important; 
+}*/
+
+.footer-lower {
+    width: 95%;
+    margin: auto;
+    overflow: hidden;
+    padding: 25px 0;
+    font-size: 12px;
+}
+
+.footer-tax-shipping {
+    a {
+        font-weight: bold;
+        color: #4ab2f1;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+
+.footer-powered-by {
+    margin: 10px 0 0;
+
+    a {
+        font-weight: bold;
+        color: #4ab2f1;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.theme-selector {
+    margin: 10px 0 0;
+
+    select {
+        width: 170px;
+    }
+}

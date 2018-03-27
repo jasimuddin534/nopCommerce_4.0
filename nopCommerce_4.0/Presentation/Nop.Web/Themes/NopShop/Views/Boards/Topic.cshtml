@@ -3,11 +3,11 @@
 @using Nop.Web.Models.Boards;
 @using Nop.Web.Models.Common;
 @{
-    Layout = "~/Views/Shared/_ColumnsOne.cshtml";
+    Layout = "_ColumnsOne";
 
     Html.AddTitleParts(Model.Subject);
 }
-<script type="text/javascript">
+<script type="text/javascript" asp-location="Footer">
     function handleTopicWatch(context) {
         $('#watch-topic-top').text(context.Text);
         $('#watch-topic-bottom').text(context.Text);
@@ -37,11 +37,11 @@
 <div class="container forum-group-search-div">
     <div class="row">
         <div class="col-md-9">
-            @Html.Action("ForumBreadcrumb", new { forumTopicId = Model.Id })
+            @await Component.InvokeAsync("ForumBreadcrumb", new { forumTopicId = Model.Id })
         </div>
      
         <div class="col-md-3">
-            @Html.Partial("_SearchBox")
+            @await Html.PartialAsync("_SearchBox")
         </div>
     </div>
 </div>
@@ -71,7 +71,7 @@
                     @if (Model.IsCustomerAllowedToSubscribe)
                     {
                         <a class="btn btn-primary" href="#" id="watch-topic-top"><i class="fa fa-eye"></i>&nbsp; @Model.WatchTopicText</a>
-                        <script type="text/javascript">
+                        <script type="text/javascript" asp-location="Footer">
                             $(function () {
                                 $('#watch-topic-top').click(function () {
                                     $.ajax({

@@ -1,7 +1,7 @@
 ﻿@model CheckoutShippingMethodModel
 @using Nop.Web.Models.Checkout;
 <div>
-    @Html.Widget("op_checkout_shipping_method_top")
+    @await Component.InvokeAsync("Widget", new { widgetZone = "op_checkout_shipping_method_top" })
     <div>
         @if (Model.Warnings.Count == 0)
         {
@@ -36,5 +36,5 @@
             </div>
         }
     </div>
-    @Html.Widget("op_checkout_shipping_method_bottom")
+    @await Component.InvokeAsync("Widget", new { widgetZone = "op_checkout_shipping_method_bottom" })
 </div>

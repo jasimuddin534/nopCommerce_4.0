@@ -1,0 +1,101 @@
+﻿
+@media all and (max-width: 1000px) {
+    /*** MOBILE NAVIGATION ***/
+    .header-menu {
+        position: relative;
+        z-index: 1;
+        width: 90%;
+        max-width: 600px;
+        margin: 0 auto 40px;
+    }
+
+    .menu-toggle {
+        background: #4ab2f1 url('../images/menu-icon.png') right center no-repeat;
+        padding: 15px;
+        font-size: 15px;
+        font-weight: bold;
+        color: $white;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+
+    .top-menu {
+        display: none;
+
+        > li {
+            position: relative;
+            margin: 1px 0;
+            background-color: #f6f6f6;
+
+            > a {
+                display: block;
+                min-height: 55px;
+                padding: 18px;
+                font-size: 15px;
+                color: #555;
+            }
+        }
+
+        .sublist {
+            display: none;
+            background-color: $white;
+            padding: 5px 0;
+
+            li {
+                position: relative;
+                margin: 1px 0 1px 20px;
+
+                a {
+                    display: block;
+                    padding: 15px 18px;
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+
+
+
+    .sublist-toggle {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 55px;
+        height: 55px;
+        border-left: 1px solid $white;
+        background: url('../images/toggle-black.png') center no-repeat;
+        padding: 15px;
+        font-size: 15px;
+        font-weight: bold;
+        color: $white;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+
+    .sublist {
+        .sublist-toggle {
+            height: 49px;
+        }
+
+        .sublist {
+            li {
+                background-color: #f6f6f6;
+            }
+
+            .sublist {
+                li {
+                    background-color: $white;
+                }
+            }
+        }
+    }
+
+    .block-category-navigation {
+        display: none;
+    }
+
+    .block-account-navigation {
+        float: none;
+        margin: auto !important;
+    }
+}

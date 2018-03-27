@@ -3,7 +3,7 @@
 @using Nop.Services.Helpers
 @using Nop.Web.Models.Boards;
 @{
-    Layout = "~/Views/Shared/_ColumnsOne.cshtml";
+    Layout = "_ColumnsOne";
 
     Html.AddTitleParts(T("Forum.PageTitle.Default").Text);
 }
@@ -16,8 +16,7 @@
         
         <div class="row">
             <div class="col-sm-12 ">
-                @Html.Action("TopicBlock", "Topic", new { systemName = "ForumWelcomeMessage" })
-
+                @await Component.InvokeAsync("TopicBlock", new { systemName = "ForumWelcomeMessage" })
             </div> 
         </div>
 
@@ -38,7 +37,7 @@
 								
                 </div>
                 <div class="col-md-offset-5 col-md-3 pull-right">
-                    @Html.Partial("_SearchBox")
+                    @Html.PartialAsync("_SearchBox")
                 </div>
             </div>    
         </div>

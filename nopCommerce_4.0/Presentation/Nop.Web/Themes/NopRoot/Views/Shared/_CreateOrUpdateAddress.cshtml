@@ -3,7 +3,7 @@
 
 @if (Model.CountryEnabled && Model.StateProvinceEnabled)
 {
-    <script type="text/javascript">
+    <script type="text/javascript" asp-location="Footer">
         $(function () {
             $("#@Html.IdFor(model => model.CountryId)").change(function () {
                 var selectedItem = $(this).val();
@@ -34,10 +34,10 @@
 @Html.HiddenFor(model => model.Id)
 <div class="form-horizontal">
     <div class="form-group inputs">
-        @*@Html.LabelFor(model => model.FirstName, new { })
-                @Html.EditorFor(model => model.FirstName)
-            @Html.RequiredHint()
-            @Html.ValidationMessageFor(model => model.FirstName)*@
+                @*@Html.LabelFor(model => model.FirstName, new { })
+            @Html.EditorFor(model => model.FirstName)
+        <nop-required />
+        @Html.ValidationMessageFor(model => model.FirstName)*@
 
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-right">
             @Html.LabelFor(model => model.FirstName, new { @class = "control-label" })
@@ -51,10 +51,10 @@
         </div>
     </div>
     <div class="form-group inputs">
-        @*@Html.LabelFor(model => model.LastName, new { })
-                @Html.EditorFor(model => model.LastName)
-            @Html.RequiredHint()
-            @Html.ValidationMessageFor(model => model.LastName)*@
+                @*@Html.LabelFor(model => model.LastName, new { })
+            @Html.EditorFor(model => model.LastName)
+        <nop-required />
+        @Html.ValidationMessageFor(model => model.LastName)*@
 
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-right">
             @Html.LabelFor(model => model.LastName, new { @class = "control-label" })
@@ -68,10 +68,10 @@
         </div>
     </div>
     <div class="form-group inputs">
-        @* @Html.LabelFor(model => model.Email, new { })
-                @Html.EditorFor(model => model.Email)
-            @Html.RequiredHint()
-            @Html.ValidationMessageFor(model => model.Email)*@
+                @* @Html.LabelFor(model => model.Email, new { })
+            @Html.EditorFor(model => model.Email)
+        <nop-required />
+        @Html.ValidationMessageFor(model => model.Email)*@
 
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-right">
             @Html.LabelFor(model => model.Email, new { @class = "control-label" })
@@ -87,13 +87,13 @@
     @if (Model.CompanyEnabled)
     {
         <div class="form-group inputs">
-            @*@Html.LabelFor(model => model.Company, new { })
-                    @Html.EditorFor(model => model.Company)
-                @if (Model.CompanyRequired)
-                {
-                    @Html.RequiredHint()
-                }
-                @Html.ValidationMessageFor(model => model.Company)*@
+                        @*@Html.LabelFor(model => model.Company, new { })
+            @Html.EditorFor(model => model.Company)
+        @if (Model.CompanyRequired)
+        {
+            <nop-required />
+        }
+        @Html.ValidationMessageFor(model => model.Company)*@
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-right">
                 @Html.LabelFor(model => model.Company, new { @class = "control-label" })
@@ -113,10 +113,10 @@
     @if (Model.CountryEnabled)
     {
         <div class="form-group inputs">
-            @* @Html.LabelFor(model => model.CountryId, new { })
-                    @Html.DropDownListFor(model => model.CountryId, Model.AvailableCountries)
-                @Html.RequiredHint()
-                @Html.ValidationMessageFor(model => model.CountryId)*@
+                        @* @Html.LabelFor(model => model.CountryId, new { })
+            @Html.DropDownListFor(model => model.CountryId, Model.AvailableCountries)
+        <nop-required />
+        @Html.ValidationMessageFor(model => model.CountryId)*@
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-right">
                 @Html.LabelFor(model => model.CountryId, new { @class = "control-label" })
@@ -155,14 +155,14 @@
     @if (Model.CityEnabled)
     {
         <div class="form-group inputs">
-            @* @Html.LabelFor(model => model.City, new { })
-                    @Html.EditorFor(model => model.City)
+                        @* @Html.LabelFor(model => model.City, new { })
+            @Html.EditorFor(model => model.City)
 
-                @if (Model.CityRequired)
-                {
-                    @Html.RequiredHint()
-                }
-                @Html.ValidationMessageFor(model => model.City)*@
+        @if (Model.CityRequired)
+        {
+            <nop-required />
+        }
+        @Html.ValidationMessageFor(model => model.City)*@
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-right">
                 @Html.LabelFor(model => model.City, new { @class = "control-label" })
@@ -182,13 +182,13 @@
     @if (Model.StreetAddressEnabled)
     {
         <div class="form-group inputs">
-            @*@Html.LabelFor(model => model.Address1, new { })
-                    @Html.EditorFor(model => model.Address1)
-                @if (Model.StreetAddressRequired)
-                {
-                    @Html.RequiredHint()
-                }
-                @Html.ValidationMessageFor(model => model.Address1)*@
+                        @*@Html.LabelFor(model => model.Address1, new { })
+            @Html.EditorFor(model => model.Address1)
+        @if (Model.StreetAddressRequired)
+        {
+            <nop-required />
+        }
+        @Html.ValidationMessageFor(model => model.Address1)*@
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-right">
                 @Html.LabelFor(model => model.Address1, new { @class = "control-label" })
@@ -208,13 +208,13 @@
     @if (Model.StreetAddress2Enabled)
     {
         <div class="form-group inputs">
-            @*@Html.LabelFor(model => model.Address2, new { })
-                    @Html.EditorFor(model => model.Address2)
-                @if (Model.StreetAddress2Required)
-                {
-                    @Html.RequiredHint()
-                }
-                @Html.ValidationMessageFor(model => model.Address2)*@
+                        @*@Html.LabelFor(model => model.Address2, new { })
+            @Html.EditorFor(model => model.Address2)
+        @if (Model.StreetAddress2Required)
+        {
+            <nop-required />
+        }
+        @Html.ValidationMessageFor(model => model.Address2)*@
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-right">
                 @Html.LabelFor(model => model.Address2, new { @class = "control-label" })
@@ -234,13 +234,13 @@
     @if (Model.ZipPostalCodeEnabled)
     {
         <div class="form-group inputs">
-            @*@Html.LabelFor(model => model.ZipPostalCode, new { })
-                    @Html.EditorFor(model => model.ZipPostalCode)
-                @if (Model.ZipPostalCodeRequired)
-                {
-                    @Html.RequiredHint()
-                }
-                @Html.ValidationMessageFor(model => model.ZipPostalCode)*@
+                        @*@Html.LabelFor(model => model.ZipPostalCode, new { })
+            @Html.EditorFor(model => model.ZipPostalCode)
+        @if (Model.ZipPostalCodeRequired)
+        {
+            <nop-required />
+        }
+        @Html.ValidationMessageFor(model => model.ZipPostalCode)*@
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-right">
                 @Html.LabelFor(model => model.ZipPostalCode, new { @class = "control-label" })
@@ -260,13 +260,13 @@
     @if (Model.PhoneEnabled)
     {
         <div class="form-group inputs">
-            @*@Html.LabelFor(model => model.PhoneNumber, new { })
-                    @Html.EditorFor(model => model.PhoneNumber)
-                @if (Model.PhoneRequired)
-                {
-                    @Html.RequiredHint()
-                }
-                @Html.ValidationMessageFor(model => model.PhoneNumber)*@
+                        @*@Html.LabelFor(model => model.PhoneNumber, new { })
+            @Html.EditorFor(model => model.PhoneNumber)
+        @if (Model.PhoneRequired)
+        {
+            <nop-required />
+        }
+        @Html.ValidationMessageFor(model => model.PhoneNumber)*@
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-right">
                 @Html.LabelFor(model => model.PhoneNumber, new { @class = "control-label" })
@@ -286,13 +286,13 @@
     @if (Model.FaxEnabled)
     {
         <div class="form-group inputs">
-            @* @Html.LabelFor(model => model.FaxNumber, new { })
-                    @Html.EditorFor(model => model.FaxNumber)
-                @if (Model.FaxRequired)
-                {
-                    @Html.RequiredHint()
-                }
-                @Html.ValidationMessageFor(model => model.FaxNumber)*@
+                        @* @Html.LabelFor(model => model.FaxNumber, new { })
+            @Html.EditorFor(model => model.FaxNumber)
+        @if (Model.FaxRequired)
+        {
+            <nop-required />
+        }
+        @Html.ValidationMessageFor(model => model.FaxNumber)*@
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-right">
                 @Html.LabelFor(model => model.FaxNumber, new { @class = "control-label" })

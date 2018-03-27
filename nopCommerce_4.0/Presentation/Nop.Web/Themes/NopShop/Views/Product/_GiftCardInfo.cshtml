@@ -6,7 +6,7 @@
     <div class="giftcard">
         <div class="form-group row">
             <div class="col-md-4">
-                 @Html.LabelFor(model => model.RecipientName, new { }, ":")               
+                 @Html.LabelFor(model => model.RecipientName, new { })               
             </div>
             <div class="col-md-8">
                 @Html.TextBoxFor(model => model.RecipientName, new { @class = "recipient-name " })
@@ -16,7 +16,7 @@
         {
             <div class="form-group row">
                 <div class="col-md-4">
-                    @Html.LabelFor(model => model.RecipientEmail, new { }, ":")           
+                    @Html.LabelFor(model => model.RecipientEmail, new { })           
                 </div>
                 <div class="col-md-8">
                     @Html.TextBoxFor(model => model.RecipientEmail, new { @class = "recipient-email" })
@@ -25,7 +25,7 @@
         }
         <div class="form-group row">
                 <div class="col-md-4">
-                    @Html.LabelFor(model => model.SenderName, new { }, ":")         
+                    @Html.LabelFor(model => model.SenderName, new { })         
                 </div>
                 <div class="col-md-8">
                     @Html.TextBoxFor(model => model.SenderName, new { @class = "sender-name " })
@@ -35,7 +35,7 @@
         {
             <div class="form-group row">
                 <div class="col-md-4">
-                    @Html.LabelFor(model => model.SenderEmail, new { }, ":")        
+                    @Html.LabelFor(model => model.SenderEmail, new { })        
                 </div>
                 <div class="col-md-8">
                     @Html.TextBoxFor(model => model.SenderEmail, new { @class = "sender-email " })
@@ -44,7 +44,7 @@
         }
         <div class="form-group row">
                 <div class="col-md-4">
-                    @Html.LabelFor(model => model.Message, new { }, ":")     
+                    @Html.LabelFor(model => model.Message, new { })     
                 </div>
                 <div class="col-md-8">
                     @Html.TextAreaFor(model => model.Message, new { @class = "", rows="5",cols="2" })

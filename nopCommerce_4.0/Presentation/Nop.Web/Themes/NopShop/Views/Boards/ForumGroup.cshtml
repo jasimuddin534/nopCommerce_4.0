@@ -1,29 +1,27 @@
 ﻿@model ForumGroupModel
 @using Nop.Web.Models.Boards;
 @{
-    Layout = "~/Views/Shared/_ColumnsOne.cshtml";
+    Layout = "_ColumnsOne";
 
     Html.AddTitleParts(Model.Name);
 }
 <div class="container forum-group-search-div">
     <div class="row">
         <div class="col-md-9">
-            @Html.Action("ForumBreadcrumb", new { forumGroupId = Model.Id })
-
+            @await Component.InvokeAsync("ForumBreadcrumb", new { forumGroupId = Model.Id })
         </div>
         <div class="col-md-3">
-             @Html.Partial("_SearchBox")
+             @Html.PartialAsync("_SearchBox")
         </div>
     </div>
 </div>
-
 
        
 <div class="container">
     <div class="row forums-page-header">
         <div class="col-md-12">
             <div class="page">
-                @Html.Partial("_ForumGroup", Model)
+                @await Html.PartialAsync("_ForumGroup", Model)
             </div>
         </div>
     </div>

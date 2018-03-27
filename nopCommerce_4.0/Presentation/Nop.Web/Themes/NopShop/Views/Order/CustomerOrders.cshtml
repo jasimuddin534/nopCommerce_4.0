@@ -1,6 +1,6 @@
 ﻿@model CustomerOrderListModel
 @{
-    Layout = "~/Views/Shared/_ColumnsTwo.cshtml";
+    Layout = "_ColumnsTwo";
 
     //title
     Html.AddTitleParts(T("PageTitle.Account").Text);
@@ -9,7 +9,7 @@
 @using Nop.Web.Models.Order;
 @section left
 {
-    @Html.Action("CustomerNavigation", "Customer", new { selectedTabId = CustomerNavigationEnum.Orders })
+    @await Component.InvokeAsync("CustomerNavigation", new { selectedTabId = CustomerNavigationEnum.Orders })
 }
 <div class="features_items my-account-page">
     <h2 class="title text-center">@T("Account.MyAccount") - @T("Account.CustomerOrders")</h2>
@@ -92,11 +92,11 @@
                     
                 </div>
             }
-            if (Model.CancelRecurringPaymentErrors.Count > 0)
+            if (Model.RecurringPaymentErrors.Any())
             {
-                <div class="alert alert-danger message-error">
+                <div class="message-error">
                     <ul>
-                        @foreach (var error in Model.CancelRecurringPaymentErrors)
+                        @foreach (var error in Model.RecurringPaymentErrors)
                         {
                             <li>@error</li>
                         }

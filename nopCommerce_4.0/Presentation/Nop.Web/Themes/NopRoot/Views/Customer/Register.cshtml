@@ -395,7 +395,7 @@
             </div>
             @if (Model.AcceptPrivacyPolicyEnabled)
             {
-                <script type="text/javascript">
+                <script type="text/javascript" asp-location="Footer">
                     $(document).ready(function () {
                         $('#register-button').click(function () {
                             if ($('#accept-privacy-policy').is(':checked')) {

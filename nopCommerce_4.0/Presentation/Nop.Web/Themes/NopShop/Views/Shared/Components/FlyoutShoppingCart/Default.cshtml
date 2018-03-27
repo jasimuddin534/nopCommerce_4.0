@@ -58,7 +58,7 @@
             <div class="buttons">
                 @if (Model.DisplayShoppingCartButton)
                 {
-                    <input type="button" value="@T("ShoppingCart.Mini.ViewCart")" class="btn btn-default" onclick="setLocation('@(Url.RouteUrl("ShoppingCart"))')" />
+                    <input type="button" value="@T("ShoppingCart.Mini.ViewCart")" class="margin-top-none btn btn-primary" onclick="setLocation('@(Url.RouteUrl("ShoppingCart"))')" />
                     
                 }
                 @if (Model.DisplayCheckoutButton)
@@ -72,7 +72,7 @@
                     {
                         checkoutUrl = Url.RouteUrl("Checkout");
                     }
-                    <input type="button" value="@T("Checkout.Button")" class="btn btn-default" onclick="setLocation('@checkoutUrl')" />
+                    <input type="button" value="@T("Checkout.Button")" class="margin-top-none btn btn-primary" onclick="setLocation('@checkoutUrl')" />
                 }
             </div>
         }

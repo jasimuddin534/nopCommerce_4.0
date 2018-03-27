@@ -12,7 +12,7 @@
     <div id="helpfulness-vote-result-@(Model.ProductReviewId)" class="result text-info"></div>
 
     
-    <script type="text/javascript">
+    <script type="text/javascript" asp-location="Footer">
         $(document).ready(function () {
             $('#vote-yes-@(Model.ProductReviewId)').click(function () {
                 setProductReviewHelpfulness@(Model.ProductReviewId)('true');

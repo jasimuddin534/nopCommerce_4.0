@@ -8,19 +8,19 @@
 @if (Model.AvailableLanguages.Count > 1)
 {
     var rawUrl = webHelper.GetRawUrl(httpContextAccessor.HttpContext.Request);
-  if (Model.UseImages)
+    if (Model.UseImages)
     {
-       
+
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" href="#">
                 @foreach (var lang in Model.AvailableLanguages)
                 {
-                    if(lang.Id == Model.CurrentLanguageId)
+                    if (lang.Id == Model.CurrentLanguageId)
                     {
-                        <img  src="@Url.Content("~/Content/Images/flags/" + @lang.FlagImageFileName) " />
+                        <img src="@Url.Content("~/Content/Images/flags/" + @lang.FlagImageFileName) " />
                     }
-                
-                }                
+
+                }
 
                 <i class="fa fa-angle-down"></i>
             </a>
@@ -29,17 +29,17 @@
                 @foreach (var lang in Model.AvailableLanguages)
                 {
                     <li>
-                        <a href="@webHelper.ModifyQueryString(Url.RouteUrl("ChangeLanguage", new {langid = lang.Id}), "returnurl=" + WebUtility.UrlEncode(rawUrl), null)" title="@lang.Name">
+                        <a href="@webHelper.ModifyQueryString(Url.RouteUrl("ChangeLanguage", new { langid = lang.Id }), "returnurl=" + WebUtility.UrlEncode(rawUrl), null)" title="@lang.Name">
                             <img title='@lang.Name' alt='@lang.Name' @(lang.Id == Model.CurrentLanguageId ? " class=selected" : null)
-                                 src="@Url.Content("~/images/flags/" + @lang.FlagImageFileName) "/>
+                                 src="@Url.Content("~/images/flags/" + @lang.FlagImageFileName) " />
                         </a>
-                       
+
                     </li>
                 }
             </ul>
         </li>
 
- 
+
     }
     else
     {
@@ -53,25 +53,26 @@
         @*@Html.DropDownList("customerlanguage", languages, new { onchange = "setLocation(this.value);" })*@
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" href="#">
-                @foreach(var just_language in languages)
+                @foreach (var just_language in languages)
                 {
-                    if(just_language.Selected==true)
+                    if (just_language.Selected == true)
                     {
                         @just_language.Text
                     }
                 }
                 <i class="fa fa-angle-down"></i>
             </a>
-            <ul class="dropdown-menu" >
-        
-                @foreach(var language in languages)
+            <ul class="dropdown-menu">
+
+                @foreach (var language in languages)
                 {
-                    <li><a href="@language.Value" >@language.Text</a></li>
-            
-                }     
+                    <li><a href="@language.Value">@language.Text</a></li>
+
+                }
 
             </ul>
         </li>
 
     }
+
 }

@@ -1,6 +1,6 @@
 ﻿@model ProductsByTagModel
 @{
-    Layout = "~/Views/Shared/_ColumnsTwo.cshtml";
+    Layout = "_ColumnsTwo";
 
     //title
     Html.AddTitleParts(string.Format(T("PageTitle.ProductsByTag").Text, Model.TagName));
@@ -13,12 +13,7 @@
     <div class="custom-page-box-border-less-div">
          <div class="row">
             <div class="col-md-12">
-                                      
-            
                 <div class="product-selectors clearfix">
-                   
-
-                            
                     @*view mode*@
                     @if (Model.PagingFilteringContext.AllowProductViewModeChanging && Model.Products.Count > 0)
                     {
@@ -31,16 +26,9 @@
                                             <li><a>@T("Catalog.ViewMode")</a></li>
                                         </ol>
                                     </div>
-
                                 </div>
-																			
-
-																			
-
-
                                 <div class="col-md-6 remove_left_padding form-two text-left">
                                     <form class="pull-left">@Html.DropDownList("products-viewmode", Model.PagingFilteringContext.AvailableViewModes, new { @class = "", onchange = "setLocation(this.value);" })</form>
-                                    
                                 </div>
                             </div>
                         </div>
@@ -57,10 +45,6 @@
                                         </ol>
                                     </div>
                                 </div>
-
-
-                                
-
                                 <div class="col-md-8 remove_left_padding form-two">
                                     <form class="pull-left">@Html.DropDownList("products-orderby", Model.PagingFilteringContext.AvailableSortOptions, new { @class = "", onchange = "setLocation(this.value);" })</form>
                                 </div>
@@ -149,11 +133,5 @@
             </div>
            
         </div>
-
-
     </div>
 </div>
-
-
-
-

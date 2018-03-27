@@ -25,7 +25,7 @@
         </li>
         if (!string.IsNullOrEmpty(Model.AlertMessage))
         {
-            <script type="text/javascript">
+            <script type="text/javascript" asp-location="Footer">
                 $(document).ready(function () {
                     $('#notificationModal').modal('show');
                 });

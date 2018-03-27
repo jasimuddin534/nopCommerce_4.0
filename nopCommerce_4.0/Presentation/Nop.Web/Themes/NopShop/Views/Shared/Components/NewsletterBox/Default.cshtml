@@ -1,12 +1,12 @@
 ﻿@model NewsletterBoxModel
 <div class="newsletter">
-    <div class="title">
+    @*<div class="title">
         <strong>@T("Newsletter.Title")</strong>
-    </div>
+    </div>*@
     <div class="newsletter-subscribe" id="newsletter-subscribe-block">
         <div class="newsletter-email">
             <input asp-for="NewsletterEmail" id="newsletter-email" class="newsletter-subscribe-text" placeholder=@T("Newsletter.Email.Placeholder")/>
-            <input type="button" value="@T(Model.AllowToUnsubscribe ? "Newsletter.Options.Send" : "Newsletter.Options.Subscribe")" id="newsletter-subscribe-button" class="button-1 newsletter-subscribe-button"/>
+            <input type="button" value="@T(Model.AllowToUnsubscribe ? "Newsletter.Options.Send" : "Newsletter.Options.Subscribe")" id="newsletter-subscribe-button" class="button-1 newsletter-subscribe-button btn btn-primary"/>
             @if (Model.AllowToUnsubscribe)
             {
                 <div class="options">
@@ -27,7 +27,7 @@
         </div>
     </div>
     <div class="newsletter-result" id="newsletter-result-block"></div>
-    <script type="text/javascript">
+    <script type="text/javascript" asp-location="Footer">
         function newsletter_subscribe(subscribe) {
             var subscribeProgress = $("#subscribe-loading-progress");
             subscribeProgress.show();

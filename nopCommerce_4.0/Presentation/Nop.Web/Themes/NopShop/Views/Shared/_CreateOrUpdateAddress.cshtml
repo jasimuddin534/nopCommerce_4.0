@@ -3,11 +3,11 @@
 
 @if (Model.CountryEnabled && Model.StateProvinceEnabled)
 {
-    <script type="text/javascript">
+    <script type="text/javascript" asp-location="Footer">
         $(function () {
-            $("#@Html.FieldIdFor(model => model.CountryId)").change(function () {
+            $("#@Html.IdFor(model => model.CountryId)").change(function () {
                 var selectedItem = $(this).val();
-                var ddlStates = $("#@Html.FieldIdFor(model => model.StateProvinceId)");
+                var ddlStates = $("#@Html.IdFor(model => model.StateProvinceId)");
                 var statesProgress = $("#states-loading-progress");
                 statesProgress.show();
                 $.ajax({
@@ -38,8 +38,8 @@
 
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
             <div class="">
-                @Html.LabelFor(model => model.FirstName, new { @class = "" }, " :")
-                @Html.RequiredHint()
+                @Html.LabelFor(model => model.FirstName)
+                <nop-required />
             </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -54,8 +54,8 @@
 
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
             <div class="">
-                @Html.LabelFor(model => model.LastName, new { @class = "" }, " :")
-                @Html.RequiredHint()
+                @Html.LabelFor(model => model.LastName)
+                <nop-required />
             </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -70,8 +70,8 @@
 
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
             <div class="">
-                @Html.LabelFor(model => model.Email, new { @class = "" }, " :")
-                @Html.RequiredHint()
+                @Html.LabelFor(model => model.Email)
+                <nop-required />
             </div>
         </div>
         <div class="col-lg-6 col-md-9 col-sm-9 col-xs-9">
@@ -88,10 +88,10 @@
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                 <div class="">
-                    @Html.LabelFor(model => model.Company, new { @class = "" }, " :")
+                    @Html.LabelFor(model => model.Company)
                     @if (Model.CompanyRequired)
                     {
-                        @Html.RequiredHint()
+                        <nop-required />
                     }
                 </div>
             </div>
@@ -110,8 +110,8 @@
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
                 <div class="">
-                    @Html.LabelFor(model => model.CountryId, new { @class = "" }, " :")
-                    @Html.RequiredHint()
+                    @Html.LabelFor(model => model.CountryId)
+                    <nop-required />
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -130,7 +130,7 @@
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                 <div class="">
-                    @Html.LabelFor(model => model.StateProvinceId, new { @class = "control-label" }, " :")
+                    @Html.LabelFor(model => model.StateProvinceId, new { @class = "control-label" })
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -152,10 +152,10 @@
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                 <div class="">
-                    @Html.LabelFor(model => model.City, new { @class = "" }, " :")
+                    @Html.LabelFor(model => model.City)
                     @if (Model.CityRequired)
                     {
-                        @Html.RequiredHint()
+                        <nop-required />
                     }
                 </div>
             </div>
@@ -174,10 +174,10 @@
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                 <div class="">
-                    @Html.LabelFor(model => model.Address1, new { @class = "" }, " :")
+                    @Html.LabelFor(model => model.Address1)
                     @if (Model.StreetAddressRequired)
                     {
-                        @Html.RequiredHint()
+                        <nop-required />
                     }
                 </div>
             </div>
@@ -196,10 +196,10 @@
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                 <div class="">
-                    @Html.LabelFor(model => model.Address2, new { @class = "control-label" }, " :")
+                    @Html.LabelFor(model => model.Address2, new { @class = "control-label" })
                     @if (Model.StreetAddress2Required)
                     {
-                        @Html.RequiredHint()
+                        <nop-required />
                     }
                 </div>
             </div>
@@ -218,10 +218,10 @@
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
                 <div class="">
-                    @Html.LabelFor(model => model.ZipPostalCode, new { @class = "control-label" }, " :")
+                    @Html.LabelFor(model => model.ZipPostalCode, new { @class = "control-label" })
                     @if (Model.ZipPostalCodeRequired)
                     {
-                        @Html.RequiredHint()
+                        <nop-required />
                     }
                 </div>
             </div>
@@ -240,10 +240,10 @@
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                 <div class="">
-                    @Html.LabelFor(model => model.PhoneNumber, new { @class = "control-label" }, " :")
+                    @Html.LabelFor(model => model.PhoneNumber, new { @class = "control-label" })
                     @if (Model.PhoneRequired)
                     {
-                        @Html.RequiredHint()
+                        <nop-required />
                     }
                 </div>
             </div>
@@ -262,10 +262,10 @@
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
                 <div class="">
-                    @Html.LabelFor(model => model.FaxNumber, new { @class = "control-label" }, " :")
+                    @Html.LabelFor(model => model.FaxNumber, new { @class = "control-label" })
                     @if (Model.FaxRequired)
                     {
-                        @Html.RequiredHint()
+                        <nop-required />
                     }
                 </div>
             </div>

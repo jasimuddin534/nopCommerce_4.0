@@ -133,7 +133,6 @@
                                     }
                                 </tr>
                             }
-                            @*@Html.Widget("compareproducts_row")*@
                             @await Component.InvokeAsync("Widget", new { widgetZone = "compareproducts_row" })
                         </tbody>
                     </table>

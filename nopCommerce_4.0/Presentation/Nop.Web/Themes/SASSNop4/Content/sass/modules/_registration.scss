@@ -1,0 +1,545 @@
+﻿/********** REGISTRATION, LOGIN, ACCOUNT PAGES  **********/
+.gender {
+    display: inline-block;
+
+    span {
+        display: inline-block;
+        margin: 0 5px;
+
+        > * {
+            display: inline !important;
+            margin: 0 5px;
+            line-height: 32px;
+        }
+    }
+}
+
+.date-of-birth {
+    .date-picker-wrapper {
+        display: inline;
+    }
+
+    select {
+        width: 31%; /*always single line*/
+        max-width: 126px;
+    }
+
+    select + select {
+        margin: 0 0 0 10px;
+    }
+}
+
+
+#check-availability-button {
+    margin: 10px 0 0;
+    border: none;
+    background-color: #888;
+    padding: 10px 15px;
+    font-size: 12px;
+    color: $white;
+    text-transform: uppercase;
+
+    &:hover {
+        background-color: #999;
+    }
+}
+
+.accept-privacy-policy {
+    margin: 0 0 20px;
+    text-align: center;
+
+    > * {
+        display: inline-block;
+        line-height: 32px;
+    }
+
+    span, a {
+        color: #4ab2f1;
+        cursor: pointer;
+    }
+}
+
+
+.registration-page,
+.registration-result-page,
+.login-page,
+.password-recovery-page,
+.account-page,
+.return-request-page {
+    .button-1 {
+        min-width: 140px;
+        border: none;
+        background-color: #4ab2f1;
+        padding: 10px 30px;
+        text-align: center;
+        font-size: 15px;
+        color: $white;
+        text-transform: uppercase;
+
+        &:hover {
+            background-color: #248ece;
+        }
+    }
+}
+
+
+.return-request-page {
+    h1 {
+        a {
+            color: #4ab2f1;
+        }
+    }
+
+    .return-request-file {
+        font-size: 14px;
+
+        .uploadedfileinput {
+            display: inline-block;
+        }
+    }
+}
+
+
+.registration-page,
+.login-page,
+.account-page {
+    .message-error {
+        margin: 0 0 10px;
+    }
+}
+
+.registration-result-page {
+    .result {
+        margin: 0 0 30px;
+        padding: 30px 0;
+        text-align: center;
+        font-size: 16px;
+        color: #4cb17c;
+    }
+}
+
+.customer-info-page {
+    .email-to-revalidate,
+    .readonly-username,
+    .vat-status {
+        margin: 0 5px;
+        font-size: 14px;
+    }
+
+    .vat-status {
+        display: block;
+    }
+
+    .vat-note,
+    .email-to-revalidate-note {
+        display: block;
+        font-size: 14px;
+        margin-top: 7px;
+        white-space: normal;
+    }
+}
+
+
+.registration-page {
+    .vat-note {
+        display: block;
+        font-size: 14px;
+        margin-top: 7px;
+        white-space: normal;
+    }
+}
+
+.login-page {
+    .customer-blocks {
+        margin: 0 0 30px;
+    }
+
+    .title {
+        margin: 0 0 15px;
+        font-size: 20px;
+        color: $black;
+
+        strong {
+            font-weight: normal;
+        }
+    }
+
+
+    .new-wrapper {
+        margin: 0 0 50px;
+
+        .text {
+            margin: 0 0 30px;
+            border-top: 1px solid #e6e6e6;
+            background-color: #f9f9f9;
+            padding: 30px;
+            line-height: 22px;
+        }
+
+        .topic-block {
+            margin: 0;
+        }
+
+        .topic-block-body {
+            strong {
+                color: $black;
+            }
+        }
+
+        .button-1 {
+            margin: 0 0 5px;
+        }
+    }
+
+    .returning-wrapper {
+        margin: 0;
+
+        .form-fields {
+            overflow: hidden;
+            padding: 30px 15px 0;
+        }
+
+        .inputs.reversed {
+            white-space: normal;
+        }
+
+        .inputs.reversed * {
+            display: inline-block;
+            width: auto;
+            margin: 5px;
+            font-size: 14px; /*reset zeroing*/
+            color: $black;
+        }
+
+        .inputs.reversed {
+            a {
+                &:hover {
+                    color: #4ab2f1;
+                }
+            }
+        }
+
+        .buttons {
+            background-color: $white;
+            padding: 30px 0;
+        }
+    }
+
+    .captcha-box {
+        margin: -15px 0 20px;
+    }
+}
+
+
+
+.external-authentication {
+    margin: 0 0 50px;
+    overflow: hidden;
+    text-align: center;
+
+    .title {
+        margin: 0 0 15px;
+        font-size: 20px;
+        color: $black;
+    }
+
+    .buttons {
+        margin: 0 0 30px;
+        border-top: 1px solid #e6e6e6;
+        padding: 30px;
+    }
+}
+
+.external-auth-errors {
+    color: #e4444c;
+}
+
+.external-auth-association {
+    color: $black;
+
+    a {
+        color: #4ab2f1;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+
+.password-recovery-page {
+    .result {
+        margin: 0 0 5px;
+        font-weight: bold;
+        color: $black;
+    }
+
+    .tooltip {
+        margin: 0 0 25px;
+    }
+}
+
+.add-more-external-records {
+    text-align: center;
+
+    a {
+        color: #4ab2f1;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.account-page {
+    .buttons {
+        text-align: center;
+    }
+
+    .description {
+        margin: 0 0 25px;
+        padding: 0 10px;
+    }
+
+    .table-wrapper {
+        margin: 0 0 30px
+    }
+}
+
+.address-list-page,
+.order-list-page {
+    .info {
+        margin: 0 0 10px;
+        border-top: 1px solid #e6e6e6;
+        background-color: #f9f9f9;
+        padding: 20px;
+        line-height: 26px;
+        color: $black;
+
+        .name {
+            font-size: 16px;
+            font-weight: bold;
+        }
+    }
+
+    .button-2 {
+        display: inline-block;
+        margin: 0 0 0 10px;
+        border: none;
+        padding: 0 0 0 18px;
+        font-size: 12px;
+        color: $black;
+
+        &:hover {
+            color: #4ab2f1;
+        }
+    }
+}
+
+.edit-address-button {
+    background: url('../images/edit.png') left center no-repeat;
+}
+
+.delete-address-button,
+.cancel-recurring-order-button {
+    background: url('../images/remove.png') left center no-repeat;
+}
+
+.retry-recurring-order-button {
+    background: url('../images/retry.png') left center no-repeat;
+}
+
+.return-items-button {
+    background: url('../images/return.png') left center no-repeat;
+}
+
+.order-details-button {
+    background: url('../images/details.png') left center no-repeat;
+}
+
+
+.address-list-page {
+    .add-button {
+        margin: 0 0 20px;
+        text-align: center;
+    }
+}
+
+.address-edit-page {
+    .page-title {
+        margin: 0 0 -1px;
+    }
+
+    .message-error {
+        margin: 20px 0;
+    }
+
+    .edit-address {
+        margin: 0 0 30px;
+        border-top: 1px solid #e6e6e6;
+        background-color: #f9f9f9;
+        padding: 30px 15px;
+    }
+}
+
+.recurring-payments {
+    table {
+        td {
+            white-space: nowrap;
+        }
+
+        td:first-child {
+            min-width: 120px;
+            white-space: normal;
+        }
+    }
+
+    .button-2 {
+        font-size: 14px;
+    }
+}
+
+.return-request-list-page {
+    .details {
+        border-top: 1px solid #e6e6e6;
+        background-color: #f9f9f9;
+        padding: 20px;
+        line-height: 22px;
+        color: $black;
+    }
+
+    label {
+        margin: 0 5px 0 0;
+    }
+
+    a {
+        color: #4ab2f1;
+
+        :hover {
+            text-decoration: underline;
+        }
+    }
+
+    .comments {
+        div {
+            margin: 10px 0 0;
+            font-size: 15px;
+            font-style: italic;
+            color: $black;
+        }
+    }
+}
+
+.downloadable-products-page {
+    table {
+        td {
+            color: $black;
+        }
+    }
+}
+
+.reward-points-overview {
+    margin: 0 0 25px;
+}
+
+.reward-points-history {
+    table {
+        td {
+            color: $black;
+        }
+
+        td:first-child {
+            min-width: 120px;
+        }
+    }
+}
+
+
+.change-password-page {
+    .page-title {
+        margin: 0 0 -1px;
+    }
+
+    .result,
+    .message-error {
+        margin: 20px 0;
+    }
+
+    .fieldset {
+        margin: 0 0 30px;
+    }
+}
+
+
+
+.avatar-page {
+    .page-title {
+        margin: 0;
+    }
+
+    .page-body {
+        margin: 0 0 30px;
+        overflow: hidden;
+        background-color: #f9f9f9;
+        padding: 30px 25px;
+    }
+
+    .message-error {
+        margin: 0 0 10px;
+    }
+
+    .image {
+        margin: 0 0 10px;
+    }
+
+    .image img {
+        border: 1px solid #ccc;
+    }
+
+    .button-1 {
+        font-size: 14px;
+    }
+
+    .button-2 {
+        border: none;
+        background-color: #888;
+        padding: 10px 15px;
+        font-size: 14px;
+        color: $white;
+        text-transform: uppercase;
+
+        &:hover {
+            background-color: #999;
+        }
+    }
+
+    .info {
+        color: $black;
+    }
+}
+
+
+.vendorinfo-page {
+    .button-2 {
+        border: medium none;
+        background-color: #888;
+        padding: 10px 15px;
+        font-size: 14px;
+        color: $white;
+        text-transform: uppercase;
+
+        &:hover {
+            background-color: #999;
+        }
+    }
+
+    .vendor-picture {
+        width: 400px;
+        margin: 0 auto;
+
+        * {
+            display: block;
+            margin-top: 15px;
+        }
+    }
+}

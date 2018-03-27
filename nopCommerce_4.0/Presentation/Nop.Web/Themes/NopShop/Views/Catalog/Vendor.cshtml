@@ -1,6 +1,6 @@
 ﻿@model VendorModel
 @{
-    Layout = "~/Views/Shared/_ColumnsTwo.cshtml";
+    Layout = "_ColumnsTwo";
     Html.AddTitleParts(Model.Name);
 
     var canonicalUrlsEnabled = EngineContext.Current.Resolve<SeoSettings>().CanonicalUrlsEnabled;
@@ -20,7 +20,7 @@
             <h3>@Model.Name</h3>
         </div>
         <div class="panel-body">
-            @Html.Widget("vendordetails_top")
+            @await Component.InvokeAsync("Widget", new { widgetZone = "vendordetails_top" })
             @*description*@
             @if (!String.IsNullOrWhiteSpace(Model.Description))
             {
@@ -142,7 +142,7 @@
             <div class="pager">
                 @Html.Pager(Model.PagingFilteringContext).QueryParam("pagenumber")
             </div>
-            @Html.Widget("vendordetails_bottom")
+        @await Component.InvokeAsync("Widget", new { widgetZone = "vendordetails_bottom" })
         </div>
     </div>
 </div>
