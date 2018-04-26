@@ -565,9 +565,9 @@ input[type="password"],
 textarea, select {
     height: 36px;
     padding: 8px;
+    border-radius: 5px;
     border: 1px solid #ddd;
     vertical-align: middle;
-    border-radius: 20px;
 }
 
 input, textarea, select {
@@ -1026,7 +1026,7 @@ label, label + * {
     color: #e4434b;
     margin-top: 5px;
     font-size: 13px;
-    text-align: center;
+    text-align: left;
 }
 
 .field-validation-valid,
