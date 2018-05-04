@@ -6510,11 +6510,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Tests\\Nop.Core.Tests\\Nop.Core.Tests.csproj",
+      "projectUniqueName": "F:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Tests\\Nop.Core.Tests\\Nop.Core.Tests.csproj",
       "projectName": "Nop.Core.Tests",
-      "projectPath": "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Tests\\Nop.Core.Tests\\Nop.Core.Tests.csproj",
+      "projectPath": "F:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Tests\\Nop.Core.Tests\\Nop.Core.Tests.csproj",
       "packagesPath": "C:\\Users\\BS061-Jasim\\.nuget\\packages\\",
-      "outputPath": "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Tests\\Nop.Core.Tests\\obj\\",
+      "outputPath": "F:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Tests\\Nop.Core.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -6533,11 +6533,11 @@
       "frameworks": {
         "net461": {
           "projectReferences": {
-            "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Tests\\Nop.Tests\\Nop.Tests.csproj": {
-              "projectPath": "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Tests\\Nop.Tests\\Nop.Tests.csproj"
+            "F:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Tests\\Nop.Tests\\Nop.Tests.csproj": {
+              "projectPath": "F:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Tests\\Nop.Tests\\Nop.Tests.csproj"
             },
-            "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Libraries\\Nop.Core\\Nop.Core.csproj": {
-              "projectPath": "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Libraries\\Nop.Core\\Nop.Core.csproj"
+            "F:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Libraries\\Nop.Core\\Nop.Core.csproj": {
+              "projectPath": "F:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Libraries\\Nop.Core\\Nop.Core.csproj"
             }
           }
         }

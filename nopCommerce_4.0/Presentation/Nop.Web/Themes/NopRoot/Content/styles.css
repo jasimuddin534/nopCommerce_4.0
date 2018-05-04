@@ -577,7 +577,7 @@ div.newsletter-subscribe-block > div.newsletter-email {
 }
 
 .picture.thumbnail {
-    margin: 5px 0 0 10px;
+    margin: 0 auto;
 }
 
 .productview img {
@@ -2498,4 +2498,19 @@ div.total-info table td {
 
 .topic-block-body {
     padding: 15px 15px;
+}
+
+
+@media screen and (max-width: 767px) {
+    .sublist li a {
+        color: #fff;
+    }
+}
+
+
+
+@media screen and (max-width: 360px) {
+    .sub-category.col-xs-6 {
+        width: 100%;
+    }
 }

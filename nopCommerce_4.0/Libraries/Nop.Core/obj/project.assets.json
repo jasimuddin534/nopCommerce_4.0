@@ -6411,11 +6411,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Libraries\\Nop.Core\\Nop.Core.csproj",
+      "projectUniqueName": "F:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Libraries\\Nop.Core\\Nop.Core.csproj",
       "projectName": "Nop.Core",
-      "projectPath": "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Libraries\\Nop.Core\\Nop.Core.csproj",
+      "projectPath": "F:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Libraries\\Nop.Core\\Nop.Core.csproj",
       "packagesPath": "C:\\Users\\BS061-Jasim\\.nuget\\packages\\",
-      "outputPath": "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Libraries\\Nop.Core\\obj\\",
+      "outputPath": "F:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Libraries\\Nop.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

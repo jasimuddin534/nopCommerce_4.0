@@ -29,12 +29,18 @@
         <link rel="alternate stylesheet" type="text/css" href="~/Themes/NopRoot/Content/color-styles/green.css" title="green" media="screen" />-->
 
         Html.AppendCssFileParts("~/lib/jquery-ui-themes/smoothness/jquery-ui-1.10.3.custom.min.css");
+
+        //For slick slider
+        Html.AppendCssFileParts("~/Themes/NopRoot/Content/slick/slick-theme.css");
+        Html.AppendCssFileParts("~/Themes/NopRoot/Content/slick/slick.css");
+
         Html.AppendCssFileParts("~/Themes/NopRoot/Content/font-awosome-3/css/font-awesome.rtl.css");
         Html.AppendCssFileParts("~/Themes/NopRoot/Content/bootstrap-3.2.0/css/bootstrap.rtl.css");
         Html.AppendCssFileParts("~/Themes/NopRoot/Content/styles.css");
         Html.AppendCssFileParts("~/Themes/NopRoot/Content/styles.rtl.css");
     }
-    else { 
+    else
+    {
         <!--Uncomment following line to select 'Black' as theme color || Comment following line if you dont want-->
         <link rel="stylesheet" type="text/css" href="~/Themes/NopRoot/Content/color-styles/black.css" title="black" media="screen" />
 
@@ -60,7 +66,12 @@
         Html.AppendCssFileParts("~/lib/jquery-ui-themes/smoothness/jquery-ui-1.10.3.custom.min.css");
         Html.AppendCssFileParts("~/Themes/NopRoot/Content/font-awosome-3/css/font-awesome.css");
         Html.AppendCssFileParts("~/Themes/NopRoot/Content/bootstrap-3.2.0/css/bootstrap.min.css");
-        
+
+        //For slick slider
+        Html.AppendCssFileParts("~/Themes/NopRoot/Content/slick/slick-theme.css");
+        Html.AppendCssFileParts("~/Themes/NopRoot/Content/slick/slick.css");
+
+
     }
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
@@ -75,7 +86,7 @@
     //{
     //    Html.AppendCssFileParts("~/Themes/DefaultClean/Content/ie7.css");
     //}
-    
+
     ////add main CSS file
     //var supportRtl = EngineContext.Current.Resolve<IWorkContext>().WorkingLanguage.Rtl;
     //if (supportRtl)

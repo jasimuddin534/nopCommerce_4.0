@@ -67,9 +67,10 @@
     </div>
 </div>
 
+<script type="text/javascript" asp-location="Footer">
 
-<script>
     $(document).ready(function () {
+
         $('.navbar a.dropdown-toggle').on('click', function (e) {
             var elmnt = $(this).parent().parent();
             if (!elmnt.hasClass('nav')) {
@@ -86,9 +87,8 @@
             }
         });
     });
-</script>
 
-<script>
+
     function setMouseHoverDropdown() {
         if ($(window).innerWidth() > 767) {
             $('ul.nav li').hover(function () {
@@ -107,17 +107,13 @@
     $(window).resize(function () {
         setMouseHoverDropdown();
     });
-</script>
 
-<script>
     $(document).ready(function () {
         $(".navbar-toggle").click(function() {
             $(this).parent().find("> .navbar-header").css("overflow-y", "auto");
         });
     });
-</script>
 
-<script type="text/javascript" asp-location="Footer">
     $(function () {
         // Call stylesheet init so that all stylesheet changing functions
         // will work.

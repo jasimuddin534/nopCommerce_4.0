@@ -7895,11 +7895,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Tests\\Nop.Services.Tests\\Nop.Services.Tests.csproj",
+      "projectUniqueName": "F:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Tests\\Nop.Services.Tests\\Nop.Services.Tests.csproj",
       "projectName": "Nop.Services.Tests",
-      "projectPath": "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Tests\\Nop.Services.Tests\\Nop.Services.Tests.csproj",
+      "projectPath": "F:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Tests\\Nop.Services.Tests\\Nop.Services.Tests.csproj",
       "packagesPath": "C:\\Users\\BS061-Jasim\\.nuget\\packages\\",
-      "outputPath": "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Tests\\Nop.Services.Tests\\obj\\",
+      "outputPath": "F:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Tests\\Nop.Services.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -7918,11 +7918,11 @@
       "frameworks": {
         "net461": {
           "projectReferences": {
-            "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Libraries\\Nop.Services\\Nop.Services.csproj": {
-              "projectPath": "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Libraries\\Nop.Services\\Nop.Services.csproj"
+            "F:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Libraries\\Nop.Services\\Nop.Services.csproj": {
+              "projectPath": "F:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Libraries\\Nop.Services\\Nop.Services.csproj"
             },
-            "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Tests\\Nop.Tests\\Nop.Tests.csproj": {
-              "projectPath": "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Tests\\Nop.Tests\\Nop.Tests.csproj"
+            "F:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Tests\\Nop.Tests\\Nop.Tests.csproj": {
+              "projectPath": "F:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Tests\\Nop.Tests\\Nop.Tests.csproj"
             }
           }
         }

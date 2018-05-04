@@ -10714,11 +10714,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Presentation\\Nop.Web\\Nop.Web.csproj",
+      "projectUniqueName": "F:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Presentation\\Nop.Web\\Nop.Web.csproj",
       "projectName": "Nop.Web",
-      "projectPath": "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Presentation\\Nop.Web\\Nop.Web.csproj",
+      "projectPath": "F:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Presentation\\Nop.Web\\Nop.Web.csproj",
       "packagesPath": "C:\\Users\\BS061-Jasim\\.nuget\\packages\\",
-      "outputPath": "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Presentation\\Nop.Web\\obj\\",
+      "outputPath": "F:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Presentation\\Nop.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -10737,17 +10737,17 @@
       "frameworks": {
         "net461": {
           "projectReferences": {
-            "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Libraries\\Nop.Services\\Nop.Services.csproj": {
-              "projectPath": "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Libraries\\Nop.Services\\Nop.Services.csproj"
+            "F:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Libraries\\Nop.Services\\Nop.Services.csproj": {
+              "projectPath": "F:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Libraries\\Nop.Services\\Nop.Services.csproj"
             },
-            "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Libraries\\Nop.Data\\Nop.Data.csproj": {
-              "projectPath": "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Libraries\\Nop.Data\\Nop.Data.csproj"
+            "F:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Libraries\\Nop.Data\\Nop.Data.csproj": {
+              "projectPath": "F:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Libraries\\Nop.Data\\Nop.Data.csproj"
             },
-            "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Libraries\\Nop.Core\\Nop.Core.csproj": {
-              "projectPath": "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Libraries\\Nop.Core\\Nop.Core.csproj"
+            "F:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Libraries\\Nop.Core\\Nop.Core.csproj": {
+              "projectPath": "F:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Libraries\\Nop.Core\\Nop.Core.csproj"
             },
-            "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj": {
-              "projectPath": "E:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj"
+            "F:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj": {
+              "projectPath": "F:\\Jasim\\Projects\\nopCommerce_4.0\\nopCommerce_4.0\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj"
             }
           }
         }

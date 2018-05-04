@@ -368,6 +368,9 @@
     <None Include="Themes\NopShop\Views\ShoppingCart\_GiftCardBox.cshtml" />
     <None Include="Themes\NopShop\Views\Topic\TopicDetails.cshtml" />
     <None Include="Themes\NopShop\Views\Vendor\ApplyVendor.cshtml" />
+    <Content Update="Themes\NopRoot\Content\slick\slick - Copy.min.js">
+      <DependentUpon>slick - Copy.js</DependentUpon>
+    </Content>
     <Content Update="Themes\PowerShop\Views\Shared\Head.cshtml">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
