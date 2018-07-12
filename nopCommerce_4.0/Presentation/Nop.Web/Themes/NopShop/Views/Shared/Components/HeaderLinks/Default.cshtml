@@ -68,7 +68,7 @@
 
 
 
-                <ul class="minicart-dropdown-menu">
+                <ul class="minicart-dropdown-menu hidden-xs">
                     <li>
                         @await Component.InvokeAsync("FlyoutShoppingCart")
                     </li>
@@ -79,11 +79,13 @@
             }
             else
             {
-                <a href="@Url.RouteUrl("ShoppingCart")" class="ico-cart">
+                <a href="@Url.RouteUrl("ShoppingCart")" class="ico-cart visible-md visible-lg">
                     <span class="cart-label">
                         <i class="fa fa-shopping-cart"></i>
-                    @T("ShoppingCart")</span>
+                        @T("ShoppingCart")
+                    </span>
                     <span class="cart-qty">@T("ShoppingCart.HeaderQuantity", Model.ShoppingCartItems)</span>
+                    <i class="fa fa-angle-down"></i>
 
 
                 </a>
@@ -106,18 +108,6 @@
             </a>
         </li>
     }
-    <li>
-        @await Component.InvokeAsync("TaxTypeSelector")
-
-    </li>
-    <li>
-        @await Component.InvokeAsync("CurrencySelector")
-
-    </li>
-    <li>
-        @await Component.InvokeAsync("LanguageSelector")
-
-    </li>
     @await Component.InvokeAsync("Widget", new { widgetZone = "header_links_after" })
 
 </ul>

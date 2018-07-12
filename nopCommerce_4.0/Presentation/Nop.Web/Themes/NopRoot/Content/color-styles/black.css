@@ -18,7 +18,14 @@ ul.nav.navbar-nav.navbar-right li > a:hover { background-color:  #222222; }
 .category-menu { background-color: #101010; border-color: #101010; }
     .category-menu .nav > li > a:hover, .nav > li > a:focus { background-color: #000000; color: #fff; text-decoration: none; }
 
-.masthead .dropdown-menu > li > a:hover, .dropdown-menu > li > a { background-color: #222222; color: #fff; text-decoration: none; }
+.category-menu .dropdown-menu {
+background-color: #222222;
+}
+.masthead .dropdown-menu > li > a:hover, .dropdown-menu > li > a {
+    background-color: #222222;
+    color: #fff;
+    text-decoration: none;
+}
 .masthead .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus { background-color: #000000; color: #fff; text-decoration: none; }
 .top-menu ul.dropdown-menu > li > a { color: #000; }
 .navbar-fixed-top.top-menu li > a:hover { background-color: #222222; color: #FFF; }

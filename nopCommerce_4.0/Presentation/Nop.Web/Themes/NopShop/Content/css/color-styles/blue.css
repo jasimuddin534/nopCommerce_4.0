@@ -95,7 +95,7 @@ h2.title { color: #3498DB;  }
 .choose ul li a:hover { color: #3498DB; }
 
 
-.category-tab ul { border-bottom: 1px solid #3498DB;  }
+.category-tab  { border-bottom: 1px solid #3498DB;  }
 
 
     .category-tab ul li a:hover { background: #3498DB;  }
@@ -120,7 +120,10 @@ h2.title { color: #3498DB;  }
 .product-information span span { color: #3498DB;  }
 
 
-.cart { background: #3498DB; }
+.cart .cart-header-row {
+    background: #3498DB;
+    color: #fff;
+}
 
 
 
@@ -286,7 +289,7 @@ a:hover { color: #3498DB;}
 .configure-button a { color: #3498DB; }
 
 .nav-tabs li.active a, .nav-tabs li.active a:hover, .nav-tabs li.active a:focus {background-color: #3498DB !important; }
-.category-tab ul { border-bottom: 2px solid #3498DB;  }
+.category-tab .nav { border-bottom: 2px solid #3498DB;  }
 
 .product-list .productinfo  a.product-name-a:hover {color:#3498DB; }
 .add-to-cart:hover { border: 0 none; border-radius: 0; }

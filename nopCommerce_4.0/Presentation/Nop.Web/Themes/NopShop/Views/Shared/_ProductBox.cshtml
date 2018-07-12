@@ -28,7 +28,9 @@
 <div class="product-image-wrapper" data-productid="@Model.Id">
     <div class="single-products box-product">
         <div class="productinfo text-center">
-            <img alt="@Model.DefaultPictureModel.AlternateText" src="@Model.DefaultPictureModel.ImageUrl" title="@Model.DefaultPictureModel.Title" />
+            <div class="product-img-wrapper">
+                <img alt="@Model.DefaultPictureModel.AlternateText" src="@Model.DefaultPictureModel.ImageUrl" title="@Model.DefaultPictureModel.Title" />
+            </div>
             <h2>
                 @if (!String.IsNullOrEmpty(Model.ProductPrice.OldPrice)|| Model.ProductPrice.DisplayTaxShippingInfo)
                 {
@@ -113,7 +115,9 @@
 
             @if (!Model.ProductPrice.DisableBuyButton)
             {
-                <a  onclick="AjaxCart.addproducttocart_catalog('@addtocartlink    '); return false;"  class="add-to-cart btn"><i class="fa fa-shopping-cart"></i> @(Model.ProductPrice.AvailableForPreOrder ? T("ShoppingCart.PreOrder") : T("ShoppingCart.AddToCart"))</a>
+                <p>
+                    <a  onclick="AjaxCart.addproducttocart_catalog('@addtocartlink    '); return false;"  class="add-to-cart btn"><i class="fa fa-shopping-cart"></i> @(Model.ProductPrice.AvailableForPreOrder ? T("ShoppingCart.PreOrder") : T("ShoppingCart.AddToCart"))</a>
+                </p>
                 
             }
             
@@ -123,7 +127,7 @@
 
 
 
-        <div class="product-overlay hidden"  >
+        <div class="product-overlay"  >
             <div class="overlay-content">
                 <h4><a href="@Url.RouteUrl("Product", new
                                                           {

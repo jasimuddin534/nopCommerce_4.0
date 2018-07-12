@@ -2,7 +2,7 @@
 @using Nop.Core.Infrastructure;
 @using Nop.Web.Framework.UI
 @{
-     var supportRtl = EngineContext.Current.Resolve<IWorkContext>().WorkingLanguage.Rtl;
+    var supportRtl = EngineContext.Current.Resolve<IWorkContext>().WorkingLanguage.Rtl;
     if (supportRtl)
     {
 
@@ -10,8 +10,7 @@
         @*<link rel="stylesheet" type="text/css" href="~/Themes/NopRoot/Content/color-styles/black.css" title="black" media="screen" />*@
 
 
-        <!--Uncomment following line to select 'Blue' as theme color || Comment following line if you dont want-->
-        <link rel="stylesheet" type="text/css" href="~/Themes/NopRoot/Content/color-styles/blue.css" title="black" media="screen" />
+
 
         <!--Uncomment following line to select 'Red' as theme color || Comment following line if you dont want-->
         <!--<link rel="stylesheet" type="text/css" href="~/Themes/NopRoot/Content/color-styles/red.css" title="black" media="screen" />-->
@@ -20,7 +19,7 @@
         <!--<link rel="stylesheet" type="text/css" href="~/Themes/NopRoot/Content/color-styles/green.css" title="black" media="screen" />-->
 
 
-    
+
         <!--Uncomment following lines and comment out all previous lines to add color picker -->
 
         <!--<link rel="stylesheet" type="text/css" href="~/Themes/NopRoot/Content/color-styles/black.css" title="black" media="screen" />
@@ -38,11 +37,12 @@
         Html.AppendCssFileParts("~/Themes/NopRoot/Content/bootstrap-3.2.0/css/bootstrap.rtl.css");
         Html.AppendCssFileParts("~/Themes/NopRoot/Content/styles.css");
         Html.AppendCssFileParts("~/Themes/NopRoot/Content/styles.rtl.css");
+        <!--Uncomment following line to select 'Blue' as theme color || Comment following line if you dont want-->
+        <link rel="stylesheet" type="text/css" href="~/Themes/NopRoot/Content/color-styles/blue.css" title="black" media="screen" />
     }
     else
     {
-        <!--Uncomment following line to select 'Black' as theme color || Comment following line if you dont want-->
-        <link rel="stylesheet" type="text/css" href="~/Themes/NopRoot/Content/color-styles/black.css" title="black" media="screen" />
+
 
 
         <!--Uncomment following line to select 'Blue' as theme color || Comment following line if you dont want-->
@@ -55,13 +55,14 @@
         <!--<link rel="stylesheet" type="text/css" href="~/Themes/NopRoot/Content/color-styles/green.css" title="black" media="screen" />-->
 
 
-    
+
         <!--Uncomment following lines and comment out all previous lines to add color picker -->
 
         <!--<link rel="stylesheet" type="text/css" href="~/Themes/NopRoot/Content/color-styles/black.css" title="black" media="screen" />
         <link rel="alternate stylesheet" type="text/css" href="~/Themes/NopRoot/Content/color-styles/blue.css" title="blue" media="screen" />
         <link rel="alternate stylesheet" type="text/css" href="~/Themes/NopRoot/Content/color-styles/red.css" title="red" media="screen" />
         <link rel="alternate stylesheet" type="text/css" href="~/Themes/NopRoot/Content/color-styles/green.css" title="green" media="screen" />-->
+        Html.AppendCssFileParts("~/Themes/NopRoot/Content/color-styles/black.css");
         Html.AppendCssFileParts("~/Themes/NopRoot/Content/styles.css");
         Html.AppendCssFileParts("~/lib/jquery-ui-themes/smoothness/jquery-ui-1.10.3.custom.min.css");
         Html.AppendCssFileParts("~/Themes/NopRoot/Content/font-awosome-3/css/font-awesome.css");
@@ -70,6 +71,10 @@
         //For slick slider
         Html.AppendCssFileParts("~/Themes/NopRoot/Content/slick/slick-theme.css");
         Html.AppendCssFileParts("~/Themes/NopRoot/Content/slick/slick.css");
+        <!--Uncomment following line to select 'Blue' as theme color || Comment following line if you dont want-->
+        <link rel="stylesheet" type="text/css" href="~/Themes/NopRoot/Content/color-styles/blue.css" title="black" media="screen" />
+        <!--Uncomment following line to select 'Black' as theme color || Comment following line if you dont want-->
+        <link rel="stylesheet" type="text/css" href="~/Themes/NopRoot/Content/color-styles/black.css" title="black" media="screen" />
 
 
     }
@@ -97,4 +102,4 @@
     //{
     //    Html.AppendCssFileParts("~/Themes/DefaultClean/Content/styles.css");
     //}
-  }
+}

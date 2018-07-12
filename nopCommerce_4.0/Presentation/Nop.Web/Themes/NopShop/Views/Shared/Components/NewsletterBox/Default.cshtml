@@ -4,9 +4,11 @@
         <strong>@T("Newsletter.Title")</strong>
     </div>*@
     <div class="newsletter-subscribe" id="newsletter-subscribe-block">
-        <div class="newsletter-email">
-            <input asp-for="NewsletterEmail" id="newsletter-email" class="newsletter-subscribe-text" placeholder=@T("Newsletter.Email.Placeholder")/>
-            <input type="button" value="@T(Model.AllowToUnsubscribe ? "Newsletter.Options.Send" : "Newsletter.Options.Subscribe")" id="newsletter-subscribe-button" class="button-1 newsletter-subscribe-button btn btn-primary"/>
+        <div class="newsletter-email  input-group">
+            <input asp-for="NewsletterEmail" id="newsletter-email" class="newsletter-subscribe-text form-control" placeholder=@T("Newsletter.Email.Placeholder")/>
+            <span class="input-group-btn">
+                <input type="button" value="@T(Model.AllowToUnsubscribe ? "Newsletter.Options.Send" : "Newsletter.Options.Subscribe")" id="newsletter-subscribe-button" class="button-1 newsletter-subscribe-button btn btn-primary" />
+            </span>
             @if (Model.AllowToUnsubscribe)
             {
                 <div class="options">

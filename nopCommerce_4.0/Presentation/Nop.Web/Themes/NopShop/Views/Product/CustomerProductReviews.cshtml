@@ -14,7 +14,7 @@
 }
 <div class="page account-page my-product-reviews-list-page">
     <div class="page-title">
-        <h1>@T("Account.MyAccount") - @T("Account.CustomerProductReviews")</h1>
+        <h2 class="title text-center">@T("Account.MyAccount") - @T("Account.CustomerProductReviews")</h2>
     </div>
     <div class="page-body">
         @if (Model.ProductReviews.Count > 0)
@@ -23,11 +23,11 @@
             {
                 var ratingPercent = review.Rating * 20;
                 <div class="product-review-item">
-                    <div class="review-item-head">
-                        <div class="review-title">
+                    <div class="review-item-head clearfix">
+                        <div class="review-title pull-left">
                             <strong>@review.Title</strong>@(!string.IsNullOrEmpty(review.ApprovalStatus) ? $" - {review.ApprovalStatus}" : null)
                         </div>
-                        <div class="product-review-box">
+                        <div class="product-review-box pull-right">
                             <div class="rating">
                                 <div style="width: @(ratingPercent)%">
                                 </div>

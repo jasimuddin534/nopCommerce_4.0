@@ -3,11 +3,11 @@
 @using Nop.Core.Infrastructure;
 @using Nop.Web.Models.Catalog;
 @{
-    Html.AddScriptParts("~/lib/magnific-popup/jquery.magnific-popup.js");
+    Html.AppendScriptParts(ResourceLocation.Footer, "~/lib/magnific-popup/jquery.magnific-popup.js");
     Html.AddCssFileParts("~/lib/magnific-popup/magnific-popup.css");
 
     //int productPerRow = EngineContext.Current.Resolve<MediaSettings>().ProductThumbPerRowOnProductDetailsPage;   
-    int productPerRow = 4; 
+    int productPerRow = 4;
 }
 
 

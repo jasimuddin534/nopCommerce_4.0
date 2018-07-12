@@ -36,48 +36,48 @@
     <div class="form-group">
 
 
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+        <div class="col-lg-3 col-md-3 col-sm-4">
             <div class="">
                 @Html.LabelFor(model => model.FirstName)
                 <nop-required />
             </div>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <div class="col-lg-6 col-md-6 col-sm-8">
             @Html.TextBoxFor(model => model.FirstName, new { @class = "gray-input", autofocus = "autofocus" })
         </div>
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-left">
+        <div class="col-lg-3 col-md-3 col-sm-4 text-left">
             @Html.ValidationMessageFor(model => model.FirstName, string.Empty, new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group inputs">
 
 
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+        <div class="col-lg-3 col-md-3 col-sm-4">
             <div class="">
                 @Html.LabelFor(model => model.LastName)
                 <nop-required />
             </div>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <div class="col-lg-6 col-md-6 col-sm-8">
             @Html.TextBoxFor(model => model.LastName, new { @class = "gray-input", autofocus = "autofocus" })
         </div>
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-left">
+        <div class="col-lg-3 col-md-3 col-sm-4 text-left">
             @Html.ValidationMessageFor(model => model.LastName, string.Empty, new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group inputs">
 
 
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+        <div class="col-lg-3 col-md-3 col-sm-4">
             <div class="">
                 @Html.LabelFor(model => model.Email)
                 <nop-required />
             </div>
         </div>
-        <div class="col-lg-6 col-md-9 col-sm-9 col-xs-9">
+        <div class="col-lg-6 col-md-6 col-sm-8">
             @Html.TextBoxFor(model => model.Email, new { @class = "gray-input", autofocus = "autofocus" })
         </div>
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-left">
+        <div class="col-lg-3 col-md-3 col-sm-4 text-left">
             @Html.ValidationMessageFor(model => model.Email, string.Empty, new { @class = "text-danger" })
         </div>
     </div>
@@ -86,7 +86,7 @@
         <div class="form-group inputs">
 
 
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <div class="col-lg-3 col-md-3 col-sm-4">
                 <div class="">
                     @Html.LabelFor(model => model.Company)
                     @if (Model.CompanyRequired)
@@ -95,10 +95,10 @@
                     }
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <div class="col-lg-6 col-md-6 col-sm-8">
                 @Html.TextBoxFor(model => model.Company, new { @class = "gray-input", autofocus = "autofocus" })
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-left">
+            <div class="col-lg-3 col-md-3 col-sm-4 text-left">
                 @Html.ValidationMessageFor(model => model.Company, string.Empty, new { @class = "text-danger" })
             </div>
         </div>
@@ -108,16 +108,16 @@
         <div class="form-group inputs">
 
 
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
+            <div class="col-lg-3 col-md-3 col-sm-4 ">
                 <div class="">
                     @Html.LabelFor(model => model.CountryId)
                     <nop-required />
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <div class="col-lg-6 col-md-6 col-sm-8">
                 @Html.DropDownList("CountryId", Model.AvailableCountries, new { @class = "gray-dropdown" })
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-left">
+            <div class="col-lg-3 col-md-3 col-sm-4 text-left">
                 @Html.ValidationMessageFor(model => model.CountryId, string.Empty, new { @class = "text-danger" })
             </div>
         </div>
@@ -128,19 +128,19 @@
         <div class="form-group inputs">
 
 
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <div class="col-lg-3 col-md-3 col-sm-4">
                 <div class="">
                     @Html.LabelFor(model => model.StateProvinceId, new { @class = "control-label" })
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <div class="col-lg-6 col-md-6 col-sm-8">
                 @Html.DropDownList("StateProvinceId", Model.AvailableStates, new { @class = "gray-dropdown" })
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <div class="col-lg-3 col-md-3 col-sm-4">
                 <span id="states-loading-progress" style="display: none;" class="text-info">@T("Common.Wait...")</span>
             </div>
 
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-left">
+            <div class="col-lg-3 col-md-3 col-sm-4 text-left">
                 @Html.ValidationMessageFor(model => model.StateProvinceId, string.Empty, new { @class = "text-danger" })
             </div>
         </div>
@@ -150,7 +150,7 @@
         <div class="form-group inputs">
 
 
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <div class="col-lg-3 col-md-3 col-sm-4">
                 <div class="">
                     @Html.LabelFor(model => model.City)
                     @if (Model.CityRequired)
@@ -159,10 +159,10 @@
                     }
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <div class="col-lg-6 col-md-6 col-sm-8">
                 @Html.TextBoxFor(model => model.City, new { @class = "gray-input", autofocus = "autofocus" })
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-left">
+            <div class="col-lg-3 col-md-3 col-sm-4 text-left">
                 @Html.ValidationMessageFor(model => model.City, string.Empty, new { @class = "text-danger" })
             </div>
         </div>
@@ -172,7 +172,7 @@
         <div class="form-group inputs">
 
 
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <div class="col-lg-3 col-md-3 col-sm-4">
                 <div class="">
                     @Html.LabelFor(model => model.Address1)
                     @if (Model.StreetAddressRequired)
@@ -181,10 +181,10 @@
                     }
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <div class="col-lg-6 col-md-6 col-sm-8">
                 @Html.TextBoxFor(model => model.Address1, new { @class = "gray-input", autofocus = "autofocus" })
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-left">
+            <div class="col-lg-3 col-md-3 col-sm-4 text-left">
                 @Html.ValidationMessageFor(model => model.Address1, string.Empty, new { @class = "text-danger" })
             </div>
         </div>
@@ -194,7 +194,7 @@
         <div class="form-group inputs">
 
 
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <div class="col-lg-3 col-md-3 col-sm-4">
                 <div class="">
                     @Html.LabelFor(model => model.Address2, new { @class = "control-label" })
                     @if (Model.StreetAddress2Required)
@@ -203,10 +203,10 @@
                     }
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <div class="col-lg-6 col-md-6 col-sm-8">
                 @Html.TextBoxFor(model => model.Address2, new { @class = "gray-input", autofocus = "autofocus" })
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-left">
+            <div class="col-lg-3 col-md-3 col-sm-4 text-left">
                 @Html.ValidationMessageFor(model => model.Address2, string.Empty, new { @class = "text-danger" })
             </div>
         </div>
@@ -216,7 +216,7 @@
         <div class="form-group inputs">
 
 
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
+            <div class="col-lg-3 col-md-3 col-sm-4 ">
                 <div class="">
                     @Html.LabelFor(model => model.ZipPostalCode, new { @class = "control-label" })
                     @if (Model.ZipPostalCodeRequired)
@@ -225,10 +225,10 @@
                     }
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <div class="col-lg-6 col-md-6 col-sm-8">
                 @Html.TextBoxFor(model => model.ZipPostalCode, new { @class = "gray-input", autofocus = "autofocus" })
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-left">
+            <div class="col-lg-3 col-md-3 col-sm-4 text-left">
                 @Html.ValidationMessageFor(model => model.ZipPostalCode, string.Empty, new { @class = "text-danger" })
             </div>
         </div>
@@ -238,7 +238,7 @@
         <div class="form-group inputs">
 
 
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <div class="col-lg-3 col-md-3 col-sm-4">
                 <div class="">
                     @Html.LabelFor(model => model.PhoneNumber, new { @class = "control-label" })
                     @if (Model.PhoneRequired)
@@ -247,10 +247,10 @@
                     }
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <div class="col-lg-6 col-md-6 col-sm-8">
                 @Html.TextBoxFor(model => model.PhoneNumber, new { @class = "gray-input", autofocus = "autofocus" })
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-left">
+            <div class="col-lg-3 col-md-3 col-sm-4 text-left">
                 @Html.ValidationMessageFor(model => model.PhoneNumber, string.Empty, new { @class = "text-danger" })
             </div>
         </div>
@@ -260,7 +260,7 @@
         <div class="form-group inputs">
 
 
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
+            <div class="col-lg-3 col-md-3 col-sm-4 ">
                 <div class="">
                     @Html.LabelFor(model => model.FaxNumber, new { @class = "control-label" })
                     @if (Model.FaxRequired)
@@ -269,10 +269,10 @@
                     }
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <div class="col-lg-6 col-md-6 col-sm-8">
                 @Html.TextBoxFor(model => model.FaxNumber, new { @class = "gray-input", autofocus = "autofocus" })
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-left">
+            <div class="col-lg-3 col-md-3 col-sm-4 text-left">
                 @Html.ValidationMessageFor(model => model.FaxNumber, string.Empty, new { @class = "text-danger" })
             </div>
         </div>

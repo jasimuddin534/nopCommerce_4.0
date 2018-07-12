@@ -9,9 +9,9 @@
             @T("ShoppingCart.DiscountCouponCode.Tooltip")
         </div>
         <div class="coupon-code">
-            <input name="discountcouponcode" id="discountcouponcode" type="text" class="discount-coupon-code" />
+            <input name="discountcouponcode" id="discountcouponcode" type="text" class="gray-input" />
             <input type="submit" name="applydiscountcouponcode" id="applydiscountcouponcode" 
-                   value="@T("ShoppingCart.DiscountCouponCode.Button")" class="button-2 apply-discount-coupon-code-button" />
+                   value="@T("ShoppingCart.DiscountCouponCode.Button")" class="btn btn-primary get" />
         </div>
         @foreach (var message in Model.Messages)
         {

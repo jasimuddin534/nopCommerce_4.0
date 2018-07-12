@@ -299,15 +299,12 @@
                                         <li @(attributeValue.IsPreSelected ? @Html.Raw(" class=\"selected-value\"") : null)>
                                             <label for="@(controlId)_@(attributeValue.Id)">
                                                 <span class="attribute-square-container">
-                                                    <span class="attribute-square" style="background: url('@(attributeValue.ImageSquaresPictureModel.ImageUrl)') 50% 50% no-repeat;">&nbsp;</span>
+                                                    <img src="@(attributeValue.ImageSquaresPictureModel.ImageUrl)" class="img-responsive" alt="Alternate Text" />
+                                                    @*<span class="attribute-square" style="background: url('@(attributeValue.ImageSquaresPictureModel.ImageUrl)') 50% 50% no-repeat;">&nbsp;</span>*@
                                                 </span>
                                                 <input id="@(controlId)_@(attributeValue.Id)" type="radio" name="@(controlId)" value="@attributeValue.Id" checked="@attributeValue.IsPreSelected"
                                                        @(attribute.Values.Any(value => value.CustomerEntersQty) ? Html.Raw($"onclick=\"showHideRadioQuantity('{controlId}', true)\"") : null) />
                                             </label>
-                                            <div class="tooltip-container">
-                                                <div class="tooltip-header">@attributeName</div>
-                                                <div class="tooltip-body"><img src="@(attributeValue.ImageSquaresPictureModel.FullSizeImageUrl)" alt="@attributeName" /></div>
-                                            </div>
                                         </li>
                                     }
                                 </ul>

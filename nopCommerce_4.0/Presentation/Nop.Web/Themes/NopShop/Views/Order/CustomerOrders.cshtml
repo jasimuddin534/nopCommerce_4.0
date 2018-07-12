@@ -123,7 +123,7 @@
                             {
                                 <input type="button" value="@T("Account.CustomerOrders.ReturnItems")" class="button-2 return-items-button" onclick="setLocation('@Url.RouteUrl("ReturnRequest", new { orderId = order.Id })')" />
                             }
-                            <input type="button" value="@T("Account.CustomerOrders.OrderDetails")" class="button-2 order-details-button" onclick="setLocation('@Url.RouteUrl("OrderDetails", new { orderId = order.Id })')" />
+                            <input type="button" value="@T("Account.CustomerOrders.OrderDetails")" class="button-2 order-details-button btn btn-primary" onclick="setLocation('@Url.RouteUrl("OrderDetails", new { orderId = order.Id })')" />
                         </div>
                     </div>
                 }

@@ -33,7 +33,7 @@
         {
             case AttributeControlType.DropdownList:
             {
-                <select name="@(controlId)" id="@(controlId)" @(attribute.Values.Any(value => value.CustomerEntersQty) ? Html.Raw($"onchange=\"showHideDropdownQuantity('{controlId}')\"") : null)>
+                <select class="form-control" name="@(controlId)" id="@(controlId)" @(attribute.Values.Any(value => value.CustomerEntersQty) ? Html.Raw($"onchange=\"showHideDropdownQuantity('{controlId}')\"") : null)>
                     @if (!attribute.IsRequired)
                     {
                         <option value="0">---</option>

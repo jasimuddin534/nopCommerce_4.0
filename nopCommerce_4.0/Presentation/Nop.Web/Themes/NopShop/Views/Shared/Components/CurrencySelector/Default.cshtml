@@ -19,8 +19,8 @@
 
 
 
-    <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" href="#">
+    <div class="btn-group">
+        <button class="btn btn-default dropdown-toggle usa" data-toggle="dropdown" data-hover="dropdown">
             @foreach(var just_currency in currencies)
             {
                 if(just_currency.Selected==true)
@@ -28,8 +28,8 @@
                     @just_currency.Text
                 }
             }
-            <i class="fa fa-angle-down"></i>
-        </a>
+            <span class="caret"></span>
+        </button>
         <ul class="dropdown-menu" >
         
             @foreach(var currency in currencies)
@@ -39,5 +39,5 @@
             }     
 
         </ul>
-    </li>
+    </div>
 }

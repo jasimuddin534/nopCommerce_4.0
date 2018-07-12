@@ -3,14 +3,37 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-4">
-                <div class="logo">
+                <div class="logo pull-left">
                     <a class="logo" href="@Url.RouteUrl("HomePage")"></a>
                 </div>
+                <div class="btn-group pull-right">
+                        @await Component.InvokeAsync("TaxTypeSelector")
+
+                        @await Component.InvokeAsync("CurrencySelector")
+
+                        @await Component.InvokeAsync("LanguageSelector")
+
+
+                    @*<div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
+                US Dollar            <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+
+                <li><a href="/changecurrency/1?returnurl=%2f">US Dollar</a></li>
+                <li><a href="/changecurrency/6?returnurl=%2f">Euro</a></li>
+
+            </ul>
+
+        </div>*@
+                </div>
             </div>
-            <div class="col-sm-8">
-                @await Component.InvokeAsync("HeaderLinks")
+                <div class="col-sm-8">
+                    <div class="shop-menu pull-right">
+                        @await Component.InvokeAsync("HeaderLinks")
+                    </div>
+                </div>
             </div>
-        </div>
     </div>
 </div>
 <div class="container">

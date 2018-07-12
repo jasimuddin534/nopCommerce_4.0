@@ -140,11 +140,11 @@
                                     <div class="row">
                                         <div class="col-md-3 pull-left">
                                             <p class="back-link">
-                                                <a href="#" onclick="Checkout.back(); return false;"><small>&laquo; </small>@T("Common.Back")</a>
+                                                <a href="#" class="btn btn-primary" onclick="Checkout.back(); return false;"><small>&laquo; </small>@T("Common.Back")</a>
                                             </p>
                                         </div>
                                         <div class="col-md-3 pull-right pull-text-right">
-                                            <input type="button" class="button-1 shipping-method-next-step-button" onclick="ShippingMethod.save()" value="@T("Common.Continue")" />
+                                            <input type="button" class="button-1 shipping-method-next-step-button  btn btn-primary" onclick="ShippingMethod.save()" value="@T("Common.Continue")" />
                                             <span id="shipping-method-please-wait" class="please-wait" style="display: none;">@T("Common.LoadingNextStep")</span>
                                         </div>
                                     </div>

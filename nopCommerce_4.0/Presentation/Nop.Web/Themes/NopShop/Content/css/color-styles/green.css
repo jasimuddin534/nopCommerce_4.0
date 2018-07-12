@@ -122,7 +122,10 @@ h2.title { color: #97D349;  }
 .product-information span span { color: #97D349;  }
 
 
-.cart { background: #97D349; }
+.cart .cart-header-row {
+    background: #97D349;
+    color: #fff;
+}
 
 
 
@@ -288,7 +291,7 @@ a:hover { color: #97D349;}
 .configure-button a { color: #97D349; }
 
 .nav-tabs li.active a, .nav-tabs li.active a:hover, .nav-tabs li.active a:focus {background-color: #97D349 !important; }
-.category-tab ul { border-bottom: 2px solid #97D349;  }
+.category-tab .nav { border-bottom: 2px solid #97D349;  }
 
 .product-list .productinfo a.product-name-a:hover{color:#97D349; }
 .add-to-cart:hover { border: 0 none; border-radius: 0; }

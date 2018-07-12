@@ -7,18 +7,6 @@
     <div class="product-grid home-page-product-grid">
         <div class="mid-content-title">
             <h2 class="title text-center">@T("Products.RelatedProducts")</h2>
-            @if (Model.Count > 3)
-            {
-                <span class="pull-right">
-                    <a class="title-carousel-control" href="#carousel-example-generic-homepage-product" data-slide="prev">
-                        <i class="fa fa-angle-left"></i>
-                    </a>
-                    <a class="title-carousel-control" href="#carousel-example-generic-homepage-product" data-slide="next">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
-
-                </span>
-            }
         </div>
 
 
@@ -37,35 +25,44 @@
                     {
                         @:<div class="item active">
                             @:<div class="row box-products">
-                    }
-                    else if (ci % 3 == 0)
-                    {
-                        @:<div class="item">
-                            @:<div class="row box-products">
-                    }
+                            }
+                            else if (ci % 3 == 0)
+                            {
+                                @:<div class="item">
+                                    @:<div class="row box-products">
+                                    }
 
-                    <div class="col-md-4">
-                        <div class="offer offer-default silde-show-offer pull-text-center">
-                            @await Html.PartialAsync("_ProductBox", item)
-                        </div>
-                    </div>
+                                    <div class="col-md-4">
+                                        <div class="offer offer-default silde-show-offer pull-text-center">
+                                            @await Html.PartialAsync("_ProductBox", item)
+                                        </div>
+                                    </div>
 
 
-                    if (ci % 3 == 2)
-                    {
-                        @:</div>
-                        @:</div>
-                    }
-                    ci++;
-                }
+                                    if (ci % 3 == 2)
+                                    {
+                                    @:</div>
+                                @:</div>
+                            }
+                            ci++;
+                        }
                 @if (ci % 3 != 0)
                 {
-                    @:</div>
-                    @:</div>
-                }
+                @:</div>
+            @:</div>
+        }
 
             </div>
-
+            @if (Model.Count > 3)
+            {
+                    <a class="left recommended-item-control" href="#carousel-example-generic-homepage-product" data-slide="prev">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a class="right recommended-item-control" href="#carousel-example-generic-homepage-product" data-slide="next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                    
+            }
 
         </div>
     </div>

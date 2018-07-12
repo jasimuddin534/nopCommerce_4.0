@@ -2,8 +2,9 @@
 
 
 
-<div class="col-md-6 shipping">
-    <script type="text/javascript" asp-location="Footer">
+<div class="col-md-6">
+    <div class="custom-footer-cart-div">
+        <script type="text/javascript" asp-location="Footer">
         $(document).ready(function () {
             $("#@Html.IdFor(model => model.CountryId)").change(function() {
                 var selectedItem = $(this).val();
@@ -29,8 +30,8 @@
                 });
             });
         });
-    </script>
-    <script type="text/javascript" asp-location="Footer">
+        </script>
+        <script type="text/javascript" asp-location="Footer">
         $(document).ready(function () {
             $('#estimate-shipping-button').click(function() {
                 displayAjaxLoading(true);
@@ -57,32 +58,33 @@
                 }
             });
         });
-    </script>
-    <div class="estimate-shipping">
-        <div class="title">
-            <strong>@T("ShoppingCart.EstimateShipping")</strong>
+        </script>
+        <div class="estimate-shipping">
+            <div class="title">
+                <strong>@T("ShoppingCart.EstimateShipping")</strong>
+            </div>
+            <div class="hint">@T("ShoppingCart.EstimateShipping.Tooltip")</div>
+            <div class="shipping-options">
+                <div class="inputs">
+                    <label asp-for="CountryId" asp-postfix=":"></label>
+                    <nop-required />
+                    <select asp-for="CountryId" asp-items="Model.AvailableCountries" class="country-input square-box"></select>
+                </div>
+                <div class="inputs">
+                    <label asp-for="StateProvinceId" asp-postfix=":"></label>
+                    <select asp-for="StateProvinceId" asp-items="Model.AvailableStates" class="state-inputsquare-box"></select>
+                    <span id="estimate-shipping-loading-progress" style="display: none;" class="please-wait">@T("Common.Wait...")</span>
+                </div>
+                <div class="inputs">
+                    <label asp-for="ZipPostalCode" asp-postfix=":"></label>
+                    <nop-required />
+                    <input asp-for="ZipPostalCode" class="zip-input square-box gray-input" />
+                </div>
+                <div class="buttons">
+                    <input id="estimate-shipping-button" type="button" value="@T("ShoppingCart.EstimateShipping.Button")" class="btn btn-primary get" />
+                </div>
+            </div>
+            <div class="estimate-shipping-result"></div>
         </div>
-        <div class="hint">@T("ShoppingCart.EstimateShipping.Tooltip")</div>
-        <div class="shipping-options">
-            <div class="inputs">
-                <label asp-for="CountryId" asp-postfix=":"></label>
-                <select asp-for="CountryId" asp-items="Model.AvailableCountries" class="country-input square-box"></select>
-                <nop-required />
-            </div>
-            <div class="inputs">
-                <label asp-for="StateProvinceId" asp-postfix=":"></label>
-                <select asp-for="StateProvinceId" asp-items="Model.AvailableStates" class="state-inputsquare-box"></select>
-                <span id="estimate-shipping-loading-progress" style="display: none;" class="please-wait">@T("Common.Wait...")</span>
-            </div>
-            <div class="inputs">
-                <label asp-for="ZipPostalCode" asp-postfix=":"></label>
-                <input asp-for="ZipPostalCode" class="zip-input square-box"/>
-                <nop-required />
-            </div>
-            <div class="buttons">
-                <input id="estimate-shipping-button" type="button" value="@T("ShoppingCart.EstimateShipping.Button")" class="button-2 estimate-shipping-button btn btn-default" />
-            </div>
-        </div>
-        <div class="estimate-shipping-result"></div>
     </div>
 </div>
