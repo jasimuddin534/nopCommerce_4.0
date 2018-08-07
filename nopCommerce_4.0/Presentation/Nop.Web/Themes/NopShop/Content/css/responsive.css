@@ -318,10 +318,13 @@ ul.sub-menu{
 	display: inline-block;
 }
 
-.logo{
-	text-align: center;
-	width: 100%;
-}
+.logo {
+        text-align: center;
+        width: 100%;
+        display: block;
+        padding: 0 20px 20px 20px;
+        margin: auto;
+    }
 
 .shop-menu ul li {
 	padding: 0;

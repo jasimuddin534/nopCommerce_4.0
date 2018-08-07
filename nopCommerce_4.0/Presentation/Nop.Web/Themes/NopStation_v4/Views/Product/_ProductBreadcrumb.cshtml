@@ -1,0 +1,52 @@
+﻿@model ProductDetailsModel.ProductBreadcrumbModel
+@using Nop.Core.Domain.Common
+@inject CommonSettings commonSettings
+@{
+    var breadcrumbDelimiter = commonSettings.BreadcrumbDelimiter;
+}
+@if (Model.Enabled)
+{
+    <div class="inner_page_navigation">
+
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <h2 class="text-uppercase font-bold text-white"> @Model.ProductName </h2>
+                    <div class="product-breadcrumb">
+                        <ul class="text-uppercase font-bold text-white">
+                            @await Component.InvokeAsync("Widget", new { widgetZone = "productbreadcrumb_before", additionalData = Model.ProductId })
+                            <li>
+                                <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                                    <a class="text-white" href="@Url.RouteUrl("HomePage")" itemprop="url">
+                                        <span itemprop="title">@T("Products.Breadcrumb.Top")</span>
+                                    </a>
+                                </span>
+                                <span class="delimiter">@breadcrumbDelimiter</span>
+                            </li>
+                            @foreach (var category in Model.CategoryBreadcrumb)
+                            {
+                                <li>
+                                    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                                        <a class="text-white" href="@Url.RouteUrl("Category", new { SeName = category.SeName })" itemprop="url">
+                                            <span itemprop="title">@category.Name</span>
+                                        </a>
+                                    </span>
+                                    <span class="delimiter">@breadcrumbDelimiter</span>
+                                </li>
+                            }
+                            <li>
+                                <strong class="current-item active">@Model.ProductName</strong>
+                                @*<strong class="current-item"><a href="@Url.RouteUrl("Product", new { SeName = Model.ProductSeName })" itemprop="url">@Model.ProductName</a></strong>*@
+                                @await Component.InvokeAsync("Widget", new { widgetZone = "productbreadcrumb_after", additionalData = Model.ProductId })
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+}

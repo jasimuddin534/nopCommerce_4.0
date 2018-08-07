@@ -1,0 +1,207 @@
+﻿@model ContactUsModel
+@{
+    Layout = "_ColumnsOne";
+
+    //title
+    Html.AddTitleParts(T("PageTitle.ContactUs").Text);
+    //page class
+    Html.AppendPageCssClassParts("html-contact-page");
+}
+@section heading {
+    <div class="inner_page_navigation">
+
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <h2 class="text-uppercase font-bold text-white">  @T("PageTitle.ContactUs") </h2>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+}
+
+
+    <div class="page contact-page">
+        <div class="page-body">
+            @await Component.InvokeAsync("TopicBlock", new { systemName = "ContactUs" })
+            @await Component.InvokeAsync("Widget", new { widgetZone = "contactus_top" })
+            @if (Model.SuccessfullySent)
+            {
+                <div class="result">
+                    <div class="container">
+                        <div class="bg-white pro-services-box p-4">
+                            <p class="lead text-center">@Model.Result</p>
+                        </div>
+                    </div>
+                  
+                </div>
+            }
+            else
+            {
+                <div class="custom_solution_top_part contact-us-container pt-5">
+
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-sm-8 m-auto">
+                                <div class="col-sm-12 text-center text-white pt-5 pb-3">
+                                    <h2 class="font-bold">Let’s Talk!</h2>
+                                    <p class="">
+                                        Want to learn more about our services or have questions that we haven’t already answered? Reach out and let us know.
+                                        We’re always here to help you out!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="cloud-services-box bg-white p-4 mt-1 br text-center contact-content-box mb-3">
+                                    <p class="p-3"> <img src="~/Themes/NopStation_v4/Content/images/drop-on-in-icon.png" class="img-fluid width-auto text-center" alt="themes"></p>
+                                    <h5 class="text-uppercase products_title"> <strong> Drop on in </strong></h5>
+                                    <p>8th floor, Plot#2, Amtoli,</p>
+                                    <p>  Bir Uttam AK Khandakar Rd Mohakhali</p>
+                                    <p>  Commercial Area, Dhaka-1212, Bangladesh </p>
+
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="cloud-services-box bg-white p-4 mt-1 br text-center contact-content-box mb-3">
+                                    <p class="p-3"> <img src="~/Themes/NopStation_v4/Content/images/give-us-a-call-icon.png" class="img-fluid width-auto text-center" alt="themes"></p>
+                                    <h5 class="text-uppercase products_title"> <strong> Give us a call </strong></h5>
+                                    <p>Office: +88-02-9856728</p>
+                                    <p>Phone: +8801736633303</p>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="cloud-services-box bg-white p-4 mt-1 br text-center contact-content-box mb-3">
+                                    <p class="p-3"> <img src="~/Themes/NopStation_v4/Content/images/connect-online-icon.png" class="img-fluid width-auto text-center" alt="themes"></p>
+                                    <h5 class="text-uppercase products_title"> <strong> Connect online </strong></h5>
+                                    <p>Email: nafiz.khan@bs-23.net</p>
+                                    <p>Skype: live:nafiz.khan_1</p>
+                                    <p>Facebook: nopstation.bs23</p>
+                                    <p>Twitter: NopStation</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End of Contact Lets Talk-->
+
+                <div class="container inner_page_body_container custom_solution_body contact-form mt-0" id="contact-us">
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h2 class="text-uppercase text-center font-weight-bold body_title_text mb-5"> Or reach us right here… </h2>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="text-justify bg-white pro-services-box">
+
+
+                                <div class="container pt-5 pb-5 contact-form-box">
+                                    <form asp-route="ContactUs" method="post">
+                                        <div asp-validation-summary="ModelOnly" class="message-error"></div>
+
+                                        <div class="row">
+                                            <div class="col-sm-10 m-auto">
+                                                <label class="sr-only" asp-for="FullName" asp-postfix=":"></label>
+                                                <div class="inputs">
+                                                    <input class="theme-input-control form-control content-box  fullname" asp-for="FullName" placeholder="@T("ContactUs.FullName.Hint")" />
+                                                    <nop-required />
+                                                </div>
+                                                <span asp-validation-for="FullName"></span>
+                                            </div>
+
+                                            <div class="col-sm-10 m-auto">
+                                                <label class="sr-only" asp-for="Email" asp-postfix=":"></label>
+                                                <div class="inputs">
+                                                    <input class="theme-input-control form-control content-box email" asp-for="Email" placeholder="@T("ContactUs.Email.Hint")" />
+                                                    <nop-required />
+                                                </div>
+                                                <span asp-validation-for="Email"></span>
+                                            </div>
+
+                                            <div class="col-sm-10 m-auto">
+                                                <label class="sr-only" asp-for="Enquiry" asp-postfix=":"></label>
+                                                <div class="inputs">
+                                                    <textarea class="form-control h-100 content-box enquiry" asp-for="Enquiry" placeholder="@T("ContactUs.Enquiry.Hint")" rows="6"></textarea>
+                                                    <nop-required />
+                                                </div>
+                                                <span asp-validation-for="Enquiry"></span>
+                                            </div>
+
+                                            <div class="col-sm-10 m-auto">
+                                                @if (Model.DisplayCaptcha)
+                                                {
+                                                    <div class="captcha-box">
+                                                        <nop-captcha />
+                                                    </div>
+                                                }
+                                            </div>
+
+                                            <div class="col-sm-10 m-auto">
+
+                                                <button type="submit" name="send-email" class="button-1 contact-us-button theme-button">@T("ContactUs.Button") <i class="fa fa-paper-plane-o ml-2"></i></button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="~/Themes/NopStation_v4/Content/images/contact-page-img.png" class="img-fluid w-100" alt="themes">
+                        </div>
+                    </div>
+                </div>
+                <div class="social-media-icon mt-5 mb-5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-3 text-center">
+                                <div class="facebook-icon-box mb-3">
+                                    <a target="_blank" href="https://www.facebook.com/nopstation.bs23/">
+                                        <i class="fa fa-facebook-f" aria-hidden="true"></i>
+                                        <p>Facebook</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 text-center">
+                                <div class="facebook-icon-box mb-3">
+                                    <a target="_blank" href="https://twitter.com/nopstation">
+                                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                                        <p>Twitter</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 text-center">
+                                <div class="facebook-icon-box mb-3">
+                                    <a target="_blank" href="https://www.youtube.com/channel/UC2v6B2DU62hq7mCE6Umo07A">
+                                        <i class="fa fa-youtube" aria-hidden="true"></i>
+                                        <p>Youtube</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 text-center">
+                                <div class="facebook-icon-box mb-3">
+                                    <a target="_blank" href="https://www.linkedin.com/company/nop-station">
+                                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                        <p>Linkedin</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            }
+            @await Component.InvokeAsync("Widget", new { widgetZone = "contactus_bottom" })
+        </div>
+    </div>

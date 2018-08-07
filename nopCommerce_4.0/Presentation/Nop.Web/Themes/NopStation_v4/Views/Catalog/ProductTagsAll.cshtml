@@ -1,0 +1,33 @@
+﻿@model PopularProductTagsModel
+@{
+    Layout = "_ColumnsTwo";
+
+    //title
+    Html.AddTitleParts(T("PageTitle.AllProductTags").Text);
+    //page class
+    Html.AppendPageCssClassParts("html-product-tags-all-page");
+}
+@section heading {
+    <div class="page-title">
+        <h2 class="text-white text-center text-uppercase">@T("Products.Tags.All")</h2>
+    </div>
+}
+<div class="page product-tags-all-page">
+    <div class="page-body">
+        <div class="theme-box-shadow p-4" >
+            @if (Model.Tags.Count > 0)
+            {
+                <ul class="product-tags-list list-unstyled list-inline pl-4">
+                    @foreach (var item in Model.Tags)
+                    {
+                        <li class="list-inline-item m-3">
+                            <a href="@Url.RouteUrl("ProductsByTag", new { productTagId = item.Id, SeName = item.SeName })" class="producttag" style="font-size:@(Model.GetFontSize(item))%;">
+                                @item.Name
+                            </a>
+                        </li>
+                    }
+                </ul>
+            }
+        </div>
+    </div>
+</div>

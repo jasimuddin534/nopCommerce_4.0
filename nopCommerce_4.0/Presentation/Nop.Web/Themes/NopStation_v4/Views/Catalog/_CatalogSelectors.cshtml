@@ -1,0 +1,57 @@
+﻿@model CatalogPagingFilteringModel
+<div class="product-selectors">
+    <div class="row shop_item_filter bg-white p-2 ml-0 mr-0 align-items-center">
+       
+        @if (Model.AllowProductViewModeChanging)
+        {
+        <div class="col-md-9 col-sm-9">
+            <div class="filter-by clearfix">
+
+                @*sorting*@
+                @if (Model.AllowProductSorting)
+                {
+                <div class="float-left pr-3">
+                    <div class="product-sorting">
+                        <span>@T("Catalog.OrderBy")</span>
+                        @Html.DropDownList("products-orderby", Model.AvailableSortOptions, new { onchange = "setLocation(this.value);" })
+                    </div>
+                </div>
+                }
+                @if (Model.AllowCustomersToSelectPageSize)
+                {
+                    @*page size*@
+                <div class="float-left">
+                    <div class="product-page-size">
+                        <span>@T("Catalog.PageSize")</span>
+                        @Html.DropDownList("products-pagesize", Model.PageSizeOptions, new { onchange = "setLocation(this.value);" })
+                        @*<span>@T("Catalog.PageSize.PerPage")</span>*@
+                    </div>
+                </div>
+                }
+            </div>
+
+        </div>
+        }
+        
+        
+        <div class="col-md-3 col-sm-3 p-0">
+            @*view mode*@
+            <div class="product-viewmode shop-tab text-right">
+                <span class="sr-only">@T("Catalog.ViewMode")</span>
+                @if (Model.AvailableViewModes.Count > 1)
+                {
+                    var gridMode = Model.AvailableViewModes[0];
+                    var listMode = Model.AvailableViewModes[1];
+
+                    <a class="viewmode-icon grid @if(gridMode.Selected){<text>selected</text>}" href="@gridMode.Value" title="@gridMode.Text">
+                        <i class="fa fa-th"></i>
+                    </a>
+                    <a class="viewmode-icon list @if (listMode.Selected){<text>selected</text>}" href="@listMode.Value" title="@listMode.Text">
+                        <i class="fa fa-th-list"></i>
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+    
+</div>

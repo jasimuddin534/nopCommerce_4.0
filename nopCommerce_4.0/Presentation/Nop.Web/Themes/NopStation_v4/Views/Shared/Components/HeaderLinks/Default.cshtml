@@ -1,0 +1,86 @@
+﻿@model HeaderLinksModel
+@using System.Text.Encodings.Web
+    <ul class="navbar-nav header-links align-items-lg-center">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-fw" aria-hidden="true"></i> Account</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                @if (Model.IsAuthenticated)
+                {
+                    <li class="dropdown-item"><a href="@Url.RouteUrl("CustomerInfo")" class="ico-account">@T("Account.MyAccount")@*@Model.CustomerName*@</a></li>
+                    <li class="dropdown-item"><a href="@Url.RouteUrl("Logout")" class="ico-logout">@T("Account.Logout")</a></li>
+                }
+                else
+                {
+                    <li class="dropdown-item"><a href="@Url.RouteUrl("Register")" class="ico-register">@T("Account.Register")</a></li>
+                    <li class="dropdown-item"><a href="@Url.RouteUrl("Login")" class="ico-login">@T("Account.Login")</a></li>
+                }
+                @if (Model.AllowPrivateMessages)
+                {
+                    <li class="dropdown-item">
+                        <a href="@Url.RouteUrl("PrivateMessages", new { tab = "" })" class="ico-inbox">
+                            <span class="inbox-label">@T("PrivateMessages.Inbox")</span>
+                            <span class="inbox-unread">@Model.UnreadPrivateMessages</span>
+                        </a>
+                    </li>
+                }
+                @if (Model.WishlistEnabled)
+                {
+                    <li class="dropdown-item">
+                        <a href="@Url.RouteUrl("Wishlist")" class="ico-wishlist">
+                            <span class="wishlist-label">@T("Wishlist")</span>
+                            <span class="wishlist-qty">@T("Wishlist.HeaderQuantity", Model.WishlistItems)</span>
+                        </a>
+                    </li>
+                }
+            </ul>
+        </li>
+
+        @await Component.InvokeAsync("Widget", new { widgetZone = "header_links_before" })
+       
+        @if (Model.ShoppingCartEnabled)
+        {
+        <li id="topcartlink" class="align-self-lg-center">
+            <a href="@Url.RouteUrl("ShoppingCart")" class="ico-cart">
+                <i class="fa fa-shopping-cart fa-fw" aria-hidden="true"></i><span>
+                    <span class="cart-label">CART</span>
+                    @*<span class="cart-label">@T("ShoppingCart")</span>*@
+                    <span class="cart-qty">@T("ShoppingCart.HeaderQuantity", Model.ShoppingCartItems)</span>
+            </a>
+            <ul class="minicart-dropdown-menu">
+                <li>
+                    @await Component.InvokeAsync("FlyoutShoppingCart")
+                </li>
+
+            </ul>
+        </li>
+        }
+        @await Component.InvokeAsync("Widget", new { widgetZone = "header_links_after" })
+    </ul>
+    @if (Model.AllowPrivateMessages && !string.IsNullOrEmpty(Model.AlertMessage))
+    {
+        //new private message notification
+        <script type="text/javascript" asp-location="Footer">
+            $(document).ready(function () {
+                displayPopupNotification('@Html.Raw(JavaScriptEncoder.Default.Encode(Model.AlertMessage))', 'success', false);
+            });
+        </script>
+    }
+    @if (Model.ShoppingCartEnabled)
+    {
+        <script type="text/javascript" asp-location="Footer">
+            $(document).ready(function () {
+                $('.header').on('mouseenter', '#topcartlink', function () {
+                    $('#flyout-cart').addClass('active');
+                });
+                $('.header').on('mouseleave', '#topcartlink', function () {
+                    $('#flyout-cart').removeClass('active');
+                });
+                $('.header').on('mouseenter', '#flyout-cart', function () {
+                    $('#flyout-cart').addClass('active');
+                });
+                $('.header').on('mouseleave', '#flyout-cart', function () {
+                    $('#flyout-cart').removeClass('active');
+                });
+            });
+        </script>
+    }

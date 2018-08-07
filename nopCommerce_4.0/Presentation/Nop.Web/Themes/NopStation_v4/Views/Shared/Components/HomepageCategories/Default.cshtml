@@ -1,0 +1,26 @@
+﻿@model IList<CategoryModel>
+@if (Model.Count > 0)
+{
+    <div class="products_add_content bg-white">
+        <div class="container wow fadeInDown">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-4 col-sm-6">
+                        <div class="products-add-box category-item  mb-3">
+                            <a href="@Url.RouteUrl("Category", new { SeName = item.SeName })" title="@item.PictureModel.Title">
+                                <img class="img-fluid w-100" alt="apps" alt="@item.PictureModel.AlternateText" src="@item.PictureModel.ImageUrl" title="@item.PictureModel.Title">
+                                <span class="click-products-add text-uppercase"> View all </span>
+                            </a>
+                            <h4 class="title text-center title-overlay">
+                                    @item.Name
+                            </h4>
+                        </div>
+                    </div>
+                }
+
+
+            </div>
+        </div>
+    </div>
+}

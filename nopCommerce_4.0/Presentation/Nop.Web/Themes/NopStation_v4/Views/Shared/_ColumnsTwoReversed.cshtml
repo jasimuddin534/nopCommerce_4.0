@@ -1,0 +1,91 @@
+﻿@{
+    Layout = "_Root";
+}
+@{
+    //current category ID
+    var currentCategoryId = 0;
+    if (Url.ActionContext.RouteData.Values["controller"].ToString().Equals("catalog", StringComparison.InvariantCultureIgnoreCase) &&
+        Url.ActionContext.RouteData.Values["action"].ToString().Equals("category", StringComparison.InvariantCultureIgnoreCase))
+    {
+        currentCategoryId = Convert.ToInt32(Url.ActionContext.RouteData.Values["categoryId"].ToString());
+    }
+
+
+    //current manufacturer ID
+    var currentManufacturerId = 0;
+    if (Url.ActionContext.RouteData.Values["controller"].ToString().Equals("catalog", StringComparison.InvariantCultureIgnoreCase) &&
+        Url.ActionContext.RouteData.Values["action"].ToString().Equals("manufacturer", StringComparison.InvariantCultureIgnoreCase))
+    {
+        currentManufacturerId = Convert.ToInt32(Url.ActionContext.RouteData.Values["manufacturerId"].ToString());
+    }
+
+
+    //current product ID
+    var currentProductId = 0;
+    if (Url.ActionContext.RouteData.Values["controller"].ToString().Equals("product", StringComparison.InvariantCultureIgnoreCase) &&
+        Url.ActionContext.RouteData.Values["action"].ToString().Equals("productdetails", StringComparison.InvariantCultureIgnoreCase))
+    {
+        currentProductId = Convert.ToInt32(Url.ActionContext.RouteData.Values["productId"].ToString());
+    }
+}
+
+
+<div class="body_container">
+    <div class="inner_page_navigation">
+
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2 class="temporari-heading text-uppercase font-bold text-white">
+                        @if (IsSectionDefined("heading"))
+                        {
+                            @RenderSection("heading")
+                        }
+                    </h2>
+                    @if (IsSectionDefined("Breadcrumb"))
+                    {
+                        @RenderSection("Breadcrumb")
+                    }
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="container inner_page_body_container">
+        <div class="row">
+            <div class="col-xl-9 col-lg-8">
+                <div class="center-2">
+                    <div class="products_details_container   bg-white   m-1 p-3 mb-3">
+                        @await Component.InvokeAsync("Widget", new { widgetZone = "main_column_before" })
+                        @RenderBody()
+                        @await Component.InvokeAsync("Widget", new { widgetZone = "main_column_after" })
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4">
+
+                <div class="side-2">
+                    @if (IsSectionDefined("right"))
+                    {
+                        @RenderSection("right")
+                    }
+                    else
+                    {
+                        <div class="accordion" id="accordionEx" role="tablist" aria-multiselectable="false">
+                            @await Component.InvokeAsync("Widget", new { widgetZone = "left_side_column_before" })
+                            @await Component.InvokeAsync("CategoryNavigation", new { currentCategoryId = currentCategoryId, currentProductId = currentProductId })
+                            @await Component.InvokeAsync("Widget", new { widgetZone = "left_side_column_after_category_navigation" })
+                            @await Component.InvokeAsync("ManufacturerNavigation", new { currentManufacturerId = currentManufacturerId })
+                            @await Component.InvokeAsync("VendorNavigation")
+                            @await Component.InvokeAsync("RecentlyViewedProductsBlock", new { productThumbPictureSize = 64 })
+                            @await Component.InvokeAsync("PopularProductTags")
+                            @await Component.InvokeAsync("PollBlock", new { systemKeyword = "LeftColumnPoll" })
+                            @await Component.InvokeAsync("Widget", new { widgetZone = "left_side_column_after" })
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

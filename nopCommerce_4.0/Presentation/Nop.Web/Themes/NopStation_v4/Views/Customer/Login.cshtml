@@ -1,0 +1,155 @@
+﻿@model LoginModel
+@using System.Net
+@using Nop.Core
+@inject IWebHelper webHelper
+@{
+    Layout = "_ColumnsOne";
+
+    //title
+    Html.AddTitleParts(T("PageTitle.Login").Text);
+    //page class
+    Html.AppendPageCssClassParts("html-login-page");
+
+    //register URL with return URL (if specified)
+    var registerUrl = Url.RouteUrl("Register");
+    if (!string.IsNullOrEmpty(this.Context.Request.Query["returnUrl"]))
+    {
+        registerUrl = webHelper.ModifyQueryString(registerUrl, "returnurl=" + WebUtility.UrlEncode(this.Context.Request.Query["returnUrl"]), null);
+    }
+}
+
+<div class="page login-page body_container">
+    <div class="inner_page_navigation">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2 class="text-uppercase font-bold text-white"> @T("Account.Login.Welcome") </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    @await Html.PartialAsync("_ExternalAuthentication.Errors")
+    <div class="container inner_page_body_container">
+        <div class="row  justify-content-center">
+            <!----LEFT-PART---->
+            <!----LEFT-PART---->
+            <div class="col-md-push-4 col-md-9 col-sm-12">
+                <div class="row products_details_container bg-white m-1">
+                    <div class="col-md-12 col-sm-9">
+                        <div class="products_description">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs nav-justified font-bold text-uppercase" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active show" data-toggle="tab" href="#panel5" role="tab" aria-selected="false">
+                                        @T("Account.Login.LoginButton")
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#panel6" role="tab" aria-selected="true">
+                                        @T("Account.Register")
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <!-- Tab panels -->
+                            <div class="tab-content">
+
+                                <div class="tab-pane fade in active show text-justify p-3 margin-auto" id="panel5" role="tabpanel">
+                                    <div class="container mt-4 pt-4 pb-4 pl-0">
+                                        <form asp-route="Login" asp-route-returnurl="@Context.Request.Query["ReturnUrl"]" method="post">
+                                            <div asp-validation-summary="ModelOnly" class="message-error">@T("Account.Login.Unsuccessful")</div>
+                                            <div class="form-fields">
+                                                @if (Model.UsernamesEnabled)
+                                                {
+                                                    <div class="input">
+                                                        <label asp-for="Username" asp-postfix=":"></label>
+                                                        <input asp-for="Username" class="username form-control font-weight-light" autofocus="autofocus" placeholder="Username" />
+                                                        <span asp-validation-for="Username"></span>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div class="inputs col-sm-10 m-auto">
+                                                        <label class="sr-only" asp-for="Email" asp-postfix=":"></label>
+                                                        <input asp-for="Email" class="email form-control font-weight-light" autofocus="autofocus" placeholder="Email" />
+                                                        <span asp-validation-for="Email"></span>
+                                                    </div>
+                                                }
+                                                <div class="inputs col-sm-10 m-auto">
+                                                    <label class="sr-only" asp-for="Password" asp-postfix=":"></label>
+                                                    <input asp-for="Password" class="password form-control font-weight-light" placeholder="Password" />
+                                                    <span asp-validation-for="Password"></span>
+                                                </div>
+                                                <div class="inputs reversed col-sm-10 m-auto">
+                                                    <input class="custom_checkbox" asp-for="RememberMe" />
+                                                    <label asp-for="RememberMe"></label>
+                                                    <span class="forgot-password float-right">
+                                                        <a asp-route="PasswordRecovery">@T("Account.Login.ForgotPassword")</a>
+                                                    </span>
+                                                </div>
+                                                @if (Model.DisplayCaptcha)
+                                                {
+                                                    <div class="captcha-box col-sm-10 m-auto">
+                                                        <nop-captcha />
+                                                    </div>
+                                                }
+                                            </div>
+                                            <div class="buttons col-sm-10 m-auto">
+                                                <input class="login-button checkout_button text-white text-uppercase margin-auto login_button" type="submit" value="@T("Account.Login.LoginButton")" />
+                                            </div>
+                                        </form>
+                                        <div class="external-authentication col-sm-10 m-auto">
+                                            @await Component.InvokeAsync("ExternalMethods", "ExternalAuthentication")
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade text-justify p-3" id="panel6" role="tabpanel">
+                                    <div class="container mt-4 pt-4 pb-4 pl-0">
+                                        <form class="introduction-form">
+                                            <div class="row">
+                                                <div class="col-sm-8 m-auto">
+                                                    <div class="text-center">
+                                                        @if (Model.CheckoutAsGuest)
+                                                        {
+                                                            <div class="new-wrapper checkout-as-guest-or-register-block">
+                                                                <div class="title">
+                                                                    <h4>@T("Account.Login.CheckoutAsGuestOrRegister")</h4>
+                                                                </div>
+                                                                <div class="text mb-3">
+                                                                    @await Component.InvokeAsync("TopicBlock", new { systemName = "CheckoutAsGuestOrRegister" })
+                                                                </div>
+                                                                <div class="buttons">
+                                                                    <input type="button" class="checkout-as-guest-button checkout_button text-white text-uppercase margin-auto login_button" onclick="location.href='@Url.RouteUrl("Checkout")'" value="@T("Account.Login.CheckoutAsGuest")" />
+                                                                    <input type="button" class="register-button checkout_button text-white text-uppercase margin-auto login_button" onclick="location.href='@registerUrl'" value="@T("Account.Register")" />
+                                                                </div>
+                                                            </div>
+                                                        }
+                                                        else
+                                                        {
+                                                            <div class="new-wrapper register-block">
+                                                                <div class="title">
+                                                                    <h4>@T("Account.Login.NewCustomer")</h4>
+                                                                </div>
+                                                                <div class="text mb-3">
+                                                                    @T("Account.Login.NewCustomerText")
+                                                                </div>
+                                                                <div class="buttons">
+                                                                    <input type="button" class="register-button checkout_button text-white text-uppercase margin-auto login_button" onclick="location.href='@registerUrl'" value="@T("Account.Register")" />
+                                                                </div>
+                                                            </div>
+                                                        }
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       </div>
+</div>

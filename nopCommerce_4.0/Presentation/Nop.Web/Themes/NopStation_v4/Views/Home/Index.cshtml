@@ -1,0 +1,754 @@
+﻿@{
+    Layout = "_ColumnsOne";
+
+    //page class
+    Html.AppendPageCssClassParts("html-home-page");
+}
+
+@*<div class="page home-page">
+        <div class="page-body">
+            @await Component.InvokeAsync("Widget", new { widgetZone = "home_page_top" })
+            @await Component.InvokeAsync("TopicBlock", new { systemName = "HomePageText" })
+
+  
+            
+           
+            @await Component.InvokeAsync("Widget", new { widgetZone = "home_page_before_poll" })
+            @await Component.InvokeAsync("HomepagePolls")
+            @await Component.InvokeAsync("Widget", new { widgetZone = "home_page_bottom" })
+        </div>
+    </div>*@
+    
+
+<!DOCTYPE html>
+
+
+    <div id="container">
+        <!-- start header -->
+        <!----------------------------------Main Navigation---------------------------------->
+        <!----------------------------------Main Navigation---------------------------------->
+        <header>
+
+            @*<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-pink scrolling-navbar wow fadeInUp">
+                <a class="navbar-brand" href="index.html">
+                    <img src="~/Themes/NopStation_v4/Content/images/logo.png" alt="logo">
+
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </button>
+                <div class="collapse navbar-collapse text-uppercase" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="apps.html">apps</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="themes.html">Themes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="plugins.html">Plugins</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="custom_solution.html"> Custom Solution </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="cloud_services.html">Cloud Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog.html">blog  </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact_us.html">contact</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav nav-flex-icons">
+                        <li class="nav-item Login">
+                            <a href="login.html" class="nav-link"> <i class="fa fa-sign-in" aria-hidden="true"></i> Login  </a>
+                        </li>
+                        <li class="nav-item shopping_cart">
+                            <a href="cart.html" class="nav-link"> <i class="fa fa-shopping-cart" aria-hidden="true"></i>  cart <span> (5)</span> </a>
+                        </li>
+                        <li class="nav-item search_box">
+                            <a data-toggle="modal" data-target="#basicExampleModal" class="nav-link"><i class="fa fa-search"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>*@
+
+            
+
+        </header>
+        <!----------------------------------Main Navigation---------------------------------->
+        <!----------------------------------Main Navigation---------------------------------->
+        <!-- End header -->
+        <!--start Body Container-->
+
+        <div class="body_container">
+
+            <!----------------------------------Slider---------------------------------->
+            <!----------------------------------Slider---------------------------------->
+
+            <div class="row m-0">
+
+                <div id="carousel-example-1z" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+                    </ol>
+
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100 img-fluid" src="~/Themes/NopStation_v4/Content/images/banner.png" alt="First slide">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100 img-fluid" src="~/Themes/NopStation_v4/Content/images/banner-2.jpg" alt="Third slide">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100 img-fluid" src="~/Themes/NopStation_v4/Content/images/banner-3.jpg" alt="Third slide">
+                        </div>
+                    </div>
+
+                    <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+                        <h2> <i class="fa fa-angle-left" aria-hidden="true"></i> </h2>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+                        <h2> <i class="fa fa-angle-right" aria-hidden="true"></i> </h2>
+                        <span class="sr-only">Next</span>
+                    </a>
+
+                </div>
+
+            </div>
+            <!----------------------------------Slider---------------------------------->
+            <!----------------------------------Slider---------------------------------->
+            <!----------------------------------Three Offer Box---------------------------------->
+            <!----------------------------------Three Offer Box---------------------------------->
+
+            @await Component.InvokeAsync("Widget", new { widgetZone = "home_page_before_categories" })
+            @await Component.InvokeAsync("HomepageCategories")
+            @await Component.InvokeAsync("Widget", new { widgetZone = "home_page_before_products" })
+
+
+
+
+
+            <!----------------------------------Three Offer Box---------------------------------->
+            <!----------------------------------Three Offer Box---------------------------------->
+            <!----------------------------------NEW PRODUCTS---------------------------------->
+            <!----------------------------------NEW PRODUCTS---------------------------------->
+
+
+
+
+            @await Component.InvokeAsync("Widget", new { widgetZone = "home_page_before_products" })
+            @await Component.InvokeAsync("HomepageProducts")
+            @await Component.InvokeAsync("Widget", new { widgetZone = "home_page_before_best_sellers" })
+
+            @await Component.InvokeAsync("HomepageBestSellers")
+
+
+
+            @*<div class="container body_products">
+
+            <h2 class="body_title_text text-uppercase text-center"> <span class="text-lowercase"> nop </span> new products </h2>
+
+            <div class="col-md-push-4 col-md-12 col-sm-12">
+                <div class="row">
+
+                    <!--PRODUCTS 1 -->
+                    <div class="col-md-4">
+                        <div class="view overlay bg-white products_box">
+
+                            <div class="view overlay hm-white-slight"> <img src="~/Themes/NopStation_v4/Content/images/products-1.png" class="img-fluid w-100" alt="themes"> </div>
+
+                            <div class="products_box_body">
+                                <h5 class="text-uppercase products_title font-bold"><strong>nop E-Shopper</strong></h5>
+                                <p class="card-text">Some quick example text to build on the card title and make..</p>
+
+                                <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i>
+                                <h5 class="font-bold fs">$500.00</h5>
+                            </div>
+
+                            <div class="mask flex-center rgba-red-strong">
+
+                                <p class="white-text">
+                                    <a title="ADD TO CART" href="themes.html"> <i class="fa fa-cart-plus bg-white"></i> </a>
+                                    <a data-toggle="modal" data-target="#basicExampleModal-2" title="QUICK VIEW" href="products_list.html"> <i class="fa fa-eye bg-white" aria-hidden="true"></i> </a>
+                                    <a title="VIEW LIST" href="themes.html"> <i class="fa fa-th-list bg-white" aria-hidden="true"></i> </a>
+                                    <a title="WISHLIST" href="themes.html"><i class="fa fa-heart-o bg-white" aria-hidden="true"></i> </a>
+                                </p>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!------------ QUICK VIEW ------------>
+
+                    <div class="modal fade quick-view-box" id="basicExampleModal-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content border-0">
+
+                                <div class="modal-header border-0">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+
+
+                                <div class="row p-5">
+                                    <div class="col-md-6 col-sm-6 gallery_left_container">
+                                        <div id="carousel-example-1z-2" class="carousel slide carousel-fade" data-ride="carousel">
+                                            <ol class="carousel-indicators">
+                                                <li data-target="#carousel-example-1z-2" data-slide-to="0" class=""></li>
+                                                <li data-target="#carousel-example-1z-2" data-slide-to="1" class="active"></li>
+                                            </ol>
+
+                                            <div class="carousel-inner" role="listbox">
+                                                <div class="carousel-item">
+                                                    <img class="d-block w-100 img-fluid" src="~/Themes/NopStation_v4/Content/images/gallery_lg_img.png" alt="First slide">
+                                                </div>
+
+                                                <div class="carousel-item active">
+                                                    <img class="d-block w-100 img-fluid" src="~/Themes/NopStation_v4/Content/images/gallery_lg_img_1.png" alt="Third slide">
+                                                </div>
+                                            </div>
+
+                                            <a class="carousel-control-prev" href="#carousel-example-1z-2" role="button" data-slide="prev">
+                                                <h2> <i class="fa fa-angle-left" aria-hidden="true"></i> </h2>
+                                                <span class="sr-only">Previous</span>
+                                            </a>
+                                            <a class="carousel-control-next" href="#carousel-example-1z-2" role="button" data-slide="next">
+                                                <h2> <i class="fa fa-angle-right" aria-hidden="true"></i> </h2>
+                                                <span class="sr-only">Next</span>
+                                            </a>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-6 products_right_container">
+                                        <h4 class="font-bold">Fashion Clothing nop Commerce Theme</h4>
+                                        <p>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            (3 reviews)  /  <a href="#"> Write a review</a>
+                                        </p>
+                                        <h2>$1500.00 </h2>
+
+                                        <p>
+                                            <span class="font-bold text-uppercase d-block text-justify"> Short description</span>
+                                            This is a open source theme designed by using Twitter Bootstap. It is open source for the
+                                            NopCommerce community and it will be..
+                                        </p>
+
+                                        <p>
+                                            <span class="font-bold text-uppercase d-block"> Supported Versions</span>
+                                            nopCommerce <strong>3.50</strong>,
+                                            nopCommerce <strong>3.60 </strong>, nopCommerce <strong>3.70</strong>, nopCommerce <strong>4.00</strong>
+                                        </p>
+
+                                        <p class="font-bold text-uppercase">Availability :  <strong class="text-blue">In stock</strong>  </p>
+
+                                        <p class="see-all-products-button add_to_cart_button">
+                                            <a class="text-white font-bold text-uppercase" href="cart.html"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> add to cart </a>
+                                            <a class="text-white font-bold text-uppercase live_demo" href="#"> live demo </a>
+                                        </p>
+
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <!------------ QUICK VIEW ------------>
+                    <!--PRODUCTS 1 -->
+                    <!--PRODUCTS 2 -->
+                    <div class="col-md-4">
+                        <div class="view overlay bg-white products_box">
+
+                            <div class="view overlay hm-white-slight"> <img src="~/Themes/NopStation_v4/Content/images/products-2.png" class="img-fluid w-100" alt="themes"> </div>
+
+                            <div class="products_box_body">
+                                <h5 class="text-uppercase products_title font-bold"><strong>nop E-Shopper</strong></h5>
+                                <p class="card-text">Some quick example text to build on the card title and make..</p>
+
+                                <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i>
+                                <h5 class="font-bold fs">$500.00</h5>
+                            </div>
+
+                            <div class="mask flex-center rgba-red-strong">
+
+                                <p class="white-text">
+                                    <a title="ADD TO CART" href="themes.html"> <i class="fa fa-cart-plus bg-white"></i> </a>
+                                    <a data-toggle="modal" data-target="#basicExampleModal-2" title="QUICK VIEW" href="products_list.html"><i class="fa fa-eye bg-white" aria-hidden="true"></i> </a>
+                                    <a title="VIEW LIST" href="themes.html"> <i class="fa fa-th-list bg-white" aria-hidden="true"></i> </a>
+                                    <a title="WISHLIST" href="themes.html"><i class="fa fa-heart-o bg-white" aria-hidden="true"></i> </a>
+                                </p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--PRODUCTS 2 -->
+                    <!--PRODUCTS 3 -->
+                    <div class="col-md-4">
+                        <div class="view overlay bg-white products_box">
+
+                            <div class="view overlay hm-white-slight"> <img src="~/Themes/NopStation_v4/Content/images/products-3.png" class="img-fluid w-100" alt="themes"> </div>
+
+                            <div class="products_box_body">
+                                <h5 class="text-uppercase products_title font-bold"><strong>nop E-Shopper</strong></h5>
+                                <p class="card-text">Some quick example text to build on the card title and make..</p>
+
+                                <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i>
+                                <h5 class="font-bold fs">$500.00</h5>
+                            </div>
+
+                            <div class="mask flex-center rgba-red-strong">
+
+                                <p class="white-text">
+                                    <a title="ADD TO CART" href="themes.html"> <i class="fa fa-cart-plus bg-white"></i> </a>
+                                    <a data-toggle="modal" data-target="#basicExampleModal-2" title="QUICK VIEW" href="products_list.html"><i class="fa fa-eye bg-white" aria-hidden="true"></i> </a>
+                                    <a title="VIEW LIST" href="themes.html"> <i class="fa fa-th-list bg-white" aria-hidden="true"></i> </a>
+                                    <a title="WISHLIST" href="themes.html"><i class="fa fa-heart-o bg-white" aria-hidden="true"></i> </a>
+                                </p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--PRODUCTS 3 -->
+                    <!--PRODUCTS 4 -->
+                    <!--PRODUCTS 4 -->
+                    <!--PRODUCTS 5 -->
+                    <div class="col-md-4">
+                        <div class="view overlay bg-white products_box">
+
+                            <div class="view overlay hm-white-slight"> <img src="~/Themes/NopStation_v4/Content/images/products-5.png" class="img-fluid w-100" alt="themes"> </div>
+
+                            <div class="products_box_body">
+                                <h5 class="text-uppercase products_title font-bold"><strong>nop E-Shopper</strong></h5>
+                                <p class="card-text">Some quick example text to build on the card title and make..</p>
+
+                                <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i>
+                                <h5 class="font-bold fs">$500.00</h5>
+                            </div>
+
+                            <div class="mask flex-center rgba-red-strong">
+
+                                <p class="white-text">
+                                    <a title="ADD TO CART" href="themes.html"> <i class="fa fa-cart-plus bg-white"></i> </a>
+                                    <a data-toggle="modal" data-target="#basicExampleModal-2" title="QUICK VIEW" href="products_list.html"><i class="fa fa-eye bg-white" aria-hidden="true"></i> </a>
+                                    <a title="VIEW LIST" href="themes.html"> <i class="fa fa-th-list bg-white" aria-hidden="true"></i> </a>
+                                    <a title="WISHLIST" href="themes.html"><i class="fa fa-heart-o bg-white" aria-hidden="true"></i> </a>
+                                </p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--PRODUCTS 5 -->
+                    <!--PRODUCTS 6 -->
+                    <div class="col-md-4">
+                        <div class="view overlay bg-white products_box">
+
+                            <div class="view overlay hm-white-slight"> <img src="~/Themes/NopStation_v4/Content/images/products-5.png" class="img-fluid w-100" alt="themes"> </div>
+
+                            <div class="products_box_body">
+                                <h5 class="text-uppercase products_title font-bold"><strong>nop E-Shopper</strong></h5>
+                                <p class="card-text">Some quick example text to build on the card title and make..</p>
+
+                                <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i>
+                                <h5 class="font-bold fs">$500.00</h5>
+                            </div>
+
+                            <div class="mask flex-center rgba-red-strong">
+
+                                <p class="white-text">
+                                    <a title="ADD TO CART" href="themes.html"> <i class="fa fa-cart-plus bg-white"></i> </a>
+                                    <a data-toggle="modal" data-target="#basicExampleModal-2" title="QUICK VIEW" href="products_list.html"><i class="fa fa-eye bg-white" aria-hidden="true"></i> </a>
+                                    <a title="VIEW LIST" href="themes.html"> <i class="fa fa-th-list bg-white" aria-hidden="true"></i> </a>
+                                    <a title="WISHLIST" href="themes.html"><i class="fa fa-heart-o bg-white" aria-hidden="true"></i> </a>
+                                </p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--PRODUCTS 6 -->
+                    <!--PRODUCTS 7 -->
+                    <div class="col-md-4">
+                        <div class="view overlay bg-white products_box">
+
+                            <div class="view overlay hm-white-slight"> <img src="~/Themes/NopStation_v4/Content/images/products-5.png" class="img-fluid w-100" alt="themes"> </div>
+
+                            <div class="products_box_body">
+                                <h5 class="text-uppercase products_title font-bold"><strong>nop E-Shopper</strong></h5>
+                                <p class="card-text">Some quick example text to build on the card title and make..</p>
+
+                                <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i>
+                                <h5 class="font-bold fs">$500.00</h5>
+                            </div>
+
+                            <div class="mask flex-center rgba-red-strong">
+
+                                <p class="white-text">
+                                    <a title="ADD TO CART" href="themes.html"> <i class="fa fa-cart-plus bg-white"></i> </a>
+                                    <a data-toggle="modal" data-target="#basicExampleModal-2" title="QUICK VIEW" href="products_list.html"><i class="fa fa-eye bg-white" aria-hidden="true"></i> </a>
+                                    <a title="VIEW LIST" href="themes.html"> <i class="fa fa-th-list bg-white" aria-hidden="true"></i> </a>
+                                    <a title="WISHLIST" href="themes.html"><i class="fa fa-heart-o bg-white" aria-hidden="true"></i> </a>
+                                </p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--PRODUCTS 7 -->
+                    <!--PRODUCTS 8 -->
+                    <!--PRODUCTS 8 -->
+
+                </div>
+            </div>
+
+            <div class="col-sm-3 see-all-products-button"> <a class="text-white font-bold text-uppercase mb-5" href="#"> see all products</a> </div>
+
+
+        </div>*@
+
+            <!----------------------------------NEW PRODUCTS---------------------------------->
+            <!----------------------------------NEW PRODUCTS---------------------------------->
+            <!----------------------------------Explor_Offers_container---------------------------------->
+            <!----------------------------------Explor_Offers_container---------------------------------->
+
+            <div class="Explor_Offers_container">
+
+                <div class="container">
+                    <h2 class="body_title_text text-uppercase text-center">  Exclusive native   <span class="text-lowercase">nop</span> Commerce mobile Apps </h2>
+                    <p class="text-center"> Creating outstanding online stores. Giving 100% professional look with aesthetic designs and features.</p>
+
+                    <div class="row">
+
+                        <div class="col-sm-6 text-center wow fadeInDown">
+
+                            <i class="fa fa-apple" aria-hidden="true"></i>
+                            <h3>iOS</h3>
+                            <p>Our highly customizable iOS apps for nopCommerce store owners can save owners’ time and money at the same time.</p>
+
+                        </div>
+
+                        <div class="col-sm-6 text-center wow fadeInUp">
+
+                            <i class="fa fa-android" aria-hidden="true"></i>
+                            <h3>Android</h3>
+                            <p>Highly customizable native android app for nopCommerce for the latest version is served with the best customer hauling guarantee.</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-sm-3 see-all-products-button"> <a class="text-white font-bold text-uppercase" href="#"> Explor Offers </a> </div>
+
+                </div>
+            </div>
+
+            <!----------------------------------Explor_Offers_container---------------------------------->
+            <!----------------------------------Explor_Offers_container---------------------------------->
+            <!----------------------------------Client feedback---------------------------------->
+            <!----------------------------------Client feedback---------------------------------->
+
+
+            <div class="home-demo container Client_feedback_container">
+                <h2 class="body_title_text text-uppercase text-center"> <span> Client </span> feedback </h2>
+
+
+                <div class="owl-carousel">
+
+                    <div class="feedback_body bg-white">
+                        <div class="d-flex">
+                            <p class="pr-3"> <img src="~/Themes/NopStation_v4/Content/images/client_icon.png" class="img-fluid" alt="themes"></p>
+                            <h6 class="font-bold">Abraham Mathias, CEO Obeezi.com</h6>
+                        </div>
+                        <p>
+                            <i>
+                                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of Lorem Ipsum is not simply random text Lorem Ipsum is not..
+                                classical Latin literature
+                            </i>
+                        </p>
+                        <i class="feedback_date">15/01/2018</i>
+                    </div>
+
+                    <div class="feedback_body bg-white">
+                        <div class="d-flex">
+                            <p class="pr-3"> <img src="~/Themes/NopStation_v4/Content/images/client_icon.png" class="img-fluid" alt="themes"></p>
+                            <h6 class="font-bold">Abraham Mathias, CEO Obeezi.com</h6>
+                        </div>
+                        <p>
+                            <i>
+                                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of Lorem Ipsum is not simply random text Lorem Ipsum is not..
+                                classical Latin literature
+                            </i>
+                        </p>
+                        <i class="feedback_date">15/01/2018</i>
+                    </div>
+
+                    <div class="feedback_body bg-white">
+                        <div class="d-flex">
+                            <p class="pr-3"> <img src="~/Themes/NopStation_v4/Content/images/client_icon.png" class="img-fluid" alt="themes"></p>
+                            <h6 class="font-bold">Abraham Mathias, CEO Obeezi.com</h6>
+                        </div>
+                        <p>
+                            <i>
+                                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of Lorem Ipsum is not simply random text Lorem Ipsum is not..
+                                classical Latin literature
+                            </i>
+                        </p>
+                        <i class="feedback_date">15/01/2018</i>
+                    </div>
+
+                    <div class="feedback_body bg-white">
+                        <div class="d-flex">
+                            <p class="pr-3"> <img src="~/Themes/NopStation_v4/Content/images/client_icon.png" class="img-fluid" alt="themes"></p>
+                            <h6 class="font-bold">Abraham Mathias, CEO Obeezi.com</h6>
+                        </div>
+                        <p>
+                            <i>
+                                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of Lorem Ipsum is not simply random text Lorem Ipsum is not..
+                                classical Latin literature
+                            </i>
+                        </p>
+                        <i class="feedback_date">15/01/2018</i>
+                    </div>
+
+                    <div class="feedback_body bg-white">
+                        <div class="d-flex">
+                            <p class="pr-3"> <img src="~/Themes/NopStation_v4/Content/images/client_icon.png" class="img-fluid" alt="themes"></p>
+                            <h6 class="font-bold">Abraham Mathias, CEO Obeezi.com</h6>
+                        </div>
+                        <p>
+                            <i>
+                                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of Lorem Ipsum is not simply random text Lorem Ipsum is not..
+                                classical Latin literature
+                            </i>
+                        </p>
+                        <i class="feedback_date">15/01/2018</i>
+                    </div>
+
+                    <div class="feedback_body bg-white">
+                        <div class="d-flex">
+                            <p class="pr-3"> <img src="~/Themes/NopStation_v4/Content/images/client_icon.png" class="img-fluid" alt="themes"></p>
+                            <h6 class="font-bold">Abraham Mathias, CEO Obeezi.com</h6>
+                        </div>
+                        <p>
+                            <i>
+                                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of Lorem Ipsum is not simply random text Lorem Ipsum is not..
+                                classical Latin literature
+                            </i>
+                        </p>
+                        <i class="feedback_date">15/01/2018</i>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+            <script>
+                var owl = $('.owl-carousel');
+                owl.owlCarousel({
+                    margin: 10,
+
+                    loop: true,
+                    autoplay: true,
+                    autoplayTimeout: 4000,
+                    autoplayHoverPause: true,
+
+                    dots: true,
+
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        600: {
+                            items: 2
+                        },
+                        1000: {
+                            items: 3
+                        }
+                    }
+                })
+            </script>
+
+
+
+            <!----------------------------------Client feedback---------------------------------->
+            <!----------------------------------Client feedback---------------------------------->
+            <!----------------------------------our quality---------------------------------->
+            <!----------------------------------our quality---------------------------------->
+
+            <div class="our_quality_container bg-white text-white text-center">
+
+                <div class="container">
+                    <h2 class="body_title_text text-uppercase text-center"> <span> Our </span> quality </h2>
+
+                    <div class="row">
+                        <div class="col-sm-3 secure_payment">
+                            <i class="fa fa-key" aria-hidden="true"></i>
+                            <h6 class="font-bold text-uppercase">Secure Payment</h6>
+                            <p>Via popular payment systems</p>
+                        </div>
+
+                        <div class="col-sm-3 secure_payment high_quality_products">
+                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                            <h6 class="font-bold text-uppercase">High Quality Products</h6>
+                            <p>Professionals with 8+ years of work experience.</p>
+                        </div>
+
+                        <div class="col-sm-3 secure_payment">
+                            <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                            <h6 class="font-bold text-uppercase">100% Satisfaction</h6>
+                            <p>In case you are not satisfied with the purchased product</p>
+                        </div>
+
+                        <div class="col-sm-3 secure_payment high_quality_products">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            <h6 class="font-bold text-uppercase">24/7 Customer service</h6>
+                            <p>Our Customer Care Managers will always help you.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!----------------------------------our quality---------------------------------->
+            <!----------------------------------our quality---------------------------------->
+            <!----------------------------------Customization---------------------------------->
+            <!----------------------------------Customization---------------------------------->
+
+            <div class="customization_container">
+
+                <div class="container wow fadeInDown">
+                    <h2 class="body_title_text text-uppercase"> <span> Customization </span></h2>
+                    <div class="row">
+                        <div class="col-sm-8">
+
+                            <p>
+                                We adore custom requirements. Starting from scratch then delivering the exact envisioned product by customer is our ultimate goal. Therefore, nopStation is always in the front on taking challenges for giving the best nopCommerce
+                                experiences to the customers.
+                            </p>
+
+
+                            <h5 class="font-bold text-uppercase"> We emphasize on</h5>
+                            <p><i class="fa fa-check" aria-hidden="true"></i> Customization in nopCommerce in almost any way customers want.</p>
+                            <p><i class="fa fa-check" aria-hidden="true"></i>  Opening endless options window for nopCommerce development.</p>
+                            <p><i class="fa fa-check" aria-hidden="true"></i> Added functionality that fits customers’ needs.</p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3 see-all-products-button"> <a class="text-white font-bold text-uppercase" href="#"> customization </a> </div>
+
+                </div>
+
+            </div>
+
+            <!----------------------------------Customization---------------------------------->
+            <!----------------------------------Customization---------------------------------->
+            <!---------------------------------- Our Clients ---------------------------------->
+            <!---------------------------------- Our Clients ---------------------------------->
+
+
+            <div class="home-demo container Client_feedback_container our_clients">
+                <h2 class="body_title_text text-uppercase text-center"> <span>  Our </span>Clients </h2>
+
+
+                <div class="owl-carousel">
+
+                    <div class="feedback_body bg-white"> <img src="~/Themes/NopStation_v4/Content/images/our_clients_logo_1.png" class="img-fluid" alt="themes"></div>
+                    <div class="feedback_body bg-white"> <img src="~/Themes/NopStation_v4/Content/images/our_clients_logo_2.png" class="img-fluid" alt="themes"></div>
+                    <div class="feedback_body bg-white"> <img src="~/Themes/NopStation_v4/Content/images/our_clients_logo_3.png" class="img-fluid" alt="themes"></div>
+                    <div class="feedback_body bg-white"> <img src="~/Themes/NopStation_v4/Content/images/our_clients_logo_4.png" class="img-fluid" alt="themes"></div>
+                    <div class="feedback_body bg-white"> <img src="~/Themes/NopStation_v4/Content/images/our_clients_logo_5.png" class="img-fluid" alt="themes"></div>
+
+
+                    <div class="feedback_body bg-white"> <img src="~/Themes/NopStation_v4/Content/images/our_clients_logo_1.png" class="img-fluid" alt="themes"></div>
+                    <div class="feedback_body bg-white"> <img src="~/Themes/NopStation_v4/Content/images/our_clients_logo_2.png" class="img-fluid" alt="themes"></div>
+                    <div class="feedback_body bg-white"> <img src="~/Themes/NopStation_v4/Content/images/our_clients_logo_3.png" class="img-fluid" alt="themes"></div>
+                    <div class="feedback_body bg-white"> <img src="~/Themes/NopStation_v4/Content/images/our_clients_logo_4.png" class="img-fluid" alt="themes"></div>
+                    <div class="feedback_body bg-white"> <img src="~/Themes/NopStation_v4/Content/images/our_clients_logo_5.png" class="img-fluid" alt="themes"> </div>
+
+                </div>
+
+
+            </div>
+
+
+            @await Component.InvokeAsync("Widget", new { widgetZone = "home_page_before_news" })
+            @await Component.InvokeAsync("HomepageNews")
+
+            <script>
+
+            </script>
+
+
+            <!---------------------------------- Our Clients ---------------------------------->
+            <!---------------------------------- Our Clients ---------------------------------->
+            <!-- End body -->
+            <!----------------------------- Footer------------------------------>
+            <!----------------------------- Footer------------------------------>
+            <!----------------------------- Signup Our newsletter------------------------------>
+            <!----------------------------- Signup Our newsletter------------------------------>
+            
+    
+    @* @await Component.InvokeAsync("NewsletterBox") *@
+
+
+
+            <!----------------------------- Signup Our newsletter------------------------------>
+            <!----------------------------- Signup Our newsletter------------------------------>
+            <!----------------------------- Footer------------------------------>
+            <!----------------------------- Footer------------------------------>
+
+        </div>
+
+        <!--End Body Container -->
+
+
+    </div>
+
+
+    <a href="#" class="scrollup" style=""> <i class="fa fa-angle-double-up" aria-hidden="true"></i> </a>
+    <script>
+
+
+        //scroll to top
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                $('.scrollup').fadeIn();
+            } else {
+                $('.scrollup').fadeOut();
+            }
+        });
+        $('.scrollup').click(function () {
+            $("html, body").animate({ scrollTop: 0 }, 1000);
+            return false;
+        });
+        // Primary Controls
+
+        
+
+    </script>
+
+
+

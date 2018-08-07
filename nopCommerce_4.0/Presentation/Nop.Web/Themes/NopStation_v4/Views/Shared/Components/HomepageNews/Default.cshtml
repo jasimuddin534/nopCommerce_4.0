@@ -1,0 +1,33 @@
+﻿@model HomePageNewsItemsModel
+@if (Model.NewsItems.Count > 0)
+{
+<div class="news-list-homepage" id="news-list-homepage">
+    <div class="container Client_feedback_container">
+        <div class="title">
+            <h2 class="body_title_text text-uppercase text-center"> @T("News") </h2>
+        </div>
+        <div class="news-items owl-carousel">
+            @foreach (var item in Model.NewsItems)
+            {
+                <div class="news-item feedback_body bg-white">
+
+                    <div class="d-flex">
+                        <h6 class="font-bold item-title">@item.Title</h6>
+                    </div>
+                    <p>
+                        <i class="news-text">
+                            @Html.Raw(item.Short)
+                        </i> <a href="@Url.RouteUrl("NewsItem", new { SeName = item.SeName })" class="read-more">@T("News.MoreInfo")</a>
+                    </p>
+                    <i class="feedback_date">-@item.CreatedOn.ToString("D")</i>
+                </div>
+
+            }
+        </div>
+        <div class="view-all col-sm-3 see-all-products-button">
+            <a class="text-white font-bold text-uppercase" href="@Url.RouteUrl("NewsArchive")">@T("News.ViewAll")</a>
+        </div>
+    </div>
+</div>
+
+}

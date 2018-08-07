@@ -1,0 +1,28 @@
+﻿@model SocialModel
+<div class="networks row justify-content-between">
+    <div class="col-sm">
+        <div class="title">
+            <strong>@T("Footer.FollowUs")</strong>
+        </div>
+    </div>
+	@if (!string.IsNullOrEmpty(Model.FacebookLink))
+	{
+		<div class="col-sm"><a href="@Model.FacebookLink" target="_blank"><i class="fa fa-facebook-official"></i> @T("Footer.FollowUs.Facebook")</a></div>
+	}
+	@if (!string.IsNullOrEmpty(Model.TwitterLink))
+	{
+		<div class="col-sm"><a href="@Model.TwitterLink" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i> @T("Footer.FollowUs.Twitter")</a></div>
+	}
+	@if (Model.NewsEnabled)
+	{
+		<div class="col-sm"><a href="@Url.RouteUrl("NewsRSS", new {languageId = Model.WorkingLanguageId})"> <i class="fa fa-rss-square" aria-hidden="true"></i> @T("Footer.FollowUs.RSS")</a></div>
+	}
+	@if (!string.IsNullOrEmpty(Model.YoutubeLink))
+	{
+		<div class="col-sm"><a href="@Model.YoutubeLink" target="_blank"> <i class="fa fa-youtube-play" aria-hidden="true"></i> @T("Footer.FollowUs.Youtube")</a></div>
+	}
+	@if (!string.IsNullOrEmpty(Model.GooglePlusLink))
+	{
+		<div class="col-sm"><a href="@Model.GooglePlusLink" target="_blank"> <i class="fa fa-google-plus-square" aria-hidden="true"></i> @T("Footer.FollowUs.GooglePlus")</a></div>
+	}
+</div>

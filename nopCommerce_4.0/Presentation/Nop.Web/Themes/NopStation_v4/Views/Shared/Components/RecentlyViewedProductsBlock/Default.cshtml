@@ -1,0 +1,38 @@
+﻿@model IList<ProductOverviewModel>
+@if (Model.Count > 0)
+{
+    <div class="categories_box bg-white recent-product-box">
+        <div class="block block-category-navigation card border-0 mb-3">
+            <div class="title card-header br border-0 p-0" role="tab" id="headingOne">
+                <a class="" data-toggle="collapse" data-parent="#accordionTwo" href="#collapse-recent-product" aria-expanded="false" aria-controls="collapseOne">
+                    <h2 class="text-white text-uppercase font-bold mb-0">
+                        @T("Products.RecentlyViewedProducts") <i class="fa fa-angle-down float-right rotate-icon fs"></i>
+                    </h2>
+                </a>
+            </div>
+            <div id="collapse-recent-product" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordionTwo">
+                <div class="listbox card-body p-0">
+                    <ul class="list list-unstyled">
+                        @for (var i = 0; i < Model.Count; i++)
+                        {
+                            var product = Model[i];
+                            <li class="media d-flex my-2  @(i == Model.Count - 1 ? @Html.Raw(" last") : null)">
+                                @if (!string.IsNullOrEmpty(product.DefaultPictureModel.ImageUrl))
+                                {
+                                    <a class="product-picture align-self-start mr-3 " href="@Url.RouteUrl("Product", new { SeName = product.SeName })" title="@product.DefaultPictureModel.Title">
+                                        <img alt="@product.DefaultPictureModel.AlternateText" src="@product.DefaultPictureModel.ImageUrl" title="@product.DefaultPictureModel.Title" />
+                                    </a>
+                                }
+                                <div class="align-self-start media-body">
+                                    <a class="product-name" href="@Url.RouteUrl("Product", new { SeName = product.SeName })">@product.Name</a>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+}

@@ -1,0 +1,48 @@
+﻿@model IList<BlogPostYearModel>
+@if (Model.Count > 0)
+{
+    <div class="accordion mt-1" id="blog-archive" role="tablist" aria-multiselectable="fals">
+
+        <div class="categories_box bg-white">
+
+            <div class="card border-0 mb-3">
+                <div class="card-header br border-0 p-0" role="tab" id="headingOne">
+                    <a class="" data-toggle="collapse" data-parent="#blog-archive" href="#blog-archive-collapse" aria-expanded="fals" aria-controls="collapseOne">
+
+                        <h2 class="text-white text-uppercase font-bold mb-0">@T("Blog.Archive") <i class="fa fa-angle-down float-right rotate-icon fs"></i></h2>
+
+                    </a>
+                </div>
+
+                <!-- Card body -->
+                <div id="blog-archive-collapse" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordionEx">
+                    <div class="card-body p-0">
+
+                        <ul class="font-bold">
+                            @foreach (var yearItem in Model)
+                            {
+                                <li class="year">
+                                    <strong class="number">@(yearItem.Year)</strong>
+                                    <ul class="m-0 p-0" id="blog-year-@(yearItem.Year)">
+                                        @foreach (var monthItem in yearItem.Months)
+                                        {
+                                            <li class="month m-0 pb-2 clearfix">
+                                                <a href="@Url.RouteUrl("BlogByMonth", new { month = yearItem.Year + "-" + monthItem.Month })">
+                                                    @(new DateTime(yearItem.Year, monthItem.Month, 1).ToString("MMMM"))
+                                                    <span class="float-right">@(monthItem.BlogPostCount)</span>
+                                                </a>
+                                            </li>
+                                        }
+                                    </ul>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+}

@@ -1,0 +1,41 @@
+﻿@model RegisterResultModel
+@{
+    Layout = "_ColumnsOne";
+
+    //title
+    Html.AddTitleParts(T("PageTitle.Register").Text);
+    //page class
+    Html.AppendPageCssClassParts("html-registration-result-page");
+}
+<form asp-route="RegisterResult" asp-route-returnurl="@Context.Request.Query["ReturnUrl"]" method="post">
+    <div asp-validation-summary="ModelOnly" class="message-error"></div>
+    <div class="body_container">
+        <div class="inner_page_navigation">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2 class="text-uppercase font-bold text-white"> @T("Account.Register") </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container inner_page_body_container">
+            <div class="row">
+                <div class="col-md-9 mx-auto my-3">
+                    <div class="bg-white  py-5">
+                        <div class="page registration-result-page">
+                            <div class="page-body">
+                                <div class="result">
+                                    <p class="lead text-center text-uppercase">@Model.Result</p>
+                                </div>
+                                <div class="buttons text-center">
+                                    <input type="submit" name="register-continue" class="button-1 register-continue-button checkout_button text-white text-uppercase m-auto" value="@T("Account.Register.Result.Continue")" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

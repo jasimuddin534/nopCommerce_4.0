@@ -383,9 +383,9 @@ div.newsletter-subscribe-block > div.newsletter-email {
 .required {
     color: red;
 }
-
-
-
+.brands-name {
+    padding:10px;
+}
 /*------------------------------------*\
 .footer
 \*------------------------------------*/
@@ -393,7 +393,7 @@ div.newsletter-subscribe-block > div.newsletter-email {
     background-color: #444444;
     color: #B8B8B8;
     text-shadow: 1px 1px 1px #000;
-    font-size: 12px;
+    font-size: 14px;
     padding: 20px 0 0 0;
 }
 
@@ -555,34 +555,32 @@ div.newsletter-subscribe-block > div.newsletter-email {
 .offer {
     background: #fff;
     border: 1px solid #ddd;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     margin: 15px auto;
     overflow: hidden;
 }
-
+    .offer:hover {
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        transition: .55s;
+    }
 .category-page .offer {
-    padding: 0 0;
+    /*padding: 0 0;*/
 }
 
 .offer-default {
-    border-color: #999999;
+    border-color: #fff;
     padding: 15px 15px;
 }
 
 .home-page-categories {
     padding: 0 0;
 }
-
-.silde-show-offer {
-    height: 400px;
-}
-
 .picture.thumbnail {
     margin: 0 auto;
 }
 
 .productview img {
-    height: 125px !important;
+    /*height: 125px !important;*/
     width: 100% !important;
 }
 
@@ -639,10 +637,18 @@ div.newsletter-subscribe-block > div.newsletter-email {
     font-weight: 600;
     margin: 10px auto;
 }
-
+.description {
+    padding: 0 10px 10px 10px;
+    height: 80px;
+}
 h2.product-title {
-    padding: 0;
+    padding: 5px 0;
     margin: 0;
+    line-height: 17px;
+    height: 55px;
+}
+.product-rating-box {
+    padding:15px 0;
 }
 
 .home-page-categories h2.product-title {
@@ -651,7 +657,7 @@ h2.product-title {
 
 h2.product-title > a {
     color: #000000;
-    font-size: 20px;
+    font-size:18px;
     font-weight: 600;
 }
 
@@ -1895,7 +1901,7 @@ Product view START
 }
 
 .product-grid .white-box {
-    height: 282px;
+    /* height: 282px;*/
 }
 
 .product-grid .ash-box {
@@ -2373,7 +2379,7 @@ div#color-options h4 {
 div.coupon-box {
     padding: 15px;
     background: #fff;
-    border: 1px solid #ddd;
+    border: 1px solid #999999;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     margin-bottom: 20px;
@@ -2381,7 +2387,7 @@ div.coupon-box {
 
 input[type="text"], textarea {
     height: 34px;
-    padding: 6px 12px;
+    padding: 6px 6px;
     font-size: 14px;
     line-height: 1.42857143;
     color: #555;
@@ -2397,7 +2403,18 @@ input[type="text"], textarea {
     -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
-
+.checkout-attributes, .title, .box-heading, .selected-checkout-attributes {
+    padding: 10px 0;
+}
+.cart-total .cart-total-left {
+    padding-left:0 !important;
+}
+.pull-right .cart-total-left {
+    padding-left: 15px;
+}
+.btn.btn-default {
+    margin-left: 5px;
+}
 .btn.btn-default {
     display: inline-block;
     vertical-align: middle;

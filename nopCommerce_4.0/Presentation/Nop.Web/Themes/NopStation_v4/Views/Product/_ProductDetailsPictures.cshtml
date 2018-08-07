@@ -1,0 +1,57 @@
+﻿@model ProductDetailsModel
+@{
+    Html.AddScriptParts(ResourceLocation.Footer, "~/lib/magnific-popup/jquery.magnific-popup.min.js");
+    Html.AddCssFileParts("~/lib/magnific-popup/magnific-popup.css");
+
+    int productPerRow = 1;
+}
+@if (Model.PictureModels.Count > 1)
+{
+    <div id="carousel-example-1z-2" class="carousel slide carousel-fade" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-1z-2" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-1z-2" data-slide-to="1"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            @for (int i = 0; i < Model.PictureModels.Count; i++)
+            {
+                var picture = Model.PictureModels[i];
+
+                if (i % productPerRow == 0)
+                {
+                    if (i == 0)
+                    {
+                        @Html.Raw("<div class='carousel-item active'>")
+                    }
+                    else
+                    {
+                        @Html.Raw("<div class='carousel-item'>")
+                    }
+
+                }
+                <a class="thumb-popup-link" href="@picture.FullSizeImageUrl" title="@Model.Name">
+                    <img class="img-fluid" src="@picture.ImageUrl" alt="@picture.AlternateText" title="@picture.Title" />
+                </a>
+                if ((i % productPerRow == (productPerRow - 1)) ||
+                    //last image
+                    (i == (Model.PictureModels.Count - 1)))
+                {
+                    @Html.Raw("</div>")
+                }
+            }
+        </div>
+        <a class="carousel-control-prev" href="#carousel-example-1z-2" role="button" data-slide="prev">
+            <h2> <i class="fa fa-angle-left" aria-hidden="true"></i> </h2>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel-example-1z-2" role="button" data-slide="next">
+            <h2> <i class="fa fa-angle-right" aria-hidden="true"></i> </h2>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+
+} else {
+    <img class="img-fluid" alt="@Model.DefaultPictureModel.AlternateText" src="@Model.DefaultPictureModel.ImageUrl" title="@Model.DefaultPictureModel.Title" itemprop="image" id="main-product-img-@Model.Id" />
+
+}

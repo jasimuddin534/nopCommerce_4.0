@@ -1,0 +1,37 @@
+﻿@model PopularProductTagsModel
+
+@if (Model.Tags.Count > 0)
+{
+    <div class="categories_box bg-white recent-product-box">
+        <div class="block block-category-navigation card border-0 mb-3">
+            <div class="title card-header br border-0 p-0" role="tab" id="headingOne">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordionTags" href="#collapse-popular-tags" aria-expanded="false" aria-controls="collapseOne">
+                    <h2 class="text-white text-uppercase font-bold mb-0">
+                        @T("Products.Tags.Popular") <i class="fa fa-angle-down float-right rotate-icon fs"></i>
+                    </h2>
+                </a>
+            </div>
+            <div id="collapse-popular-tags" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordionTwo">
+                <div class="listbox card-body p-0">
+                    <ul class="list list-unstyled">
+                        @foreach (var item in Model.Tags)
+                        {
+                        <li>
+                            <a href="@Url.RouteUrl("ProductsByTag", new { productTagId = item.Id, SeName = item.SeName })" style="font-size:@(Model.GetFontSize(item))%;">@item.Name</a>
+                        </li>
+
+                        }
+                        @if (Model.TotalTags > Model.Tags.Count)
+                        {
+                            <div class="view-all text-center">
+                                <a href="@Url.RouteUrl("ProductTagsAll")" class="btn btn-primary">@T("Products.Tags.Popular.ViewAll")</a>
+                            </div>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+
+}

@@ -1,0 +1,64 @@
+﻿@model SearchBoxModel
+@using System.Text.Encodings.Web
+<!--search-->
+
+<form asp-route="ProductSearch" method="get" id="small-search-box-form">
+    <div class="modal fade srarch_box" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span></button>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content border-0">
+                <div class="modal-body">
+                    <div class="input-group md-form form-sm form-2 pl-0 mb-0">
+                        <input type="text" class="search-box-text form-control my-0 py-1 amber-border border-0 p-2" id="small-searchterms" autocomplete="off" name="q" placeholder="@T("Search.SearchBox.Tooltip")" />
+                        @await Component.InvokeAsync("Widget", new { widgetZone = "searchbox_before_search_button" })
+                        <div class="input-group-append p-2">
+                            <button type="submit" class="search-modal-button" autocomplete="off" name="q" placeholder="@T("Search.SearchBox.Tooltip")"> <i class="fa fa-search bg-white text-dark" aria-hidden="true"></i> </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    @if (Model.SearchTermMinimumLength > 0)
+    {
+        <script type="text/javascript" asp-location="Footer">
+            $("#small-search-box-form").submit(function(event) {
+                if ($("#small-searchterms").val() == "") {
+                    alert('@Html.Raw(JavaScriptEncoder.Default.Encode(T("Search.EnterSearchTerms").Text))');
+                    $("#small-searchterms").focus();
+                    event.preventDefault();
+                }
+            });
+        </script>
+    }
+    @if (Model.AutoCompleteEnabled)
+    {
+        <script type="text/javascript" asp-location="Footer">
+            $(document).ready(function() {
+                $('#small-searchterms').autocomplete({
+                        delay: 500,
+                        minLength: @(Model.SearchTermMinimumLength.ToString()),
+                        source: '@(Url.RouteUrl("ProductSearchAutoComplete"))',
+                        appendTo: '.search-box',
+                        select: function(event, ui) {
+                            $("#small-searchterms").val(ui.item.label);
+                            setLocation(ui.item.producturl);
+                            return false;
+                        }
+                    })
+                    .data("ui-autocomplete")._renderItem = function(ul, item) {
+                        var t = item.label;
+                        //html encode
+                        t = htmlEncode(t);
+                        return $("<li></li>")
+                            .data("item.autocomplete", item)
+                            .append("<a>@(Model.ShowProductImagesInSearchAutoComplete ? Html.Raw("<img src='\" + item.productpictureurl + \"'>") : null)<span>" + t + "</span></a>")
+                            .appendTo(ul);
+                    };
+            });
+        </script>
+    }
+    @await Component.InvokeAsync("Widget", new { widgetZone = "searchbox" })
+</form>
