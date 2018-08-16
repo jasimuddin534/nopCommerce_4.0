@@ -22,6 +22,12 @@
         @*we add enctype = "multipart/form-data" because "File upload" attribute control type requires it*@
         <form asp-route="ShoppingCart" method="post" enctype="multipart/form-data" id="shopping-cart-form">
             <div class="table-wrapper">
+                <script>
+                    function RemoveThis(elem) {
+                        $(elem).siblings('.remove-check-div').find('[type=checkbox]').prop('checked', true);
+                        $(".update-cart-button").trigger("click");
+                    }
+                </script>
                 <table class="cart">
                     <colgroup>
                         @if (Model.IsEditable)
@@ -82,17 +88,27 @@
                                 @if (Model.IsEditable)
                                 {
                                     <td class="remove-from-cart">
+
+                                        
+
+
                                         @if (item.DisableRemoval)
                                         {
                                             <text>&nbsp;</text>
                                         }
                                         else
                                         {
-                                            <input id="ItemRemoveCheckBox_@(item.Id)" type="checkbox" name="removefromcart" value="@(item.Id)" />
-                                            <label class="td-title" for="ItemRemoveCheckBox_@(item.Id)">
-                                                &nbsp;
-                                                @*@T("ShoppingCart.Remove")*@
-                                            </label>
+
+                                            <div class="remove-from-cart">
+                                                <a class="item-remove-button not-for-xs-devices" onclick="RemoveThis(this)">
+                                                    x
+                                                </a>
+                                                <div class="remove-check-div" style="display:none;">
+                                                    <label class="td-title" for="ItemRemoveCheckBox_@(item.Id)"></label>
+                                                    <input type="checkbox" name="removefromcart" value="@(item.Id)" id="ItemRemoveCheckBox_@(item.Id)"/>
+                                                </div>
+                                            </div>
+                                            
                                         }
                                     </td>
                                 }

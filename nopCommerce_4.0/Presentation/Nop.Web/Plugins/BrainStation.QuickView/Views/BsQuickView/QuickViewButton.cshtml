@@ -1,0 +1,125 @@
+﻿@model Nop.Plugin.BrainStation.QuickView.Models.BsQuickViewSettingsModel
+@using Nop.Web.Framework.UI
+@if (Model.EnableWidget)
+{
+
+
+    Html.AppendScriptParts(ResourceLocation.Footer, "~/Plugins/BrainStation.QuickView/Scripts/api.shared.js");
+    Html.AppendScriptParts(ResourceLocation.Footer, "~/Plugins/BrainStation.QuickView/Scripts/api.bsmenu.js");
+    Html.AppendScriptParts(ResourceLocation.Footer, "~/Plugins/BrainStation.QuickView/Scripts/jquery.media.preview.js");
+    Html.AppendScriptParts(ResourceLocation.Footer, "~/Plugins/BrainStation.QuickView/Scripts/jquery.magnific-popup.min.js");
+
+    Html.AppendCssFileParts("~/Plugins/BrainStation.QuickView/Content/styles.css");
+    Html.AppendCssFileParts("~/Plugins/BrainStation.QuickView/Content/media.preview.css");
+    Html.AppendCssFileParts("~/Plugins/BrainStation.QuickView/Content/magnific-popup.css");
+
+
+    <script  asp-location="Footer">
+        $(function () {
+
+            //Here starts the quick view modal plugin
+
+            var quick_view_modal = '<div id="quick-view-modal"></div>';
+
+            $("body").append(quick_view_modal);
+            $("body").append("<button id='quick-view-btn'>OpenQuickView</button>");
+
+
+            $("body div[data-productid]").each(function () {
+
+                var quick_view_button = '<button data-product-id="' + $(this).data("productid") + '"type="button" class="quick-view-plugin-btn btn button-2">QUICK VIEW</button>';
+
+                var arr = "@Model.ButtonContainerName".split(',');
+                for (var i = 0; i < arr.length; i++) {
+                    $(this).find(arr[i]).append(quick_view_button);
+                }
+            });
+
+
+
+            $(".quick-view-plugin-btn.btn").on("click", function () {
+                var product_id = $(this).data("product-id");
+                api.viewProductDetails({
+                    data: { productId: product_id }
+                });
+            });
+
+        });
+
+    </script>
+
+    @*<script asp-location="Footer">
+    $(document).ready(function () {
+
+
+        $('.quickViewPictureThumbSlider').slick({
+            dots: false,
+            speed: 500,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            responsive: [{
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+            }, {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            }, {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }]
+        });
+
+    });
+
+    </script>*@
+}
+@if (Model.EnableWidget && Model.EnableEnlargePicture)
+{
+    <script   asp-location="Footer">
+        $(document).ready(function () {
+            $("body div[data-productid]").find(".picture img").each(function () {
+
+                var image = $(this);
+                var extension = image.attr('src').split('.').pop();
+                var value = (image.attr('src').split("_"));
+                value = (value[value.length - 1]);
+                var dataValue = (image.attr('src').replace(value, '')).slice(0, -1);
+                image.attr("data-src", dataValue + '.' + extension);
+
+
+                var img = new Image();
+                img.onload = function () {
+                    image.attr("data-height", img.height);
+                    image.attr("data-width", img.width);
+                    $(document).trigger("customEvent/imageLoaded");
+                };
+                img.src = dataValue + '.' + extension;
+
+                $(this).attr("title", "");
+
+                //$(this).attr("data-height", "400");
+                //$(this).attr("data-width", "400");
+            });
+
+            $(document).on("customEvent/imageLoaded", function () {
+                $('body div[data-productid] .picture img').mediaPreview({
+                    loading_text: 'Loading, please wait...',
+                    offset: 20
+                });
+            });
+        });
+    </script>
+}
+
+

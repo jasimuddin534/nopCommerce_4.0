@@ -1,0 +1,25 @@
+﻿@model ProductDetailsModel.ProductsEmiAndWarrantyModel
+@using Nop.Web.Models.Catalog;
+@{
+    var price = ViewData["ProductPrice"];
+}
+@if (Model.EmiAvail)
+{
+<hr />
+<div class="avail-emi-box avail-facility">
+    @*@Html.EditorFor(model => model.WantToAvailEmi)*@
+    <p>
+        <nop-editor asp-for="WantToAvailEmi" />
+        <label class="emi_text" asp-for="WantToAvailEmi" asp-postfix="">Avail EMI Facility</label>
+        <a id="ViewPlan" class="view-plans" data-price="@price" href="javascript:void(0)">View Plans</a>
+    </p>
+    <br/>
+    @if (Model.EmiTenure != null)
+    {
+        <p>
+            EMI starts form @Model.EmiTenure.MonthlyInstallment/months
+        </p>
+    }
+    @await Component.InvokeAsync("EmiBankList")
+</div>
+}

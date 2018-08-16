@@ -1,0 +1,71 @@
+﻿@model ProductDetailsModel
+@using Nop.Web.Models.Catalog;
+@using Nop.Core.Domain.Media
+@using Nop.Core.Infrastructure;
+@using Nop.Web.Framework
+@using Nop.Web.Framework.UI
+
+@{
+    Html.AppendScriptParts(ResourceLocation.Footer, "~/Scripts/jquery.magnific-popup.min.js");
+    Html.AddCssFileParts("~/Content/magnific-popup/magnific-popup.css");
+}
+<div class="gallery">
+    @if (@Model.DefaultPictureModel.FullSizeImageUrl != null)
+    {
+        <div class="picture @(Model.PictureModels.Count == 1? "single-picture" : null)">
+            @if (Model.DefaultPictureZoomEnabled)
+                {
+                <a href="@Model.DefaultPictureModel.FullSizeImageUrl" title="@Model.DefaultPictureModel.Title" id="main-product-img-lightbox-anchor-@Model.Id">
+                    <img class="gallery-img" alt="@Model.DefaultPictureModel.AlternateText" src="@Model.DefaultPictureModel.FullSizeImageUrl" title="@Model.DefaultPictureModel.Title" itemprop="image" id="main-product-img-@Model.Id" />
+                </a>
+                <script type="text/javascript" asp-location="Footer">
+                        $(document).ready(function () {
+                            $('#main-product-img-lightbox-anchor-@Model.Id').magnificPopup(
+                                {
+                                    type: 'image',
+                                    removalDelay: 300,
+                                    gallery: {
+                                        enabled: true,
+                                        tPrev: '@T("Media.MagnificPopup.Previous")',
+                                        tNext: '@T("Media.MagnificPopup.Next")',
+                                        tCounter: '@T("Media.MagnificPopup.Counter")'
+                                    },
+                                    tClose: '@T("Media.MagnificPopup.Close")',
+                                    tLoading: '@T("Media.MagnificPopup.Loading")'
+                                });
+                        });
+                </script>
+            }
+            else
+            {
+                <img class="gallery-img" alt="@Model.DefaultPictureModel.AlternateText" src="@Model.DefaultPictureModel.ImageUrl" title="@Model.DefaultPictureModel.Title" itemprop="image" id="main-product-img-@Model.Id" />
+            }
+        </div>
+    }
+
+    <div class="divPictureThumb">
+        @if (Model.PictureModels.Count > 1)
+        {
+            <div class="slick-slider-main">
+                <div class="picture-thumbs quickViewPictureThumbSlider">
+                    @foreach (var picture in Model.PictureModels)
+                    {
+                        <a class="thumb-popup-link" title="@picture.Title" data-largeimage="@picture.FullSizeImageUrl">
+                            <img src="@picture.FullSizeImageUrl" alt="@picture.AlternateText" title="@picture.Title" />
+                        </a>
+                    }
+                </div>
+            </div>
+                <script asp-location="Footer">
+                    $(document).ready(function () {
+                        $('.thumb-popup-link').click(function (event) {
+                            event.preventDefault();
+                            $(".gallery-img").attr('src', $(this).data("largeimage"));
+                        });
+                    });
+                </script>
+
+        }
+    </div>
+
+</div>

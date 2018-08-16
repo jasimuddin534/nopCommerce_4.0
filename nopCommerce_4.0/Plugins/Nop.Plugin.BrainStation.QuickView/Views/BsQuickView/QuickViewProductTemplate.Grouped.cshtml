@@ -1,0 +1,116 @@
+﻿@model Nop.Plugin.BrainStation.QuickView.Models.BsQuickViewModel
+@using Nop.Core.Domain.Seo;
+@using Nop.Core.Infrastructure;
+@using Nop.Services.Catalog
+@using Nop.Web.Models.Catalog;
+@using Nop.Web.Framework.UI
+@using Nop.Services.Localization;
+@using Nop.Web.Framework
+@using Nop.Core.Domain.Media
+@inject  MediaSettings mediaSettings
+
+@{
+    //title, meta
+    Html.AddTitleParts(!String.IsNullOrEmpty(Model.ProductDetailsModel.MetaTitle) ? Model.ProductDetailsModel.MetaTitle : Model.ProductDetailsModel.Name);
+    Html.AddMetaDescriptionParts(Model.ProductDetailsModel.MetaDescription);
+    Html.AddMetaKeywordParts(Model.ProductDetailsModel.MetaKeywords);
+
+    var canonicalUrlsEnabled = EngineContext.Current.Resolve<SeoSettings>().CanonicalUrlsEnabled;
+    if (canonicalUrlsEnabled)
+    {
+        var productUrl = Url.RouteUrl("Product", new { SeName = Model.ProductDetailsModel.SeName }, this.Url.ActionContext.HttpContext.Request.Scheme);
+        Html.AddCanonicalUrlParts(productUrl);
+    }
+}
+
+@{
+    var product = EngineContext.Current.Resolve<Nop.Services.Catalog.IProductService>().GetProductById(Model.ProductDetailsModel.Id);
+    Model.ProductDetailsModel.AddToCart.DisableBuyButton = Model.ProductDetailsModel.AddToCart.DisableBuyButton || product.StockQuantity < 1;
+}
+<div data-productid="@Model.ProductDetailsModel.Id" class="quick-view-product-details-modal" id="quick-view-product-details-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="product-essential">
+                    @await Html.PartialAsync("BsQuickView/_QucikViewProductDetailsPictures", Model.ProductDetailsModel)
+                    <div class="overview">
+                        <form asp-route="Product" asp-route-sename="@Model.ProductDetailsModel.SeName" method="post" id="product-details-form">
+
+                            <div class="product-name">
+                                <h1 itemprop="name">
+                                    @Model.ProductDetailsModel.Name
+                                </h1>
+                            </div>
+
+                            <!--product manufacturers-->
+                            @await Html.PartialAsync("BsQuickView/_QuickViewProductManufacturers", Model.ProductDetailsModel.ProductManufacturers)
+
+                            <!--product reviews-->
+                            @await Html.PartialAsync("BsQuickView/_QuickViewProductReviewOverview", Model.ProductDetailsModel.ProductReviewOverview)
+
+                            <!--Price-->
+                            @{
+                                var dataDictPrice = new ViewDataDictionary(ViewData);
+                                dataDictPrice.TemplateInfo.HtmlFieldPrefix = string.Format("price_{0}", Model.ProductDetailsModel.Id);
+                                @Html.PartialAsync("BsQuickView/_QuickViewProductPrice", Model.ProductDetailsModel.ProductPrice, dataDictPrice)
+                            }
+
+                            <!--delivery Info Shipping-->
+                            @await Html.PartialAsync("BsQuickView/_QucikViewDeliveryInfoShipping", Model.ProductDetailsModel)
+
+                            <!--delivery date-->
+                            @await Html.PartialAsync("BsQuickView/_QucikViewDeliveryInfo", Model.ProductDetailsModel)
+
+
+                            <!--product SKU, manufacturer part number, stock info-->
+                            @*@Html.Partial("_QuickViewSKU_Man_Stock", Model.ProductDetailsModel)*@
+
+                            <!--sample download-->
+                            @await Html.PartialAsync("BsQuickView/_QuickViewDownloadSample", Model.ProductDetailsModel)
+                            <!--attributes-->
+                            @{
+                                var dataDictAttributes = new ViewDataDictionary(ViewData);
+                                dataDictAttributes.TemplateInfo.HtmlFieldPrefix = string.Format("attributes_{0}", Model.ProductDetailsModel.Id);
+                                @await Html.PartialAsync("BsQuickView/_QuickViewProductAttributes", Model.ProductDetailsModel.ProductAttributes, dataDictAttributes)
+                            }
+                            <!--gift card-->
+                            @{
+                                var dataDictGiftCard = new ViewDataDictionary(ViewData);
+                                dataDictGiftCard.TemplateInfo.HtmlFieldPrefix = string.Format("giftcard_{0}", Model.ProductDetailsModel.Id);
+                                @await Html.PartialAsync("BsQuickView/_QuickViewGiftCardInfo", Model.ProductDetailsModel.GiftCard, dataDictGiftCard)
+                            }
+                            <!--availability-->
+                            @await Html.PartialAsync("BsQuickView/_QucikViewAvailability", Model.ProductDetailsModel)
+
+                            <!-- add to cart-->
+                            @{
+                                var dataDictAddToCart = new ViewDataDictionary(ViewData);
+                                dataDictAddToCart.TemplateInfo.HtmlFieldPrefix = string.Format("addtocart_{0}", Model.ProductDetailsModel.Id);
+                                @await Html.PartialAsync("BsQuickView/_QuickViewAddToCart", Model.ProductDetailsModel.AddToCart, dataDictAddToCart)
+                            }
+                            <div id="quick-view-details-error-message-div"></div>
+                            <div data-product-name="@Model.ProductDetailsModel.SeName" data-productid="@Model.ProductDetailsModel.Id" data-pictureurl="@Model.ProductDetailsModel.DefaultPictureModel.ImageUrl" class="quick-view-details-page-image-and-name-info" style="display: none"></div>
+
+                            <div class="share-item">
+                                @await Html.PartialAsync("BsQuickView/_QuickViewShareButton", Model.ProductDetailsModel)
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <ul style="display:block;">
+                    @Component.InvokeAsync("RecentlyViewedProductsForProductDetails", new { productThumbPictureSize = mediaSettings.ProductThumbPictureSize, preparePriceModel = true })
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script asp-location="Footer">
+    $(window).load(function () {
+        $(".thumbnails img").on.click(function () {
+            $(".thumbnails img").removeClass("active");
+            $(this).addClass("active");
+            $(".largeImg").attr("src", $(this).attr("src"));
+        });
+    });
+</script>

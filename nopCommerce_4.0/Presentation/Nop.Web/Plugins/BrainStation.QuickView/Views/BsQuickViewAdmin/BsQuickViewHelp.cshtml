@@ -1,0 +1,36 @@
+﻿@using Nop.Plugin.BrainStation.QuickView.Models
+@using Nop.Web.Framework
+@model BsQuickViewModel
+@using Nop.Core.Domain.Seo;
+@using Nop.Core.Infrastructure;
+@using Nop.Web.Models.Catalog;
+@using Nop.Web.Framework.UI
+
+<!--product breadcrumb-->
+
+@{
+    Layout = "_AdminLayout";
+    Html.SetActiveMenuItemSystemName("Bs Quick View Help");
+}
+
+<div class="content-header clearfix">
+    <h1 class="pull-left">
+        <i class="fa fa-question-circle" aria-hidden="true"></i>
+        @T("admin.plugin.brainstation.quickview.help")
+    </h1>
+</div>
+
+<div class="content">
+    <div class="form-horizontal">
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <p>
+                        Thanks for using Bs Quick View Plugin <br /><br />
+                        You can get help from <a href="http://nop-station.com/Common/Support">Support</a> link
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

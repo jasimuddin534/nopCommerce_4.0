@@ -1,0 +1,117 @@
+﻿@using Nop.Plugin.BrainStation.QuickView.Models
+@using Nop.Web.Framework
+@model BsQuickViewSettingsModel
+@using Nop.Core.Domain.Seo;
+@using Nop.Core.Infrastructure;
+@using Nop.Web.Models.Catalog;
+@using Nop.Web.Framework.UI
+
+<!--product breadcrumb-->
+@{
+    Layout = "_AdminLayout";
+    Html.SetActiveMenuItemSystemName("Bs Quick View Configure");
+}
+
+<form asp-controller="BsQuickViewAdmin" asp-action="Configure" method="post">
+
+    @Html.AntiForgeryToken()
+    <div class="content-header clearfix">
+        <h1 class="pull-left">
+            <i class="fa fa-cog" aria-hidden="true"></i>
+            @T("admin.plugin.brainstation.quickview.settings")
+        </h1>
+        <div class="pull-right">
+            <button type="submit" name="save" value="save" class="btn bg-blue">@T("admin.plugin.brainstation.quickview.save")</button>
+        </div>
+    </div>
+    @Html.ValidationSummary(false)
+
+    <div class="content">
+        <div class="form-horizontal">
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <div class="label-wrapper">
+                                    <label class="control-label" for="EnableWidget">
+                                        @T("Plugins.BsQuickView.Fields.EnableWidget")
+                                    </label>
+                                    <div class="ico-help" title="If you check this opton you will enable the widget of the Bs Quick View plugin. Disabling the checking will make the all settings of Bs Quick View inactive.">
+                                        <i class="fa fa-question-circle"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.EnableWidget)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <div class="label-wrapper">
+                                    <label class="control-label" for="EnableEnlargePicture" title="">
+                                        @T("Plugins.BsQuickView.Fields.EnableEnlargePicture")
+                                    </label>
+                                    <div class="ico-help" title="If you check this opton you will have a splendid view of enlarged picture on each product box items .After checking & saving it reload your main store page and hover on the product pictures in product box and see the awosomeness.">
+                                        <i class="fa fa-question-circle"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.EnableEnlargePicture)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <div class="label-wrapper">
+                                    <label class="control-label" for="ShowAlsoPurchased" title="">
+                                        @T("Plugins.BsQuickView.Fields.ShowAlsoPurchased")
+                                    </label>
+                                    <div class="ico-help" title="This Option will activate showing the Products which was also purchased with the clicked product on Modal named 'Customers who bought this item also bought'">
+                                        <i class="fa fa-question-circle"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.ShowAlsoPurchased)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <div class="label-wrapper">
+                                    <label class="control-label" for="ShowRelatedProducts" title="">
+                                        @T("Plugins.BsQuickView.Fields.ShowRelatedProducts")
+                                    </label>
+                                    <div class="ico-help" title="This Option will activate showing the related Products on Modal.">
+                                        <i class="fa fa-question-circle"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.ShowRelatedProducts)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <div class="label-wrapper">
+                                    <label class="control-label" for="ButtonContainerName" title="">
+                                        @T("Plugins.BsQuickView.Fields.ButtonContainerName")
+                                    </label>
+                                    <div class="ico-help" title="Provide the class name in which the button 'Quick View' will appear. Remember add a '.' before class name . eg(.buttons)">
+                                        <i class="fa fa-question-circle"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="form-text-row">
+                                    @Html.EditorFor(model => model.ButtonContainerName)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>

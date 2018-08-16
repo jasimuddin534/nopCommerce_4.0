@@ -655,7 +655,6 @@ F:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Libraries\Nop.Core\bin\Debug\n
 F:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Libraries\Nop.Core\bin\Debug\net461\System.Xml.XmlSerializer.dll
 F:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Libraries\Nop.Core\bin\Debug\net461\System.Xml.XPath.dll
 F:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Libraries\Nop.Core\bin\Debug\net461\System.Xml.XPath.XDocument.dll
-F:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Libraries\Nop.Core\obj\Debug\net461\Nop.Core.csprojResolveAssemblyReference.cache
 F:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Libraries\Nop.Core\obj\Debug\net461\Nop.Core.csproj.CoreCompileInputs.cache
 F:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Libraries\Nop.Core\obj\Debug\net461\Nop.Core.AssemblyInfoInputs.cache
 F:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Libraries\Nop.Core\obj\Debug\net461\Nop.Core.AssemblyInfo.cs

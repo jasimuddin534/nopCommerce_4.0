@@ -1,0 +1,11 @@
+﻿{
+  "Group": "Brainstation",
+  "FriendlyName": "Bs Quick View",
+  "SystemName": "BrainStation.QuickView",
+  "Version": "1.44",
+  "SupportedVersions": [ "4.00" ],
+  "Author": "Sohel",
+  "DisplayOrder": 5,
+  "FileName": "Nop.Plugin.BrainStation.QuickView.dll",
+  "Description": "This plugin enables product pin to show detials instanly!"
+}
