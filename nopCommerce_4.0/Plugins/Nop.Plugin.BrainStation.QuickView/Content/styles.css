@@ -258,42 +258,6 @@
     height: 45px;
 }
 
-.quick-view-product-details-modal .buttonAddToCart {
-    width: 55%;
-    float: right;
-    text-align: center;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.quick-view-product-details-modal .product-box-add-to-cart-button {
-    width: 100%;
-    color: #fff;
-    height: 45px;
-    transition: 0.5s;
-    -o-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -webkit-transition: 0.5s;
-    max-width: 160px;
-    font-weight: bold;
-    border-radius: 2px;
-    text-align: center;
-    background: #22B392;
-    padding: 13px 10px;
-    border: 1px solid #22B392;
-    text-transform: capitalize;
-}
-
-    .quick-view-product-details-modal .product-box-add-to-cart-button i {
-        margin-right: 9px;
-        margin-top: -4px;
-    }
-
-    .quick-view-product-details-modal .product-box-add-to-cart-button:hover {
-        background: #0A436F;
-        border-color: #0A436F;
-    }
-
 .quick-view-product-details-modal {
 }
 
@@ -436,4 +400,26 @@ div.divPictureThumb {
     .gallery .picture {
         margin-bottom: 30px;
     }
+}
+
+
+
+.item-box .picture {
+    text-align: center;
+    position:relative;
+}
+.quick-view-plugin-btn {
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    background: #fff;
+    display: block;
+    vertical-align: middle;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 120px;
 }

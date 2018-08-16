@@ -660,3 +660,4 @@ F:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Libraries\Nop.Core\obj\Debug\n
 F:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Libraries\Nop.Core\obj\Debug\net461\Nop.Core.AssemblyInfo.cs
 F:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Libraries\Nop.Core\obj\Debug\net461\Nop.Core.dll
 F:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Libraries\Nop.Core\obj\Debug\net461\Nop.Core.pdb
+F:\Jasim\Projects\nopCommerce_4.0\nopCommerce_4.0\Libraries\Nop.Core\obj\Debug\net461\Nop.Core.csprojResolveAssemblyReference.cache
